@@ -1,0 +1,35 @@
+{
+  "$schema": "./schema/cities.schema.json",
+  "meta": {
+    "verifiedAt": "2026-11-16",
+    "note": "Satu kota dan satu landmark CONTOH, belum diverifikasi. Kota MVP belum dipilih (Q-005); target 20–30 landmark untuk kota kurasi (spesifikasi §4.4)."
+  },
+  "cities": [
+    {
+      "id": "bandung",
+      "name": "Bandung",
+      "province": "Jawa Barat",
+      "accentColor": "TBD",
+      "stampAsset": "assets/cities/bandung/stamp.png",
+      "isCurated": false,
+      "example": true
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "bandung-gedung-sate",
+      "cityId": "bandung",
+      "name": "Gedung Sate",
+      "category": "building",
+      "lat": -6.9025,
+      "lng": 107.6188,
+      "radiusM": 150,
+      "facts": [
+        { "text": "CONTOH: fakta singkat yang tampil di halaman landmark. Ganti dengan fakta bersumber.", "source": null }
+      ],
+      "silhouetteAsset": "assets/landmarks/bandung-gedung-sate/silhouette.png",
+      "verified": false,
+      "example": true
+    }
+  ]
+}

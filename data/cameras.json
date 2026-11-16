@@ -1,0 +1,20 @@
+{
+  "$schema": "./schema/cameras.schema.json",
+  "meta": {
+    "verifiedAt": "2026-11-16",
+    "note": "Satu entri CONTOH. Target MVP: 3–4 skin gratis dan 2–3 skin terkunci (spesifikasi §4.2). Nama dan aset belum ada."
+  },
+  "cameras": [
+    {
+      "id": "contoh-saku",
+      "name": "CONTOH Kamera Saku",
+      "lut": "assets/cameras/contoh-saku/lut.png",
+      "overlay": "assets/cameras/contoh-saku/overlay.png",
+      "shutterSound": "assets/cameras/contoh-saku/shutter.wav",
+      "sku": null,
+      "isFree": true,
+      "isLocked": false,
+      "example": true
+    }
+  ]
+}

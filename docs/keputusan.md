@@ -95,3 +95,30 @@
 ### K-012 · Prototipe pertama: animasi buka halaman
 - **Tanggal**: 16 Nov 2026
 - **Alasan**: Ini risiko teknis terbesar sekaligus jantung pengalaman aplikasi.
+
+### K-013 · HQ digabung dengan kode aplikasi dalam satu repo
+- **Tanggal**: 16 Nov 2026
+- **Keputusan**: Repo ini berisi knowledge base (HQ) dan nanti kode aplikasi Flutter di `app/`. HQ tidak dipisah ke repo sendiri.
+- **Alasan**: Developer solo. Satu sesi Claude melihat spesifikasi dan kode sekaligus, sehingga penyimpangan mudah terlihat. Path di CLAUDE.md bisa menunjuk ke kode, dan konvensi Flutter cukup ditaruh di `app/CLAUDE.md` yang baru dimuat saat bekerja di `app/`. Sesi cloud cukup satu repo.
+- **Ditolak**: HQ terpisah seperti `inzta-hq`. Di sana repo dipisah karena kodenya milik klien dan dibagikan ke tim lain, alasan yang tidak berlaku di sini.
+- **Konsekuensi**:
+  - Riwayat git dokumen dan kode bercampur. CI aplikasi nanti memakai filter path.
+  - Nama repo `potret-hq` mungkin perlu diganti (Q-012).
+  - Dasar persetujuan: analisis di `LAPORAN-ANALISIS.md`, disetujui pemilik 16 Nov 2026 ("Setuju semua, gabung").
+
+### K-014 · Identifier kode dan data berbahasa Inggris
+- **Tanggal**: 16 Nov 2026
+- **Keputusan**: Nama entitas, field, dan nilai enum di Dart, JSON (`data/`), dan Postgres memakai bahasa Inggris sesuai `docs/produk/glosarium.md`. Dart/JSON `camelCase`, Postgres `snake_case`. Dokumen dan teks UI tetap Bahasa Indonesia.
+- **Alasan**: Glosarium v1 sudah memakai nama kelas Inggris (`Finding`, `landmarkId`). Field §5 spesifikasi masih Indonesia (`tahun_lahir`, `radius_m`), jadi perlu satu aturan supaya kode, skema, dan sub-agen tidak mencampur dua bahasa.
+- **Ditolak**: Field berbahasa Indonesia mengikuti §5 apa adanya; campuran per lapisan.
+- **Konsekuensi**: Tabel pemetaan field §5 → kode ada di glosarium bagian 4. Disetujui pemilik 16 Nov 2026 ("Setuju semua").
+
+### K-015 · HQ tanpa gerbang persetujuan; kualitas lewat checklist mandiri
+- **Tanggal**: 16 Nov 2026
+- **Keputusan**: Tidak ada gerbang verifikasi, approval berlapis, pre-commit hook, atau CI yang memblokir di HQ. Setiap sub-agen memeriksa sendiri checklist "selesai" di file agennya. Pemeriksaan mekanis (`node scripts/cek-hq.mjs`) dijalankan sukarela.
+- **Alasan**: Developer solo tidak butuh pemeriksa dari orang lain. Gerbang di `inzta-hq` lahir dari kebutuhan klien dan tim.
+- **Ditolak**: Pasangan pembuat-pemeriksa wajib, ambang skor keyakinan, gerbang per tahap pipeline.
+- **Konsekuensi**:
+  - Mata kedua tetap tersedia bila diminta (misalnya `/code-review` bawaan Claude Code), tidak wajib.
+  - Setiap temuan agen wajib berbukti (`file:baris` atau URL) dan berlabel **terbukti** atau **dugaan**.
+  - Tindakan yang tidak bisa dibatalkan (rilis ke toko, hapus data produksi, keluar uang) tetap ditanyakan dulu. Ini perilaku dasar, bukan gerbang.

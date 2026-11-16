@@ -1,7 +1,8 @@
 # Spesifikasi Sistem v1
 
 > Status: **DIKUNCI** · Dikunci: 16 Nov 2026 · Nama aplikasi: belum ada (pakai nama kode)
-> Alasan tiap keputusan ada di `keputusan.md`. Sumber riset ada di `riset-2026-11.md`.
+> Alasan tiap keputusan ada di [`docs/keputusan.md`](../keputusan.md). Sumber riset ada di [`docs/riset/2026-11-16-riset-awal.md`](../riset/2026-11-16-riset-awal.md).
+> Terakhir diverifikasi: 16 Nov 2026 (dipindah ke struktur HQ; isi keputusan tidak diubah, hanya tautan dan §3 yang dipindah).
 
 ## 1. Ringkasan produk
 
@@ -20,21 +21,7 @@ Aplikasi untuk memotret objek di kota-kota Indonesia. Latar foto terhapus otomat
 
 ## 3. Istilah (glosarium)
 
-Pakai istilah ini secara konsisten di dokumen, kode, Trello, dan semua sub-agen.
-
-| Istilah | Arti | Nama di kode |
-|---|---|---|
-| Temuan | Satu objek hasil potret yang sudah dipotong latarnya | `Finding` |
-| Temuan bebas | Temuan apa saja, kategorinya otomatis | `Finding` dengan `landmarkId = null` |
-| Landmark | Objek kurasi per kota, punya koordinat dan radius | `Landmark` |
-| Kota | Kota tempat temuan dibuat (hanya tingkat kota) | `City` |
-| Buku | Satu buku milik tiap pengguna, berisi semua kota | `Book` |
-| Bab | Bagian buku untuk satu kota | `Chapter` |
-| Halaman | Satu halaman buku berbasis template | `Page` |
-| Penempatan | Posisi temuan di halaman | `Placement` |
-| Kamera / skin | Bodi visual + filter warna + suara shutter | `Camera` |
-| Misi | Tugas mingguan berbasis kategori | `Mission` |
-| Lencana | Penghargaan kelengkapan | `Badge` |
+Dipindah ke [`docs/produk/glosarium.md`](glosarium.md) supaya hanya ada satu sumber istilah. Isi tabel aslinya dipertahankan utuh di sana.
 
 ## 4. Fitur MVP
 

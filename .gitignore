@@ -1,0 +1,27 @@
+# Rahasia
+.env
+.env.*
+*.keystore
+*.jks
+key.properties
+**/google-services.json
+**/GoogleService-Info.plist
+supabase/.temp/
+
+# Flutter (app/, saat sudah ada)
+app/.dart_tool/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/ios/Pods/
+app/android/.gradle/
+
+# Sistem
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+
+# Lokal Claude Code
+.claude/settings.local.json
