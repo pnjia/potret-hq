@@ -1,0 +1,41 @@
+{
+  "$schema": "./schema/design-tokens.schema.json",
+  "meta": {
+    "version": "0.0.1",
+    "status": "placeholder",
+    "verifiedAt": "2026-11-16",
+    "note": "PLACEHOLDER. Palet dan tipografi belum ditentukan (Q-007). Struktur sudah final; nilai 'TBD' dan null wajib diganti sebelum dipakai di layar. Arah: dasar netral bernuansa kertas, warna ramai dibawa konten (spesifikasi §2)."
+  },
+  "color": {
+    "paper": {
+      "base": { "value": "TBD", "status": "placeholder", "note": "Latar halaman buku dan layar; netral bernuansa kertas" },
+      "line": { "value": "TBD", "status": "placeholder", "note": "Garis tipis, tepi kertas" }
+    },
+    "ink": {
+      "primary": { "value": "TBD", "status": "placeholder", "note": "Teks utama" },
+      "secondary": { "value": "TBD", "status": "placeholder", "note": "Keterangan, teks sekunder" }
+    },
+    "accent": {
+      "primary": { "value": "TBD", "status": "placeholder", "note": "Aksen UI umum. Aksen per kota ada di data/cities.json (accentColor)" }
+    },
+    "state": {
+      "error": { "value": "TBD", "status": "placeholder", "note": "Galat" },
+      "success": { "value": "TBD", "status": "placeholder", "note": "Berhasil, misalnya landmark ditemukan" }
+    }
+  },
+  "typography": {
+    "display": { "family": "TBD", "status": "placeholder", "note": "Judul, stempel kota" },
+    "body": { "family": "TBD", "status": "placeholder", "note": "Teks UI" },
+    "handwriting": { "family": "TBD", "status": "placeholder", "note": "Keterangan di halaman buku (nuansa scrapbook)" }
+  },
+  "spacing": {
+    "unit": { "value": null, "unit": "px", "status": "placeholder", "note": "Satuan dasar spasi" }
+  },
+  "radius": {
+    "card": { "value": null, "unit": "px", "status": "placeholder", "note": "Sudut kartu; hindari terlalu membulat (anti-acuan)" }
+  },
+  "motion": {
+    "pageCurl": { "value": null, "unit": "ms", "status": "placeholder", "note": "Durasi buka halaman; ditentukan dari prototipe K-012" },
+    "placementRotationMax": { "value": null, "unit": "deg", "status": "placeholder", "note": "Batas rotasi acak penempatan (usulan kerja ±4°, lihat docs/desain/acuan/halaman-buku.md)" }
+  }
+}

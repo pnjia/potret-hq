@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "design-tokens.schema.json",
+  "title": "Design tokens potret",
+  "description": "Token desain. Selama palet belum ditentukan (Q-007), nilai warna boleh 'TBD' dengan status 'placeholder'.",
+  "type": "object",
+  "required": ["meta", "color", "typography", "spacing", "radius", "motion"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "meta": { "$ref": "#/$defs/meta" },
+    "color": {
+      "type": "object",
+      "required": ["paper", "ink", "accent", "state"],
+      "additionalProperties": false,
+      "properties": {
+        "paper": { "$ref": "#/$defs/colorGroup" },
+        "ink": { "$ref": "#/$defs/colorGroup" },
+        "accent": { "$ref": "#/$defs/colorGroup" },
+        "state": { "$ref": "#/$defs/colorGroup" }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "required": ["display", "body", "handwriting"],
+      "additionalProperties": false,
+      "properties": {
+        "display": { "$ref": "#/$defs/fontToken" },
+        "body": { "$ref": "#/$defs/fontToken" },
+        "handwriting": { "$ref": "#/$defs/fontToken" }
+      }
+    },
+    "spacing": { "$ref": "#/$defs/numberGroup" },
+    "radius": { "$ref": "#/$defs/numberGroup" },
+    "motion": { "$ref": "#/$defs/numberGroup" }
+  },
+  "$defs": {
+    "status": { "type": "string", "enum": ["placeholder", "final"] },
+    "meta": {
+      "type": "object",
+      "required": ["version", "status", "verifiedAt", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "status": { "$ref": "#/$defs/status" },
+        "verifiedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "colorToken": {
+      "type": "object",
+      "required": ["value", "status", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "string", "pattern": "^(#[0-9A-Fa-f]{6}|TBD)$" },
+        "status": { "$ref": "#/$defs/status" },
+        "note": { "type": "string" }
+      }
+    },
+    "colorGroup": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/colorToken" }
+    },
+    "fontToken": {
+      "type": "object",
+      "required": ["family", "status", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "family": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/status" },
+        "note": { "type": "string" }
+      }
+    },
+    "numberToken": {
+      "type": "object",
+      "required": ["value", "unit", "status", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": ["number", "null"] },
+        "unit": { "type": "string", "enum": ["px", "ms", "deg"] },
+        "status": { "$ref": "#/$defs/status" },
+        "note": { "type": "string" }
+      }
+    },
+    "numberGroup": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/numberToken" }
+    }
+  }
+}

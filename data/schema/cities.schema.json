@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cities.schema.json",
+  "title": "Katalog kota dan landmark",
+  "description": "Entitas City dan Landmark (glosarium). Koordinat di sini adalah titik landmark publik untuk pencocokan radius di perangkat, bukan lokasi pengguna (K-011). Landmark dengan verified=true wajib punya sumber di setiap fakta (dicek scripts/cek-hq.mjs).",
+  "type": "object",
+  "required": ["meta", "cities", "landmarks"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "required": ["verifiedAt", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "verifiedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note": { "type": "string" }
+      }
+    },
+    "cities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "province", "accentColor", "stampAsset", "isCurated", "example"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "name": { "type": "string", "minLength": 1 },
+          "province": { "type": "string", "minLength": 1 },
+          "accentColor": { "type": "string", "pattern": "^(#[0-9A-Fa-f]{6}|TBD)$" },
+          "stampAsset": { "type": "string", "minLength": 1 },
+          "isCurated": { "type": "boolean", "description": "true = landmark kurasi lengkap; false = bab tetap dibuat, landmark 'segera hadir'" },
+          "example": { "type": "boolean" }
+        }
+      }
+    },
+    "landmarks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "cityId", "name", "category", "lat", "lng", "radiusM", "facts", "silhouetteAsset", "verified", "example"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "cityId": { "$ref": "#/$defs/slug" },
+          "name": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$", "description": "Taksonomi belum final (Q-004)" },
+          "lat": { "type": "number", "minimum": -11, "maximum": 6 },
+          "lng": { "type": "number", "minimum": 95, "maximum": 141 },
+          "radiusM": { "type": "integer", "minimum": 10, "maximum": 2000 },
+          "facts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["text", "source"],
+              "additionalProperties": false,
+              "properties": {
+                "text": { "type": "string", "minLength": 1 },
+                "source": { "type": ["string", "null"], "description": "URL sumber; null = belum diverifikasi" }
+              }
+            }
+          },
+          "silhouetteAsset": { "type": "string", "minLength": 1 },
+          "verified": { "type": "boolean", "description": "true = koordinat, radius, dan fakta sudah dicek" },
+          "example": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+  }
+}
