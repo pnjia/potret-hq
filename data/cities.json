@@ -11,6 +11,7 @@
       "province": "Jawa Barat",
       "accentColor": "TBD",
       "stampAsset": "assets/cities/bandung/stamp.png",
+      "findingTarget": 100,
       "isCurated": false,
       "example": true
     }
