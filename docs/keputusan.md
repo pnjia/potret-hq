@@ -347,3 +347,21 @@
   - Jumlah landmark: tidak cocok dengan angka 100.
 - **Konsekuensi**: Field `findingTarget` ditambahkan ke `data/cities.json` dan skemanya. Kartu share, halaman pembatas, dan lencana memakai definisi ini.
 - **Menjawab**: Q-014
+
+### K-029 · Kota MVP: Sukabumi
+- **Tanggal**: 17 Nov 2026
+- **Keputusan**: Kota pertama yang dikurasi (target 20–30 landmark) adalah **Kota Sukabumi**. Bandung menjadi kandidat kota kurasi kedua setelah MVP (kota kurasi tambahan memang ditunda, spesifikasi §8).
+- **Alasan**:
+  - Pemilik berdomisili di Kota Sukabumi (17 Nov 2026). Spesifikasi §4.4 meminta kota yang bisa disurvei langsung, dan K-022 sudah menyebut Bandung harus diganti bila syarat itu tidak terpenuhi.
+  - Bandung sekitar 3 jam sekali jalan dari Sukabumi tanpa kereta langsung, jadi tidak cocok untuk survei berulang.
+  - Kota Sukabumi punya sekitar 21 objek diduga cagar budaya (2023), ditambah bangunan publik dan museum.
+  - Kota domisili juga memudahkan uji kategori dengan foto nyata (K-020) dan uji lapangan di Infinix Hot 11 Play (K-016).
+  - Sumber: `docs/riset/2026-11-17-kota-mvp-sukabumi.md`.
+- **Ditolak**:
+  - Bandung: terlalu jauh untuk survei rutin; tetap jadi kandidat kedua.
+  - Kabupaten Sukabumi (Geopark Ciletuh, Pelabuhan Ratu): objeknya tersebar jauh dan tidak cocok dengan konsep bab per kota.
+- **Konsekuensi**:
+  - `data/cities.json` mendapat entri Sukabumi (belum dikurasi). Contoh Bandung–Gedung Sate tetap sebagai entri contoh.
+  - Bila kurasi menemukan kurang dari 20 landmark yang layak di dalam Kota Sukabumi, catat sebagai Q- baru. Jangan menambah objek dari luar batas kota diam-diam.
+  - Contoh "Bandung 23/100" di spesifikasi dan acuan tetap sah sebagai contoh format.
+- **Menggantikan**: K-022

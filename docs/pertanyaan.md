@@ -18,7 +18,7 @@
 | Q-002 | Apakah gerbang usia "tahun lahir" (deklarasi mandiri, spesifikasi §4.1) sudah dihitung sebagai "verifikasi usia" menurut PP Tunas? | Tidak cukup sendirian. Verifikasi berlapis: deklarasi + sinyal usia platform + jalur keberatan, plus jaring pengaman PP Ps. 22(4) | K-017 |
 | Q-003 | `Finding.path_foto_asli_lokal` hanya disimpan di SQLite perangkat, atau ikut tersinkron ke Supabase? | Hanya di perangkat (drift), tidak tersinkron | K-019 |
 | Q-004 | Taksonomi kategori final, dan pemetaan label ML Kit Image Labeling (generik, berbahasa Inggris) ke kategori. "Papan nama" kemungkinan tidak ada sebagai label bawaan | 9 kategori, 174 label ML Kit, aturan pemilihan di `data/categories.json` | K-020 |
-| Q-005 | Kota MVP yang dikurasi (20–30 landmark, bisa disurvei langsung)? | Bandung | K-022 |
+| Q-005 | Kota MVP yang dikurasi (20–30 landmark, bisa disurvei langsung)? | Bandung (K-022), lalu diganti Kota Sukabumi karena pemilik berdomisili di sana (K-029) | K-022, K-029 |
 | Q-006 | Nama aplikasi (sekarang nama kode "potret") | Kliping Kota (nama kode tetap potret); cek PDKI sebelum mendaftar | K-023 |
 | Q-007 | Palet dan tipografi. Token di `data/design-tokens.json` masih placeholder | Palet kertas + aksen merah muda/biru; Fraunces, Plus Jakarta Sans, Caveat | K-021 |
 | Q-008 | Sumber dan lisensi suara buka halaman dan suara shutter | Rekam sendiri; cadangan CC0/Pixabay; tercatat di `data/sounds.json` | K-024 |

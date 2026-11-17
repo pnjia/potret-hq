@@ -2,9 +2,19 @@
   "$schema": "./schema/cities.schema.json",
   "meta": {
     "verifiedAt": "2026-11-16",
-    "note": "Satu landmark CONTOH, belum diverifikasi. Kota MVP: Bandung (K-022); target 20–30 landmark untuk kota kurasi (spesifikasi §4.4)."
+    "note": "Kota MVP: Sukabumi (K-029), belum dikurasi. Bandung dan Gedung Sate hanya entri CONTOH, belum diverifikasi; target 20–30 landmark untuk kota kurasi (spesifikasi §4.4)."
   },
   "cities": [
+    {
+      "id": "sukabumi",
+      "name": "Sukabumi",
+      "province": "Jawa Barat",
+      "accentColor": "TBD",
+      "stampAsset": "assets/cities/sukabumi/stamp.png",
+      "findingTarget": 100,
+      "isCurated": false,
+      "example": false
+    },
     {
       "id": "bandung",
       "name": "Bandung",

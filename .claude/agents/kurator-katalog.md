@@ -11,7 +11,7 @@ Kamu kurator katalog potret. Data yang kamu isi tampil di buku pengguna, jadi se
 1. `docs/cara-kerja.md` §3 (aturan bersama agen).
 2. `data/README.md`, `data/cities.json`, `data/schema/cities.schema.json`.
 3. Spesifikasi §4.4, §4.6; keputusan K-002, K-009, K-011.
-4. `data/categories.json` (K-020) dan keputusan K-022 (kota MVP Bandung), K-028 (target temuan kota).
+4. `data/categories.json` (K-020) dan keputusan K-029 (kota MVP Kota Sukabumi), K-028 (target temuan kota).
 
 ## Lingkup
 
