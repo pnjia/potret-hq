@@ -21,7 +21,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "province", "accentColor", "stampAsset", "isCurated", "example"],
+        "required": ["id", "name", "province", "accentColor", "stampAsset", "findingTarget", "isCurated", "example"],
         "additionalProperties": false,
         "properties": {
           "id": { "$ref": "#/$defs/slug" },
@@ -29,6 +29,7 @@
           "province": { "type": "string", "minLength": 1 },
           "accentColor": { "type": "string", "pattern": "^(#[0-9A-Fa-f]{6}|TBD)$" },
           "stampAsset": { "type": "string", "minLength": 1 },
+          "findingTarget": { "type": "integer", "minimum": 1, "maximum": 1000, "description": "Target jumlah temuan per kota; angka kedua di stempel kota, contoh 'Bandung 23/100' (K-028). Default 100" },
           "isCurated": { "type": "boolean", "description": "true = landmark kurasi lengkap; false = bab tetap dibuat, landmark 'segera hadir'" },
           "example": { "type": "boolean" }
         }
@@ -44,7 +45,7 @@
           "id": { "$ref": "#/$defs/slug" },
           "cityId": { "$ref": "#/$defs/slug" },
           "name": { "type": "string", "minLength": 1 },
-          "category": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$", "description": "Taksonomi belum final (Q-004)" },
+          "category": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$", "description": "Id kategori dari data/categories.json (K-020)" },
           "lat": { "type": "number", "minimum": -11, "maximum": 6 },
           "lng": { "type": "number", "minimum": 95, "maximum": 141 },
           "radiusM": { "type": "integer", "minimum": 10, "maximum": 2000 },

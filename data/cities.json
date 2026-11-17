@@ -2,7 +2,7 @@
   "$schema": "./schema/cities.schema.json",
   "meta": {
     "verifiedAt": "2026-11-16",
-    "note": "Satu kota dan satu landmark CONTOH, belum diverifikasi. Kota MVP belum dipilih (Q-005); target 20–30 landmark untuk kota kurasi (spesifikasi §4.4)."
+    "note": "Satu landmark CONTOH, belum diverifikasi. Kota MVP: Bandung (K-022); target 20–30 landmark untuk kota kurasi (spesifikasi §4.4)."
   },
   "cities": [
     {
@@ -11,6 +11,7 @@
       "province": "Jawa Barat",
       "accentColor": "TBD",
       "stampAsset": "assets/cities/bandung/stamp.png",
+      "findingTarget": 100,
       "isCurated": false,
       "example": true
     }

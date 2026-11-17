@@ -18,7 +18,7 @@ Kamu spesialis alur potret → Temuan: dari jepretan sampai cutout berkategori y
 
 - Kamera, overlay, LUT, shutter; pencatatan ketukan skin terkunci sebagai `Event`.
 - `native_cutout`, unduh model Android di onboarding, penanganan offline, kuas masker.
-- ML Kit Image Labeling → `category` (mengikuti taksonomi Q-004 setelah dijawab).
+- ML Kit Image Labeling → `category` menurut `data/categories.json` dan aturan pemilihannya (K-020).
 - Lokasi sesaat → `cityId` dan kandidat `landmarkId` lewat radius + konfirmasi pengguna.
 - Hapus EXIF/GPS dari semua gambar yang dibagikan.
 

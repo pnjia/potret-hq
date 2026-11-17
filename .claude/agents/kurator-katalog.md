@@ -11,12 +11,12 @@ Kamu kurator katalog potret. Data yang kamu isi tampil di buku pengguna, jadi se
 1. `docs/cara-kerja.md` §3 (aturan bersama agen).
 2. `data/README.md`, `data/cities.json`, `data/schema/cities.schema.json`.
 3. Spesifikasi §4.4, §4.6; keputusan K-002, K-009, K-011.
-4. `docs/pertanyaan.md`: Q-004 (taksonomi), Q-005 (kota MVP).
+4. `data/categories.json` (K-020) dan keputusan K-022 (kota MVP Bandung), K-028 (target temuan kota).
 
 ## Lingkup
 
 - Kota dan landmark: id slug, nama, provinsi, `lat`/`lng` titik landmark, `radiusM`, `facts` dengan sumber, path siluet.
-- Usulan taksonomi kategori dan pemetaan ke label ML Kit (sebagai usulan untuk Q-004, bukan keputusan).
+- Taksonomi kategori dan pemetaan label ML Kit di `data/categories.json` (K-020). Perubahan pemetaan boleh lewat data; menambah atau menghapus kategori butuh keputusan baru.
 - Template misi mingguan (berbasis kategori, berlaku di kota mana pun) dan definisi lencana; hadiah kosmetik saja.
 
 ## Bukan lingkupmu

@@ -1,7 +1,7 @@
 # Teknis: kamera dan temuan
 
 > Area agen `kamera-cutout`. Fakta di bagian 1 diambil dari spesifikasi v1 dan riset 16 Nov 2026.
-> Terakhir diverifikasi: 16 Nov 2026. Cek ulang status paket sebelum dipasang (riset bisa usang).
+> Terakhir diverifikasi: 17 Nov 2026. Cek ulang status paket sebelum dipasang (riset bisa usang).
 
 ## 1. Yang sudah terkunci
 
@@ -18,11 +18,17 @@
 - EXIF dan GPS dihapus dari setiap gambar yang dibagikan (K-011, spesifikasi §4.8).
 - Cutout (WebP terkompresi) dan thumbnail diunggah; foto asli tetap di perangkat (spesifikasi §4.9).
 
-## 2. Belum ditetapkan
+## 2. Sudah diputuskan setelah spesifikasi
+
+- **Kategori** (K-020): 9 kategori dan pemetaan 174 label ML Kit di `data/categories.json`. Ambang confidence 0,5. Pilih label terpetakan tertinggi yang bukan "lemah"; seri dipecah `tieBreakOrder`; tanpa label terpetakan → `other`. Pemetaan dikunci pada teks label.
+- **Path foto asli** (K-019): `localOriginalPath` hanya di drift, tidak pernah dikirim ke Supabase.
+- **Lokasi** (K-017): minta izin lokasi hanya saat memotret, tampilkan tanda saat lokasi dibaca, koordinat dibuang setelah kota/landmark dicocokkan.
+- **Suara shutter** (K-024): rekam sendiri; setiap file tercatat di `data/sounds.json`.
+- **Status `native_cutout`** (riset 17 Nov): 0.4.0 (30 Sep 2026), satu perawat. ML Kit Subject Segmentation masih beta dan butuh API 24+. Risiko ini tetap di bawah K-010.
+
+## 3. Belum ditetapkan
 
 | Hal | Status |
 |---|---|
-| Taksonomi kategori dan pemetaan label ML Kit | Q-004 |
-| `localOriginalPath` ikut tersinkron atau tidak | Q-003 |
 | Format LUT (PNG 3D LUT vs `.cube`) | Diputuskan agen `kamera-cutout` saat implementasi |
 | Ukuran dan kualitas WebP cutout dan thumbnail | Belum ada angka; terkait risiko biaya storage (#4) |

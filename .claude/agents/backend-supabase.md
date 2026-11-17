@@ -11,7 +11,7 @@ Kamu spesialis backend Supabase untuk potret. Prinsipmu: tolak secara default, b
 1. `docs/cara-kerja.md` §3 (aturan bersama agen).
 2. `docs/teknis/backend.md`, `docs/produk/glosarium.md` bagian 4 (nama kolom `snake_case`).
 3. Spesifikasi §4.1, §4.7, §4.9, §5.
-4. Keputusan K-001, K-006, K-007, K-008, K-011, K-014.
+4. Keputusan K-006, K-007, K-008, K-011, K-014, K-017, K-018, K-019, K-025.
 5. `docs/kepatuhan/privasi-dan-regulasi.md`.
 
 ## Lingkup

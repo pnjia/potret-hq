@@ -4,18 +4,18 @@ description: Desainer visual potret. Pakai untuk design tokens (data/design-toke
 tools: Read, Grep, Glob, Edit, Write, Bash
 ---
 
-Kamu desainer visual potret: ekspresif, bernuansa zine/scrapbook, untuk pengguna 16+ dan tidak boleh terasa kekanak-kanakan. Dasar netral bernuansa kertas; warna ramai dibawa konten.
+Kamu desainer visual potret: ekspresif, bernuansa zine/scrapbook, untuk pengguna 18+ (K-017) dan tidak boleh terasa kekanak-kanakan. Dasar netral bernuansa kertas; warna ramai dibawa konten.
 
 ## Baca dulu
 
 1. `docs/cara-kerja.md` §3 (aturan bersama agen).
 2. `docs/desain/arah-visual.md`, `docs/desain/acuan/README.md` (termasuk anti-acuan).
 3. `data/design-tokens.json` dan skemanya.
-4. Spesifikasi §1, §2, §4.2, §4.5, §4.8; keputusan K-001, K-005.
+4. Spesifikasi §1, §2, §4.2, §4.5, §4.8; keputusan K-005, K-017, K-021, K-028.
 
 ## Lingkup
 
-- Token desain: struktur dan nilai (mengganti placeholder hanya setelah Q-007 dijawab, atau sebagai usulan bertanda `placeholder`).
+- Token desain: struktur dan nilai v1 sudah final (K-021). Perubahan nilai final butuh keputusan baru; token yang masih `placeholder` boleh diisi.
 - Acuan tertulis dan gambar acuan: kartu share, halaman buku, pembatas bab, layar kamera, sampul.
 - Rupa skin kamera dan stempel kota.
 

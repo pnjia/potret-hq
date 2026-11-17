@@ -1,6 +1,6 @@
 # potret · peta repo
 
-Aplikasi Flutter (Android + iOS) untuk memotret objek di kota-kota Indonesia, menghapus latarnya di perangkat, lalu mengoleksinya di satu buku digital beranimasi. Developer solo. Nama aplikasi belum ada; nama kode **potret**.
+Aplikasi Flutter (Android + iOS) untuk memotret objek di kota-kota Indonesia, menghapus latarnya di perangkat, lalu mengoleksinya di satu buku digital beranimasi. Developer solo. Nama aplikasi **Kliping Kota** (K-023); nama kode di repo dan kode: **potret**.
 
 Repo ini berisi HQ (knowledge base) dan nanti kode aplikasi di `app/` (K-013). File ini hanya **peta**: detail ada di dokumen yang dirujuk. Baca seperlunya.
 
@@ -20,8 +20,8 @@ Repo ini berisi HQ (knowledge base) dan nanti kode aplikasi di `app/` (K-013). F
 |---|---|
 | Apa yang dibangun (fitur MVP, entitas, stack, risiko) | `docs/produk/spesifikasi-sistem-v1.md` (DIKUNCI) |
 | Arti istilah dan nama di kode | `docs/produk/glosarium.md` |
-| Kenapa begitu, dan alternatif yang ditolak | `docs/keputusan.md` (K-001…, append-only) |
-| Apa yang belum diputuskan | `docs/pertanyaan.md` (Q-001…) |
+| Kenapa begitu, dan alternatif yang ditolak | `docs/keputusan.md` (nomor K-, append-only) |
+| Apa yang belum diputuskan | `docs/pertanyaan.md` (nomor Q-) |
 | Data pasar, pesaing, regulasi, teknologi (bertanggal) | `docs/riset/` |
 | Arah visual dan contoh acuan | `docs/desain/arah-visual.md`, `docs/desain/acuan/` |
 | Arsitektur dan catatan per area | `docs/teknis/` (arsitektur, buku, kamera, backend, rilis) |

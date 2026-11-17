@@ -1,41 +1,45 @@
 {
   "$schema": "./schema/design-tokens.schema.json",
   "meta": {
-    "version": "0.0.1",
-    "status": "placeholder",
-    "verifiedAt": "2026-11-16",
-    "note": "PLACEHOLDER. Palet dan tipografi belum ditentukan (Q-007). Struktur sudah final; nilai 'TBD' dan null wajib diganti sebelum dipakai di layar. Arah: dasar netral bernuansa kertas, warna ramai dibawa konten (spesifikasi §2)."
+    "version": "1.0.0",
+    "status": "final",
+    "verifiedAt": "2026-11-17",
+    "note": "Palet dan tipografi v1 (K-021, menjawab Q-007). Dasar kertas netral; warna ramai dibawa konten (spesifikasi §2). Kontras WCAG dihitung 17 Nov 2026: semua pasangan teks di atas paper.base dan paper.raised >= 4,5. Font berlisensi OFL (google/fonts METADATA.pb). Durasi page-curl masih placeholder sampai prototipe K-012 diukur."
   },
   "color": {
     "paper": {
-      "base": { "value": "TBD", "status": "placeholder", "note": "Latar halaman buku dan layar; netral bernuansa kertas" },
-      "line": { "value": "TBD", "status": "placeholder", "note": "Garis tipis, tepi kertas" }
+      "base": { "value": "#F3EEE4", "status": "final", "note": "Latar layar dan halaman buku; kertas hangat" },
+      "raised": { "value": "#FBF8F2", "status": "final", "note": "Kartu, lembar di atas halaman" },
+      "line": { "value": "#DCD3C3", "status": "final", "note": "Garis tipis dan tepi kertas; dekoratif, bukan teks (kontras 1,28)" },
+      "tape": { "value": "#E6D6A3", "status": "final", "note": "Selotip kertas; dipakai dengan opasitas ±80% supaya tembus pandang" }
     },
     "ink": {
-      "primary": { "value": "TBD", "status": "placeholder", "note": "Teks utama" },
-      "secondary": { "value": "TBD", "status": "placeholder", "note": "Keterangan, teks sekunder" }
+      "primary": { "value": "#1F1C19", "status": "final", "note": "Teks utama. Kontras 14,66 di paper.base" },
+      "secondary": { "value": "#5F584F", "status": "final", "note": "Keterangan, teks sekunder. Kontras 6,06 di paper.base" }
     },
     "accent": {
-      "primary": { "value": "TBD", "status": "placeholder", "note": "Aksen UI umum. Aksen per kota ada di data/cities.json (accentColor)" }
+      "primary": { "value": "#C2385F", "status": "final", "note": "Merah muda tinta stempel: tombol utama, stempel. Kontras 4,51 di paper.base; teks putih di atasnya 5,22. Bukan warna dasar (anti kekanak-kanakan)" },
+      "secondary": { "value": "#2F5D8C", "status": "final", "note": "Biru pulpen: tautan dan aksi sekunder. Kontras 5,92 di paper.base" }
     },
     "state": {
-      "error": { "value": "TBD", "status": "placeholder", "note": "Galat" },
-      "success": { "value": "TBD", "status": "placeholder", "note": "Berhasil, misalnya landmark ditemukan" }
+      "error": { "value": "#B42318", "status": "final", "note": "Galat. Kontras 5,69 di paper.base" },
+      "success": { "value": "#2E7652", "status": "final", "note": "Berhasil, misalnya landmark ditemukan. Kontras 4,74 di paper.base" }
     }
   },
   "typography": {
-    "display": { "family": "TBD", "status": "placeholder", "note": "Judul, stempel kota" },
-    "body": { "family": "TBD", "status": "placeholder", "note": "Teks UI" },
-    "handwriting": { "family": "TBD", "status": "placeholder", "note": "Keterangan di halaman buku (nuansa scrapbook)" }
+    "display": { "family": "Fraunces", "status": "final", "note": "Judul, sampul, stempel kota. Serif variabel yang berkarakter; OFL" },
+    "body": { "family": "Plus Jakarta Sans", "status": "final", "note": "Teks UI. Karya Tokotype (Indonesia); OFL" },
+    "handwriting": { "family": "Caveat", "status": "final", "note": "Keterangan tulisan tangan di halaman buku; OFL. Jangan untuk teks UI panjang" }
   },
   "spacing": {
-    "unit": { "value": null, "unit": "px", "status": "placeholder", "note": "Satuan dasar spasi" }
+    "unit": { "value": 4, "unit": "px", "status": "final", "note": "Satuan dasar; spasi memakai kelipatan 4" }
   },
   "radius": {
-    "card": { "value": null, "unit": "px", "status": "placeholder", "note": "Sudut kartu; hindari terlalu membulat (anti-acuan)" }
+    "card": { "value": 6, "unit": "px", "status": "final", "note": "Sudut kartu; sengaja kecil supaya tidak terasa kekanak-kanakan" },
+    "button": { "value": 8, "unit": "px", "status": "final", "note": "Sudut tombol" }
   },
   "motion": {
-    "pageCurl": { "value": null, "unit": "ms", "status": "placeholder", "note": "Durasi buka halaman; ditentukan dari prototipe K-012" },
-    "placementRotationMax": { "value": null, "unit": "deg", "status": "placeholder", "note": "Batas rotasi acak penempatan (usulan kerja ±4°, lihat docs/desain/acuan/halaman-buku.md)" }
+    "pageCurl": { "value": null, "unit": "ms", "status": "placeholder", "note": "Durasi buka halaman; ditetapkan dari hasil prototipe K-012 di Infinix Hot 11 Play" },
+    "placementRotationMax": { "value": 4, "unit": "deg", "status": "final", "note": "Batas rotasi acak penempatan: -4 sampai +4 derajat" }
   }
 }

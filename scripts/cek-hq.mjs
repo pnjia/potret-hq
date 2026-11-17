@@ -153,6 +153,17 @@ if (jsonData.cities) {
     if (l.example) warn("data/cities.json", `landmark ${l.id} masih entri contoh`);
   }
 }
+if (jsonData.categories) {
+  const catIds = new Set((jsonData.categories.categories || []).map((c) => c.id));
+  const labelOwner = new Map();
+  for (const c of jsonData.categories.categories || [])
+    for (const l of c.mlkitLabels || []) {
+      if (labelOwner.has(l.text)) err("data/categories.json", `label "${l.text}" dipetakan ke ${labelOwner.get(l.text)} dan ${c.id}`);
+      labelOwner.set(l.text, c.id);
+    }
+  for (const l of jsonData.cities?.landmarks || [])
+    if (!catIds.has(l.category)) err("data/cities.json", `landmark ${l.id}: kategori "${l.category}" tidak ada di data/categories.json`);
+}
 for (const [name, obj] of Object.entries(jsonData)) {
   if (obj.meta?.status === "placeholder") warn(`data/${name}.json`, "masih PLACEHOLDER");
   for (const c of obj.cameras || []) if (c.example) warn(`data/${name}.json`, `kamera ${c.id} masih entri contoh`);
@@ -209,7 +220,25 @@ for (const f of mdFiles.concat(files.filter((f) => f.endsWith(".json")))) {
   for (const m of t.matchAll(/\bK-(\d{3})\b/g)) if (!kIds.includes(`K-${m[1]}`)) err(r, `merujuk K-${m[1]} yang tidak ada`);
   for (const m of t.matchAll(/\bQ-(\d{3})\b/g)) if (!qIds.includes(`Q-${m[1]}`)) err(r, `merujuk Q-${m[1]} yang tidak ada`);
 }
-const replaced = [...kText.matchAll(/^### (K-\d{3})[\s\S]*?Menggantikan\*?\*?:\s*(K-\d{3})/gm)];
+// keputusan yang digantikan: entri baru menulis "Menggantikan: K-XXX" (boleh beberapa, dipisah koma)
+const replaced = [];
+for (const block of kText.split(/^(?=### K-\d{3})/m)) {
+  const id = block.match(/^### (K-\d{3})/)?.[1];
+  const line = block.match(/Menggantikan\*{0,2}:\s*([^\n]+)/);
+  if (id && line) for (const old of line[1].match(/K-\d{3}/g) || []) replaced.push([old, id]);
+}
+const replacedBy = new Map(replaced);
+for (const f of mdFiles) {
+  const r = rel(f);
+  if (r === ANALYSIS || SNAPSHOT(r) || r === "docs/pertanyaan.md") continue;
+  read(f).split("\n").forEach((line, i) => {
+    for (const m of line.matchAll(/\bK-(\d{3})\b/g)) {
+      const k = `K-${m[1]}`;
+      if (replacedBy.has(k) && !line.includes(replacedBy.get(k)))
+        warn(`${r}:${i + 1}`, `merujuk ${k} yang sudah digantikan ${replacedBy.get(k)}`);
+    }
+  });
+}
 
 // ---------- 5. sinonim glosarium dan sisa istilah referensi ----------
 const glos = read(join(ROOT, "docs/produk/glosarium.md"));
@@ -249,7 +278,7 @@ if (statusLines > 70) warn("STATUS.md", `${statusLines} baris (target ±60); riw
 // ---------- laporan ----------
 console.log(`cek-hq: ${mdFiles.length} Markdown, ${Object.keys(jsonData).length} data JSON, ${agentNames.length} agen, ${kIds.length} keputusan, ${qIds.length} pertanyaan`);
 console.log(`CLAUDE.md ${claudeLines} baris · STATUS.md ${statusLines} baris`);
-if (replaced.length) console.log(`Keputusan yang digantikan: ${replaced.map((m) => `${m[2]} → ${m[1]}`).join(", ")}`);
+if (replaced.length) console.log(`Keputusan yang digantikan: ${replaced.map(([o, n]) => `${o} → ${n}`).join(", ")}`);
 for (const w of warnings) console.log(`PERINGATAN ${w}`);
 for (const e of errors) console.log(`ERROR      ${e}`);
 console.log(errors.length ? `\n${errors.length} error, ${warnings.length} peringatan` : `\nOK · 0 error, ${warnings.length} peringatan`);
