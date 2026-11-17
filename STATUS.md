@@ -7,28 +7,24 @@ Terakhir diperbarui: 17 Nov 2026
 
 ## Fokus sekarang
 
-Semua pertanyaan Q-001 s/d Q-014 sudah diputuskan (K-016 s/d K-029). Kota MVP diganti ke Sukabumi (K-029). HQ siap; belum ada kode aplikasi.
+Prototipe animasi buka halaman (K-012). HQ siap: Q-001 s/d Q-014 terjawab (K-016 s/d K-029), dan board Trello sudah dibuat.
 
-- Kartu Trello: belum ada, board belum dibuat.
+- Board: https://trello.com/b/8RGssqWK/potret-kliping-kota
+- Kartu fokus: https://trello.com/c/z1r8wF0O
 
 ## Titik berhenti sesi terakhir
 
-- Empat riset bertanggal ditulis di `docs/riset/2026-11-17-*`: regulasi usia dari teks asli, label ML Kit, perangkat dan stack, serta nama, suara, dan zona aman.
-- K-017 menggantikan K-001: pengguna **18+**, verifikasi usia berlapis, dan pengaturan baku setara perlindungan anak untuk semua pengguna.
-- Data baru dan yang berubah: `data/design-tokens.json` v1 final, `data/categories.json` (9 kategori), `data/sounds.json` (kosong), `findingTarget` di `data/cities.json`.
-- `node scripts/cek-hq.mjs`: 0 error, 2 peringatan (entri contoh kamera dan landmark).
+- Kota MVP diganti ke Kota Sukabumi, domisili pemilik (K-029 menggantikan K-022).
+- Board Trello "potret · Kliping Kota" dibuat di OK Workspace: 5 list, 3 kartu di "Minggu ini" (prototipe K-012, kurasi landmark Sukabumi, cek nama di PDKI), dan 12 kartu di "Backlog" (fitur MVP §4.1–§4.9, uji kategori, rekam suara, kepatuhan sebelum rilis).
+- Flutter dan Android SDK belum terpasang di sesi cloud (baru ada Java dan Gradle). Pengukuran 30 fps harus di Infinix Hot 11 Play fisik milik pemilik.
 
 ## Langkah berikutnya
 
-1. **Prototipe animasi buka halaman (K-012).** Target K-016: konsisten 30 fps di Infinix Hot 11 Play. Acuan: `docs/teknis/buku.md` bagian "Prototipe K-012". Agen: `animasi-buku`. Folder `app/` dibuat dengan struktur K-027.
+1. **Prototipe animasi buka halaman (K-012).** Pasang Flutter dan Android SDK, buat `app/` dengan struktur K-027, tulis prototipe, lalu build APK profile. Pemilik memasang APK di Infinix Hot 11 Play dan mengirim angka frame time. Acuan: `docs/teknis/buku.md` bagian "Prototipe K-012". Agen: `animasi-buku`.
 
 ## Tertunda
 
-- Susun board Trello (spesifikasi §10 langkah 2). Konvensi kartu di `docs/cara-kerja.md` §4.
-- Cek nama "Kliping Kota" di PDKI, domain, dan media sosial sebelum mendaftar akun toko (K-023).
-- Kurasi 20–30 landmark Kota Sukabumi (K-029). Agen: `kurator-katalog`. Mulai dari daftar resmi cagar budaya Kota Sukabumi.
-- Uji pemetaan kategori dengan foto kota nyata (K-020).
-- Rekam suara buka halaman dan shutter (K-024).
+- Status semua tugas lain ada di board Trello.
 
 ## Menunggu keputusan
 
