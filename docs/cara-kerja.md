@@ -1,7 +1,7 @@
 # Cara kerja
 
 > Rincian dari peta di `CLAUDE.md`: lapisan pengetahuan, ritual sesi, aturan bersama sub-agen, Trello, dan tempat menaruh hal baru.
-> Terakhir diverifikasi: 16 Nov 2026.
+> Terakhir diverifikasi: 17 Nov 2026 (board Trello dibuat).
 
 ## 1. Lapisan pengetahuan
 
@@ -45,7 +45,10 @@ Sub-agen tidak melihat percakapan. Brief ditulis dengan `templates/brief-subagen
 
 Trello hanya melacak **status tugas**. Isi kerja (spesifikasi, keputusan, catatan teknis) tetap di repo.
 
-- Nama kartu: `[AREA] <judul dengan istilah glosarium>`. Area: `BUKU`, `KAMERA`, `TEMUAN`, `KOTA`, `AKUN`, `SOSIAL`, `SHARE`, `RETENSI`, `HQ`.
+- Board: [potret · Kliping Kota](https://trello.com/b/8RGssqWK/potret-kliping-kota) (OK Workspace, privat).
+- List, berurutan: `Backlog` → `Minggu ini` → `Dikerjakan` → `Menunggu` (butuh orang lain, data, atau perangkat) → `Selesai` (memenuhi "Selesai bila").
+
+- Nama kartu: `[AREA] <judul dengan istilah glosarium>`. Area: `BUKU`, `KAMERA`, `TEMUAN`, `KOTA`, `AKUN`, `SOSIAL`, `SHARE`, `RETENSI`, `DATA` (Supabase, drift, sinkronisasi), `HQ`.
 - Deskripsi kartu: tautan path repo yang relevan (misalnya `docs/teknis/buku.md`) dan "Selesai bila" (pakai `templates/kartu-trello.md`).
 - Repo merujuk kartu hanya di `STATUS.md` bagian "Fokus sekarang" (URL kartu). Dokumen lain tidak menyebut status kartu.
 - Commit yang menyelesaikan kartu boleh menyebut ID pendek kartu di pesan commit, misalnya `(trello: aBc123)`.
