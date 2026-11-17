@@ -153,6 +153,17 @@ if (jsonData.cities) {
     if (l.example) warn("data/cities.json", `landmark ${l.id} masih entri contoh`);
   }
 }
+if (jsonData.categories) {
+  const catIds = new Set((jsonData.categories.categories || []).map((c) => c.id));
+  const labelOwner = new Map();
+  for (const c of jsonData.categories.categories || [])
+    for (const l of c.mlkitLabels || []) {
+      if (labelOwner.has(l.text)) err("data/categories.json", `label "${l.text}" dipetakan ke ${labelOwner.get(l.text)} dan ${c.id}`);
+      labelOwner.set(l.text, c.id);
+    }
+  for (const l of jsonData.cities?.landmarks || [])
+    if (!catIds.has(l.category)) err("data/cities.json", `landmark ${l.id}: kategori "${l.category}" tidak ada di data/categories.json`);
+}
 for (const [name, obj] of Object.entries(jsonData)) {
   if (obj.meta?.status === "placeholder") warn(`data/${name}.json`, "masih PLACEHOLDER");
   for (const c of obj.cameras || []) if (c.example) warn(`data/${name}.json`, `kamera ${c.id} masih entri contoh`);
