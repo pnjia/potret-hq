@@ -7,7 +7,7 @@ Terakhir diperbarui: 17 Nov 2026
 
 ## Fokus sekarang
 
-Semua pertanyaan Q-001 s/d Q-014 sudah diputuskan (K-016 s/d K-028). HQ siap; belum ada kode aplikasi.
+Semua pertanyaan Q-001 s/d Q-014 sudah diputuskan (K-016 s/d K-029). Kota MVP diganti ke Sukabumi (K-029). HQ siap; belum ada kode aplikasi.
 
 - Kartu Trello: belum ada, board belum dibuat.
 
@@ -26,7 +26,7 @@ Semua pertanyaan Q-001 s/d Q-014 sudah diputuskan (K-016 s/d K-028). HQ siap; be
 
 - Susun board Trello (spesifikasi §10 langkah 2). Konvensi kartu di `docs/cara-kerja.md` §4.
 - Cek nama "Kliping Kota" di PDKI, domain, dan media sosial sebelum mendaftar akun toko (K-023).
-- Pastikan pemilik bisa menyurvei Bandung langsung. Bila tidak, ganti kota lewat keputusan baru (K-022).
+- Kurasi 20–30 landmark Kota Sukabumi (K-029). Agen: `kurator-katalog`. Mulai dari daftar resmi cagar budaya Kota Sukabumi.
 - Uji pemetaan kategori dengan foto kota nyata (K-020).
 - Rekam suara buka halaman dan shutter (K-024).
 

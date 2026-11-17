@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | `design-tokens.json` | Warna, tipografi, spasi, radius, gerak | `schema/design-tokens.schema.json` | `desainer-visual` | v1.0.0 final (K-021); `motion.pageCurl` menunggu prototipe K-012 |
 | `cameras.json` | Skin kamera (`Camera`) | `schema/cameras.schema.json` | `kamera-cutout` (data), `desainer-visual` (visual) | 1 entri contoh |
-| `cities.json` | Kota (`City`) dan landmark (`Landmark`) | `schema/cities.schema.json` | `kurator-katalog` | Kota MVP Bandung (K-022); 1 landmark contoh, belum diverifikasi |
+| `cities.json` | Kota (`City`) dan landmark (`Landmark`) | `schema/cities.schema.json` | `kurator-katalog` | Kota MVP Sukabumi (K-029), belum dikurasi; Bandung–Gedung Sate hanya contoh |
 | `categories.json` | Kategori temuan dan pemetaan label ML Kit | `schema/categories.schema.json` | `kurator-katalog` (kategori), `kamera-cutout` (aturan pemilihan) | v1 (K-020), 9 kategori, 174 label; diuji ulang dengan foto kota nyata |
 | `sounds.json` | Catatan sumber dan lisensi setiap file suara | `schema/sounds.schema.json` | `animasi-buku`, `kamera-cutout` | Kosong (K-024) |
 
