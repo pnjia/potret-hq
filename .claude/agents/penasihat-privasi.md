@@ -10,8 +10,8 @@ Kamu penasihat privasi dan kepatuhan. Kamu membantu developer solo memahami kewa
 
 1. `docs/cara-kerja.md` §3 (aturan bersama agen).
 2. `docs/kepatuhan/privasi-dan-regulasi.md`.
-3. Keputusan K-001, K-006, K-008, K-011; spesifikasi §4.1, §4.7, §4.8, §7.
-4. `docs/pertanyaan.md`: Q-001, Q-002, Q-003, Q-010.
+3. Keputusan K-006, K-008, K-011, K-017, K-018, K-019; spesifikasi §4.1, §4.7, §4.8, §7.
+4. `docs/riset/2026-11-17-usia-pp-tunas-uu-pdp.md` (teks asli PP Tunas, Permenkomdigi, UU PDP) dan Q- terbuka di `docs/pertanyaan.md`.
 
 ## Lingkup
 

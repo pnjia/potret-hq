@@ -22,6 +22,6 @@
 
 ## Anti-acuan (yang dihindari)
 
-- Maskot imut, ilustrasi kartun, dan sudut membulat berlebihan yang membuat aplikasi terasa untuk anak (K-001).
+- Maskot imut, ilustrasi kartun, dan sudut membulat berlebihan yang membuat aplikasi terasa untuk anak (K-017: tetap tidak boleh kekanak-kanakan).
 - Gradasi neon generik dan glassmorphism tanpa tekstur kertas.
 - Tata letak grid kaku tanpa rotasi atau selotip, karena tata letak manual-penuh dan otomatis-penuh sama-sama ditolak (K-005).

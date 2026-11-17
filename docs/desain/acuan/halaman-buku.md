@@ -14,10 +14,10 @@
 | Bagian | Usulan |
 |---|---|
 | Slot temuan per halaman | 3–6, tergantung template |
-| Rotasi acak | Kecil, sekitar −4° sampai +4°, supaya rapi tetapi tidak kaku |
+| Rotasi acak | −4° sampai +4° (`motion.placementRotationMax`, K-021) |
 | Selotip | 1–2 per temuan, posisi di sudut atau tepi atas |
-| Keterangan | `Finding.note` atau kategori, dengan font tangan/teks dari token |
-| Latar | `color.paper.base` dengan tekstur kertas halus |
+| Keterangan | `Finding.note` atau nama kategori, dengan font tulisan tangan (Caveat) |
+| Latar | `color.paper.base` dengan tekstur kertas halus; selotip `color.paper.tape` |
 | Nomor halaman | Di tepi bawah, kecil |
 
 ## Kriteria cocok dengan acuan

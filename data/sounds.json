@@ -1,0 +1,8 @@
+{
+  "$schema": "./schema/sounds.schema.json",
+  "meta": {
+    "verifiedAt": "2026-11-17",
+    "note": "Belum ada file suara. Utamakan rekaman sendiri (K-024). Dilarang CC BY, CC BY-NC, dan sumber tanpa lisensi jelas."
+  },
+  "sounds": []
+}

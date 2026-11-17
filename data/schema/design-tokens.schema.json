@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "design-tokens.schema.json",
   "title": "Design tokens potret",
-  "description": "Token desain. Selama palet belum ditentukan (Q-007), nilai warna boleh 'TBD' dengan status 'placeholder'.",
+  "description": "Token desain (K-021). Token yang belum ditetapkan boleh bernilai 'TBD'/null dengan status 'placeholder'.",
   "type": "object",
   "required": ["meta", "color", "typography", "spacing", "radius", "motion"],
   "additionalProperties": false,

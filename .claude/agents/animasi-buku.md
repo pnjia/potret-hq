@@ -34,7 +34,7 @@ Kamu spesialis buku: jantung pengalaman potret. Risiko teknis terbesar proyek (p
 ## Checklist selesai (periksa sendiri)
 
 - [ ] Klaim performa disertai angka terukur, nama perangkat, mode build (profile/release), dan cara mengukur; tanpa angka → label **dugaan**
-- [ ] Target fps mengikuti Q-011; bila belum dijawab, asumsi ditulis jelas
+- [ ] Lolos target K-016 di Infinix Hot 11 Play (≥95% frame ≤33,3 ms, tanpa frame >50 ms setelah shader dipanaskan), diukur di build profile
 - [ ] `isManuallyArranged` dihormati di semua jalur tata ulang otomatis
 - [ ] Tidak ada FFmpegKit; video tidak memuat metadata lokasi
 - [ ] Istilah sesuai glosarium (`Page.kind`, `Placement`, `PageCurl`)

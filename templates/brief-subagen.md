@@ -18,7 +18,7 @@ Laporan balik: <bentuk ringkasan yang diharapkan>
 ```
 Agen: animasi-buku
 Tujuan: Bandingkan dua pendekatan page-curl untuk prototipe K-012 dan rekomendasikan satu.
-Konteks: Risiko #1 spesifikasi adalah page-curl tidak mulus di Android kelas menengah. Q-011 (target fps) belum dijawab; pakai 60 fps sebagai asumsi kerja dan sebut asumsinya.
+Konteks: Risiko #1 spesifikasi adalah page-curl tidak mulus di Android kelas menengah. Target K-016: konsisten 30 fps di Infinix Hot 11 Play.
 Input: docs/teknis/buku.md, docs/produk/spesifikasi-sistem-v1.md §4.5 dan §9
 Output: bagian baru "Perbandingan pendekatan" di docs/teknis/buku.md
 Batas: belum membuat app/; tidak mengubah keputusan.
