@@ -365,3 +365,20 @@
   - Bila kurasi menemukan kurang dari 20 landmark yang layak di dalam Kota Sukabumi, catat sebagai Q- baru. Jangan menambah objek dari luar batas kota diam-diam.
   - Contoh "Bandung 23/100" di spesifikasi dan acuan tetap sah sebagai contoh format.
 - **Menggantikan**: K-022
+
+### K-030 · Suara sintesis sendiri boleh dipakai dan dicatat
+- **Tanggal**: 18 Nov 2026
+- **Keputusan**: Suara yang disintesis sendiri lewat skrip, tanpa bahan pihak ketiga, boleh dipakai di aplikasi. Suara seperti ini dicatat di `data/sounds.json` dengan `source` = `synth`, `license` = `own`, `url` = `null`, dan path skrip pembuatnya disebut di `meta.note` atau di skrip itu sendiri. Rekaman foley tetap diutamakan (K-024).
+- **Alasan**:
+  - K-024 mewajibkan setiap file suara tercatat, tetapi enum `source` di skema hanya berisi `foley`, `freesound`, dan `pixabay`. Placeholder buka halaman prototipe K-012 jadi tidak bisa dicatat.
+  - Sintesis sendiri tidak membawa kewajiban lisensi atau kredit, dan aman dari deteksi otomatis media sosial (alasan yang sama dengan K-024).
+  - Prototipe K-012 butuh suara sekarang, sebelum rekaman foley ada.
+- **Ditolak**:
+  - Mencatat placeholder hanya di `meta.note`: melanggar semangat K-024 (setiap file suara tercatat per entri).
+  - Prototipe tanpa suara sampai rekaman ada: suara termasuk lingkup K-012.
+  - Memakai Freesound CC0 sebagai placeholder: sah menurut K-024, tetapi tetap butuh pengecekan lisensi per file, sedangkan sintesis tidak.
+- **Konsekuensi**:
+  - `data/schema/sounds.schema.json`: enum `source` ditambah `synth`.
+  - `data/sounds.json`: entri `page-turn-placeholder` (`app/assets/sounds/page-turn-placeholder.wav`, dibuat oleh `app/tool/make_page_turn_sound.py`).
+  - Placeholder tetap diganti rekaman foley sebelum rilis, kecuali ada keputusan baru yang menetapkan suara sintesis sebagai versi final.
+- **Menjawab**: Q-016

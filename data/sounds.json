@@ -2,7 +2,18 @@
   "$schema": "./schema/sounds.schema.json",
   "meta": {
     "verifiedAt": "2026-11-18",
-    "note": "Belum ada rekaman. Utamakan rekaman sendiri (K-024). Dilarang CC BY, CC BY-NC, dan sumber tanpa lisensi jelas. Prototipe K-012 memakai placeholder app/assets/sounds/page-turn-placeholder.wav: disintesis sendiri (noise berfilter + envelope) oleh app/tool/make_page_turn_sound.py, tanpa bahan pihak ketiga, hak milik sendiri. Belum dicatat di 'sounds' karena enum 'source' tidak punya nilai untuk sintesis (Q-016). Ganti dengan rekaman foley sebelum rilis."
+    "note": "Utamakan rekaman sendiri (K-024). Dilarang CC BY, CC BY-NC, dan sumber tanpa lisensi jelas. Suara sintesis sendiri dicatat dengan source 'synth' (K-030). page-turn-placeholder dibuat oleh app/tool/make_page_turn_sound.py (noise berfilter + envelope) untuk prototipe K-012; ganti dengan rekaman foley sebelum rilis."
   },
-  "sounds": []
+  "sounds": [
+    {
+      "id": "page-turn-placeholder",
+      "file": "assets/sounds/page-turn-placeholder.wav",
+      "use": "page-turn",
+      "source": "synth",
+      "license": "own",
+      "url": null,
+      "author": "pemilik (sintesis skrip)",
+      "addedAt": "2026-11-18"
+    }
+  ]
 }

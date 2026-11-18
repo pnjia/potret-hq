@@ -9,7 +9,6 @@
 | ID | Pertanyaan | Kenapa penting | Terkait |
 |---|---|---|---|
 | Q-015 | Bundle ID final (Android applicationId dan iOS bundle identifier)? | Permanen begitu terbit di Play/App Store; prototipe memakai placeholder id.potret.prototype | K-023 |
-| Q-016 | Suara yang disintesis sendiri (skrip, tanpa bahan pihak ketiga) boleh dipakai dan dicatat di `data/sounds.json`? Enum `source` di skema hanya foley/freesound/pixabay, jadi placeholder buka halaman prototipe K-012 baru tercatat di `meta.note`. Usulan: tambah `source` = `synth` dengan `license` = `own` | K-024 mewajibkan setiap file suara tercatat; sintesis bebas lisensi dan bisa jadi cadangan bila rekaman foley belum ada | K-024, K-012 |
 
 ## Terjawab
 
@@ -29,3 +28,4 @@
 | Q-012 | Setelah HQ digabung dengan kode (K-013), apakah repo `potret-hq` diganti nama (misalnya `potret`)? | Tetap `potret-hq`; ditinjau saat rilis toko pertama | K-026 |
 | Q-013 | State management dan struktur folder Flutter (usulan ada di `docs/teknis/arsitektur.md`) | Riverpod 3 tanpa generator; struktur per fitur | K-027 |
 | Q-014 | Arti angka di stempel kota "Bandung 23/100": target tetap per kota, jumlah landmark + slot temuan, atau hal lain? | Jumlah temuan di kota / target temuan kota (default 100) | K-028 |
+| Q-016 | Suara yang disintesis sendiri (skrip, tanpa bahan pihak ketiga) boleh dipakai dan dicatat di `data/sounds.json`? | Ya. `source` = `synth`, `license` = `own`; rekaman foley tetap diutamakan dan placeholder diganti sebelum rilis | K-030 |
