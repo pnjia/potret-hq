@@ -69,4 +69,4 @@ Aturan bersama agen dan cara mendelegasikan: `docs/cara-kerja.md` §3. Brief: `t
 
 ## Kode aplikasi
 
-`app/` dan `supabase/` belum ada. Keduanya dibuat saat prototipe K-012 dimulai. Konvensi Flutter nanti ditulis di `app/CLAUDE.md` (dimuat hanya saat bekerja di `app/`).
+`app/` berisi proyek Flutter dengan struktur K-027. Konvensinya ada di `app/CLAUDE.md` (dimuat hanya saat bekerja di `app/`). `supabase/` belum ada.

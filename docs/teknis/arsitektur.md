@@ -1,7 +1,7 @@
 # Teknis: arsitektur aplikasi
 
 > Area agen `arsitek-flutter`. Bagian 1 terkunci (spesifikasi v1 + keputusan sesudahnya). Bagian 2 diputuskan di K-027.
-> Terakhir diverifikasi: 17 Nov 2026.
+> Terakhir diverifikasi: 18 Nov 2026 (bagian 4: kerangka `app/`).
 
 ## 1. Yang sudah terkunci
 
@@ -47,3 +47,26 @@ Repositori per entitas ada di `data/` (drift + Supabase). Drift satu-satunya pem
 2. Lokasi sesaat → cocokkan `City` dan radius `Landmark` → simpan `cityId` (+ `landmarkId` bila dikonfirmasi). Koordinat dibuang.
 3. ML Kit Image Labeling → `category` menurut `data/categories.json` (K-020).
 4. Simpan `Finding` di drift → tata letak otomatis membuat `Placement` → sinkron ke Supabase (cutout, thumbnail, baris data tanpa `localOriginalPath`, K-019).
+
+## 4. Kerangka `app/`
+
+Fakta saat kerangka dibuat dengan `flutter create --platforms=android,ios --org id.potret --project-name potret`. Konvensi kode: `app/CLAUDE.md`.
+
+| Hal | Nilai |
+|---|---|
+| Toolchain | Flutter 3.50.0 (stable), Dart 3.14.0 |
+| Nama paket Dart | `potret` |
+| Label di HP | "Kliping Kota" (`android:label`, `CFBundleDisplayName`), K-023 |
+| Bundle ID | Placeholder `id.potret.prototype` untuk Android dan iOS; final menunggu Q-015 |
+| Android | minSdk 24 (bawaan Flutter), compileSdk/targetSdk 36 |
+| iOS | `IPHONEOS_DEPLOYMENT_TARGET = 17.0` (K-003). Plugin lewat Swift Package Manager bawaan Flutter 3.50; tidak ada Podfile |
+| Material | Diimpor dari paket `material_ui` (template Flutter 3.50 memisahkan Material dari SDK) |
+| Token desain | Disalin ke `app/lib/core/theme/design_tokens.dart`; tes membandingkannya dengan `data/design-tokens.json` |
+
+Paket yang terpasang (dicek di pub.dev API 18 Nov 2026, cek ulang sebelum upgrade):
+
+| Paket | Versi | Rilis terakhir | Penerbit, lisensi, poin pub | Sumber |
+|---|---|---|---|---|
+| `flutter_riverpod` | 3.5.0 | 6 Nov 2026 | dash-overflow.net, MIT, 140/160 | https://pub.dev/packages/flutter_riverpod |
+| `material_ui` | 1.11.1 | 16 Nov 2026 | flutter.dev, BSD-3-Clause, 160/160 | https://pub.dev/packages/material_ui |
+| `flutter_lints` (dev) | 6.0.0 | bawaan template | flutter.dev, BSD-3-Clause | https://pub.dev/packages/flutter_lints |

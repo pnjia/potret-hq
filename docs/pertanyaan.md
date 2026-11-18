@@ -8,7 +8,7 @@
 
 | ID | Pertanyaan | Kenapa penting | Terkait |
 |---|---|---|---|
-| – | – | – | – |
+| Q-015 | Bundle ID final (Android applicationId dan iOS bundle identifier)? | Permanen begitu terbit di Play/App Store; prototipe memakai placeholder id.potret.prototype | K-023 |
 
 ## Terjawab
 
