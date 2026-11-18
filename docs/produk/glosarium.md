@@ -2,7 +2,7 @@
 
 > Sumber tunggal istilah proyek potret. Dipakai di dokumen, kode, Trello, dan semua sub-agen.
 > Asal: §3 `spesifikasi-sistem-v1.md` (dipindah utuh). Aturan penamaan identifier: K-014.
-> Terakhir diverifikasi: 17 Nov 2026 (pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028).
+> Terakhir diverifikasi: 18 Nov 2026 (pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028; pola nama repositori ditambah).
 
 ## 1. Istilah inti (dari spesifikasi v1, tidak diubah)
 
@@ -53,6 +53,7 @@ Istilah yang dipakai spesifikasi tetapi belum punya baris sendiri.
 - Dart dan JSON di `data/`: bahasa Inggris, `camelCase` untuk field, `PascalCase` untuk kelas.
 - Postgres (Supabase): bahasa Inggris, `snake_case` (`age_verified_at`, `city_id`).
 - Nilai enum: bahasa Inggris huruf kecil (`divider`, `pending`).
+- Repositori data: `<Entitas>Repository` per entitas di tabel ini (`FindingRepository`, `BookRepository`), di `app/lib/data/` (K-027).
 - Trello: nama kartu memakai istilah Indonesia dari tabel ini.
 
 ## 4. Pemetaan field entitas (spesifikasi §5 → kode)
