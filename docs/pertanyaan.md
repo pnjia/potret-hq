@@ -9,6 +9,7 @@
 | ID | Pertanyaan | Kenapa penting | Terkait |
 |---|---|---|---|
 | Q-015 | Bundle ID final (Android applicationId dan iOS bundle identifier)? | Permanen begitu terbit di Play/App Store; prototipe memakai placeholder id.potret.prototype | K-023 |
+| Q-016 | Suara yang disintesis sendiri (skrip, tanpa bahan pihak ketiga) boleh dipakai dan dicatat di `data/sounds.json`? Enum `source` di skema hanya foley/freesound/pixabay, jadi placeholder buka halaman prototipe K-012 baru tercatat di `meta.note`. Usulan: tambah `source` = `synth` dengan `license` = `own` | K-024 mewajibkan setiap file suara tercatat; sintesis bebas lisensi dan bisa jadi cadangan bila rekaman foley belum ada | K-024, K-012 |
 
 ## Terjawab
 

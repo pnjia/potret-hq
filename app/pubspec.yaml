@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^3.5.0
+  audioplayers: ^6.8.1
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +59,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  # Prototipe K-012: shader PageCurl dan probe backend renderer.
+  shaders:
+    - shaders/page_curl.frag
+    - shaders/renderer_probe.frag
+
+  # Suara buka halaman placeholder (sintesis sendiri, lihat data/sounds.json).
+  assets:
+    - assets/sounds/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
