@@ -452,6 +452,15 @@ Lebar acuan 360 dp. Margin sisi 16 dp, jarak antarblok 16 dp, spasi kelipatan 4.
 - Judul kartu adalah keterangan buatan pengguna. Bila kosong, pakai nama kategori.
 - Varian "stiker transparan" (riset Strava) memakai stiker, cap, dan watermark yang sama di atas latar transparan.
 
+**Tambahan 18 Nov: Bagikan dengan 10 gaya kartu.** Pemilik meminta kartu share yang beragam, karena kartu inilah yang dilihat calon pengguna. Dasar: `docs/riset/2026-11-18-kartu-share-viral.md`. Layar Bagikan di atas diganti oleh rancangan berikut (belum diputuskan, lihat Q-023 dan Q-024).
+
+- **Layar Bagikan** (`V5Bagikan`): pratinjau kartu yang digeser horizontal untuk berganti gaya, dengan nama gaya dan "4 dari 10"; chip warna Kobalt, Tinta, Lime, Kertas, warna Kategori, dan tombol Acak; segmen format Story 9:16, Feed 3:4, Stiker, Video (format yang tidak cocok dinonaktifkan beserta alasannya); tujuan WhatsApp, IG Stories, TikTok, Simpan, Lainnya; kalimat privasi di dekat tombol.
+- **Pilih gaya** (`V5BagikanGaya`): kisi 10 gaya. Gaya yang belum terbuka (Tonggak) tampil redup dengan alasan "Muncul di 25 temuan", tanpa ajakan berbagi demi hadiah.
+- **10 gaya**: 1 Halaman Kliping (`V5KartuShare`), 2 Video Buka Halaman (`V5ShareVideo`), 3 Stiker Temuan (`V5BagikanStiker`), 4 Temuan Tunggal (`V5ShareTunggal`), 5 Kartu Pos Kota (`V5SharePos`), 6 Sukabumi-ku dalam 4 (`V5ShareEmpat`, feed: `V5ShareEmpatFeed`), 7 Label Pemburu (`V5ShareLabel`), 8 Tonggak Stempel (`V5ShareTonggak`), 9 Cuci Cetak Mingguan (`V5ShareCetak`), 10 Tambah Punyamu (`V5ShareTambah`).
+- **Aturan bersama semua gaya**: stempel kota dan watermark "Kliping Kota · <kamera>" selalu ada (§4.8); lokasi hanya nama kota (K-011); tanpa progres landmark (K-028); tanpa nama landmark sampai Q-018 diputuskan; zona aman atas 270 dan bawah 680 bebas informasi.
+- **Unsur baru yang perlu diputuskan**: tinta cap di atas warna kategori, wujud cap tonggak 25/50/100 dengan aksen emas `#E0A526` (hanya di gaya 8), dan format Feed 3:4 serta Stiker di luar spesifikasi §4.8.
+- Screenshot: `usulan-v5/V5Bagikan.png`, `usulan-v5/V5BagikanGaya.png`, `usulan-v5/V5BagikanStiker.png`, dan `usulan-v5/V5Share*.png` (versi tanpa garis zona aman).
+
 ### 3.7 Satu momen gerak: "Cap!"
 
 Terjadi saat menekan "Tempel ke buku", dari Temuan ke Sukses. Total ±1,1 detik.
