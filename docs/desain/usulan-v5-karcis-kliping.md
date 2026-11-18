@@ -1,7 +1,7 @@
 # Laporan desainer-visual: bedah v4 "Pop Kota" dan spesifikasi v5 "Karcis & Kliping"
 
 > Ditulis: 18 Nov 2026 · Agen: `desainer-visual` · Status isi: **usulan** untuk Q-017. Tidak ada file repo yang diubah.
-> Lampiran di `docs/desain/usulan-v5/`: `gereja.svg` (contoh gaya stiker), `cap.svg` (stempel kota), `kontras.py` (hitung kontras), `spesimen.png` dan `uji-gereja.png`, serta screenshot 21 layar v5 (`V5*.png`). Mockup hidup: https://claude.ai/artifact/Acc38ZrS9c64zx1VbA3MzE (halaman "v5").
+> Lampiran di `docs/desain/usulan-v5/`: `gereja.svg` (contoh gaya stiker), `cap.svg` (stempel kota), `kontras.py` (hitung kontras), `spesimen.png` dan `uji-gereja.png`, serta screenshot 22 layar v5 (`V5*.png`). Mockup hidup: https://claude.ai/artifact/Acc38ZrS9c64zx1VbA3MzE (halaman "v5").
 > Terakhir diverifikasi: 18 Nov 2026.
 
 Yang dipertahankan dari v4, sesuai permintaan pemilik: struktur Beranda (hero kota, aksi Potret, misi, temuan terbaru), navigasi 5 tab berlabel, warna terang dan berani (Kobalt, Lime, warna kategori), dan cutout sebagai stiker.
