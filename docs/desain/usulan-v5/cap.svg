@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 132" width="WIDTH" height="HEIGHTX" aria-label="Stempel kota Sukabumi 13 dari 100">
+  <defs>
+    <filter id="CAP-tinta" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G" result="goyang"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.09 0.5" numOctaves="2" seed="9" result="n2"/>
+      <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -10 8.2" result="lubang"/>
+      <feComposite in="goyang" in2="lubang" operator="in"/>
+    </filter>
+    <path id="CAP-atas" d="M22 66 a44 44 0 0 1 88 0"/>
+    <path id="CAP-bawah" d="M16 66 a50 50 0 0 0 100 0"/>
+  </defs>
+  <g filter="url(#CAP-tinta)" fill="INK" stroke="INK">
+    <circle cx="66" cy="66" r="60" fill="none" stroke-width="3.5"/>
+    <circle cx="66" cy="66" r="40" fill="none" stroke-width="2"/>
+    <text font-family="Anybody" font-stretch="75%" font-weight="800" font-size="15" letter-spacing="1.5" stroke="none"><textPath href="#CAP-atas" startOffset="50%" text-anchor="middle">SUKABUMI</textPath></text>
+    <text font-family="Anybody" font-stretch="75%" font-weight="700" font-size="12" letter-spacing="1.2" stroke="none" dy="0"><textPath href="#CAP-bawah" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">KLIPING KOTA</textPath></text>
+    <text x="66" y="76" text-anchor="middle" font-family="Anybody" font-stretch="55%" font-weight="900" font-size="44" stroke="none">13</text>
+    <text x="66" y="94" text-anchor="middle" font-family="Anybody" font-stretch="120%" font-weight="600" font-size="14" stroke="none">/100</text>
+    <path d="M118 40 q12 -8 24 0 t24 0 t24 0 t24 0 M118 56 q12 -8 24 0 t24 0 t24 0 t24 0 M118 72 q12 -8 24 0 t24 0 t24 0 t24 0 M118 88 q12 -8 24 0 t24 0 t24 0 t24 0" fill="none" stroke-width="3"/>
+  </g>
+</svg>
