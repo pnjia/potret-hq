@@ -382,3 +382,44 @@
   - `data/sounds.json`: entri `page-turn-placeholder` (`app/assets/sounds/page-turn-placeholder.wav`, dibuat oleh `app/tool/make_page_turn_sound.py`).
   - Placeholder tetap diganti rekaman foley sebelum rilis, kecuali ada keputusan baru yang menetapkan suara sintesis sebagai versi final.
 - **Menjawab**: Q-016
+
+### K-031 · Opsi editor v5 masuk MVP, tepi bawaan Die-cut
+- **Tanggal**: 18 Nov 2026
+- **Keputusan**:
+  - **Sampul**: 8 template (Kobalt, Koran, Jendela, Peta trayek, Perangko, Tinta, Kliping, Karcis), 1–3 stiker temuan per template, dan **set hiasan** buatan sendiri (Karcis, Pos, Coretan; 12 hiasan) yang posisinya diatur template. Penempatan bebas di sampul tetap ditunda (spesifikasi §8).
+  - **Halaman**:
+    - 4 tepi stiker: putih, tanpa, gunting, bingkai.
+    - 6 tinta keterangan: Tinta `#121212`, Kobalt `#3048FF`, Sepia `#6B4226`, Merah cap `#B42318`, Magenta `#C2185B`, Hijau `#276B4A`. Semuanya ≥ 4,5:1 di kertas buku dan selotip.
+    - 6 motif selotip, 4 posisi selotip, 4 kertas latar (polos, garis, titik, grid), dan 6 gaya halaman siap pakai.
+    - Tombol **Acak tata letak**.
+  - **Acak dan K-005**: Acak hanya dijalankan pengguna. Halaman tetap berstatus `isManuallyArranged`, keterangan tidak berubah, dan hasilnya bisa diurungkan. Sistem tetap tidak pernah mengacak sendiri.
+  - **Hapus temuan** (permanen, termasuk cutout di cloud, dengan konfirmasi) terpisah dari **Lepas dari halaman** (temuan tetap ada).
+  - **Rapikan potongan**:
+    - tiga mode: Kuas (Tambah/Hapus, kaca pembesar), Gunting poligon, dan Tepi;
+    - lima gaya tepi: Tanpa, Die-cut, Guntingan, Zigzag, Sobek; tebal S/M/L;
+    - **gaya tepi bawaan: Die-cut putih**.
+- **Alasan**:
+  - Pemilik menilai editor sebelumnya kurang variatif dan meminta semua opsi hasil riset masuk MVP (18 Nov 2026).
+  - Riset menunjukkan pola "pilihan terkurasi supaya hasil selalu bagus" (preset, palet terbatas, tombol acak) di aplikasi kolase dan buku foto (`docs/riset/2026-11-18-editor-kolase-variatif.md`).
+  - Laso poligon dan tepi guntingan/zigzag tidak ditemukan di aplikasi konsumen, jadi keduanya menjadi pembeda (`docs/riset/2026-11-18-ux-potong-latar-dan-gunting.md`).
+  - Die-cut putih adalah tepi yang paling dikenal (pola stiker iOS dan Photoroom) dan paling bersih di latar apa pun.
+  - Hiasan dibuat sendiri karena hanya itu yang bebas kredit dan cocok tema (`docs/riset/2026-11-18-stiker-hiasan-lisensi.md`).
+- **Ditolak**:
+  - MVP minimal (hanya opsi berprioritas "wajib" dari riset; Gunting, Guntingan, Zigzag, Sobek, Acak, dan hiasan ditunda): pemilik ingin hasil akhir lebih variatif sejak awal.
+  - Guntingan sebagai tepi bawaan: lebih khas, tetapi kurang dikenal dan lebih berat dirender. Tetap tersedia sebagai pilihan.
+  - Stiker hiasan dari pustaka luar (OpenMoji, Twemoji, Streamline, emoji): wajib kredit atau melanggar daftar "jangan" v5. Sumber CC0 museum hanya dipakai sebagai acuan bentuk.
+- **Konsekuensi**:
+  - Spesifikasi v1 §4.3 (hanya kuas manual) dan §4.5 (sampul = template + nama + stiker) diperluas oleh keputusan ini; teks spesifikasi tidak diedit.
+  - Glosarium perlu istilah baru (K-014):
+    - tepi stiker `edgeStyle` (`none`/`dieCut`/`snipped`/`pinking`/`torn`) dan `edgeWidth`;
+    - motif selotip;
+    - tinta keterangan;
+    - kertas latar;
+    - gaya halaman;
+    - stiker hiasan;
+    - `templateId` di `Book.cover`.
+  - Hiasan buatan sendiri dicatat seperti suara (K-024/K-030): data/decorations.json (usulan) dengan lisensi `own`, dikerjakan `desainer-visual`/`kurator-katalog`.
+  - Skema drift dan Supabase untuk `Placement` dan `Book.cover` perlu kolom baru (`arsitek-flutter`, `backend-supabase`). Rincian batas atur manual dan isi sampul masih di Q-020 dan Q-021.
+  - Risiko performa di Infinix Hot 11 Play (K-016) harus diukur sebelum dikunci: tepi Zigzag/Sobek/Guntingan, kaca pembesar, dan kertas bermotif. Tepi dirender sekali saat simpan, bukan per frame (`animasi-buku`, `kamera-cutout`).
+  - Rupa visual opsi-opsi ini mengikuti arah v5, yang masih menunggu Q-017. Bila arah visual berubah, daftar opsinya tetap berlaku.
+- **Menjawab**: Q-022
