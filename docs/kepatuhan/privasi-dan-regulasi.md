@@ -1,7 +1,7 @@
 # Privasi dan regulasi
 
 > Area agen `penasihat-privasi` (pembantu, tidak memblokir). Bukan nasihat hukum resmi: periksakan ke konsultan hukum sebelum rilis.
-> Terakhir diverifikasi: 17 Nov 2026. Untuk PP 17/2025, Permenkomdigi 9/2026, Kepmenkomdigi 140 dan 142/2026, serta UU PDP, verifikasi dilakukan dari **teks asli** (JDIH Komdigi, JDIH Kemenkeu). Rincian pasal, URL, dan tafsiran ada di `docs/riset/2026-11-17-usia-pp-tunas-uu-pdp.md`. Baris berasal dari toko aplikasi **belum** dicek ke pedoman asli. Cek ulang sebelum rilis (spesifikasi §7).
+> Terakhir diverifikasi: 18 Nov 2026. Untuk PP 17/2025, Permenkomdigi 9/2026, Kepmenkomdigi 140 dan 142/2026, serta UU PDP, verifikasi dilakukan dari **teks asli** (JDIH Komdigi, JDIH Kemenkeu). Rincian pasal, URL, dan tafsiran ada di `docs/riset/2026-11-17-usia-pp-tunas-uu-pdp.md`. Pada 18 Nov, PP Ps. 17–19 beserta penjelasan Ps. 9–19, dan UU PDP Ps. 1–21, 34 beserta penjelasan Ps. 9–21, dibaca ulang dari teks asli untuk kartu share. Pedoman App Store (3.1.2(a), 3.2.2(x), 5.1.1(v), 5.1.2(iii)/(v)) dan kebijakan Spam Google Play juga dibaca dari sumber asli (`docs/riset/2026-11-18-tinjauan-privasi-kartu-share.md`). Baris toko lainnya (hapus akun, Sign in with Apple, konten pengguna) **belum** dicek ke pedoman asli. Cek ulang sebelum rilis (spesifikasi §7).
 
 ## 0. Keputusan yang berlaku
 
@@ -27,7 +27,8 @@ Label: **terbukti** = tertulis di teks sumber; **dugaan** = tafsiran penasihat. 
 | Larangan pengumpulan geolokasi tepat secara baku dan tanpa tanda yang jelas | PP Ps. 7 ayat (2) huruf b, Ps. 18 + penjelasan (terbukti) | Koordinat dipakai sesaat di perangkat, hanya kota disimpan (K-011, §4.4) | Untuk pengguna Anak: minta izin lokasi hanya saat memotret, tampilkan tanda saat lokasi dibaca (disarankan, dugaan cukup) |
 | Larangan pemrofilan Anak, termasuk secara baku | PP Ps. 7 ayat (2) huruf c, Ps. 19 + penjelasan (terbukti) | Tanpa iklan; ada metrik ketukan Kamera terkunci (§4.2, K-007) | Untuk pengguna Anak: agregasi metrik minat tanpa terikat akun (disarankan, dugaan) |
 | Privasi tinggi secara baku; Anak tidak bisa melonggarkan privasi tanpa persetujuan orang tua | PP Ps. 10; Permenkomdigi Ps. 16 ayat (2) huruf c (terbukti) | Akun privat baku (§4.7) | Wajib bila ada pengguna Anak |
-| Larangan *dark pattern* yang mendorong Anak memberi data lebih atau melonggarkan privasi | PP Ps. 7 ayat (2) huruf a, Ps. 17 + penjelasan (terbukti) | – | Wajib; berlaku juga untuk desain onboarding |
+| Kesimpulan untuk membuat profil (preferensi, kecenderungan, perilaku) termasuk Data Pribadi Anak; pemrofilan mencakup "tujuan lain", tidak hanya penawaran produk | PP penjelasan Ps. 9 ayat (5) huruf b angka i; Ps. 19 ayat (1), (4) + penjelasan (terbukti) | Gaya kartu share "Label Pemburu" (usulan v5, julukan otomatis dari kategori dominan) | Julukan otomatis kemungkinan pemrofilan; usul varian dipilih pengguna atau tunda (dugaan, `docs/riset/2026-11-18-tinjauan-privasi-kartu-share.md`) |
+| Larangan *dark pattern* yang mendorong Anak memberi data lebih atau melonggarkan privasi | PP Ps. 7 ayat (2) huruf a, Ps. 17 + penjelasan (terbukti) | – | Wajib; berlaku juga untuk desain onboarding dan layar Bagikan (tanpa hadiah untuk berbagi, tanpa pilihan terpilih lebih dulu) |
 | Penilaian mandiri tingkat risiko (7 aspek) dan laporannya ke Menteri lewat sistem Komdigi; dokumentasi disahkan sebelum produk bisa diakses Anak | PP Ps. 5 ayat (6)–(7); Permenkomdigi Ps. 4–5, 9, 21; Kepmenkomdigi 142/2026 Lampiran I–II (terbukti) | Tidak ada | Wajib. Potret kemungkinan besar masuk lingkup "mungkin diakses Anak" walau 18+, karena lencana, misi, dan progres termasuk contoh gamifikasi di Kepmen 142 (dugaan) |
 | Layanan jejaring sosial berisiko tinggi kecuali ditetapkan lain; akun di bawah 16 harus dinonaktifkan | Permenkomdigi Ps. 30; Kepmenkomdigi 140/2026 (daftar 8 platform, potret tidak termasuk) (terbukti) | Follow, buku teman, Cutout terunggah (§4.7, §4.9) | Fitur sosial potret kemungkinan memenuhi definisi Ps. 30 ayat (2) (dugaan) |
 | Mekanisme pelaporan yang mudah dipakai Anak/orang tua dan tindak lanjutnya | PP Ps. 2 ayat (4) huruf c, Ps. 23 (terbukti); aturan toko untuk konten pengguna (belum dicek) | Tombol lapor + tinjauan manual (§4.7) | Wajib |
@@ -40,6 +41,9 @@ Label: **terbukti** = tertulis di teks sumber; **dugaan** = tafsiran penasihat. 
 | Hapus akun dari dalam aplikasi | App Store, Google Play (spesifikasi §4.1; pedoman asli belum dicek) | §4.1 | – |
 | Sign in with Apple bila ada login pihak ketiga | App Store (spesifikasi §4.1; pedoman asli belum dicek) | §4.1 | – |
 | Lapor, blokir, dan penyaringan untuk konten pengguna | App Store, Google Play (spesifikasi §7; pedoman asli belum dicek) | §4.7 | "Penyaringan" belum dirinci di spesifikasi |
+| Tidak mensyaratkan posting ke media sosial untuk mendapat yang sudah dibayar; tidak memaksa aksi toko untuk membuka fungsi | App Store 3.1.2(a), 3.2.2(x) (terbukti, dibaca 18 Nov) | Kartu share §4.8 | Disarankan juga untuk misi dan lencana: tidak ada hadiah untuk berbagi |
+| Tidak membangun profil pengguna secara diam-diam | App Store 5.1.2(iii) (terbukti, dibaca 18 Nov) | – | Relevan untuk Label Pemburu dan metrik |
+| Pesan atas nama pengguna hanya dengan konfirmasi isi dan penerima; tidak memakai Kontak untuk mengundang tanpa inisiatif pengguna | Google Play kebijakan Spam; App Store 5.1.2(v) (terbukti, dibaca 18 Nov) | Share lewat share sheet atau API tujuan (§4.8) | Berlaku untuk "Tambah Punyamu" dan tautan undangan nanti |
 
 ## 2. Data yang dikumpulkan (garis besar dari spesifikasi §5)
 
