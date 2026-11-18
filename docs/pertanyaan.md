@@ -9,6 +9,7 @@
 | ID | Pertanyaan | Kenapa penting | Terkait |
 |---|---|---|---|
 | Q-015 | Bundle ID final (Android applicationId dan iOS bundle identifier)? | Permanen begitu terbit di Play/App Store; prototipe memakai placeholder id.potret.prototype | K-023 |
+| Q-017 | Arah visual "Bersih & bold" untuk UI di luar buku (latar putih `#FFFFFF`/`#F5F5F3`, tinta `#111111`/`#5C5C5C`, Plus Jakarta Sans tebal untuk judul, satu aksen pink `#D81B5C`, radius kartu 20 dan tombol 14), sementara isi halaman buku tetap kertas + Fraunces + Caveat. Ditetapkan sebagai K- baru yang menggantikan sebagian K-021 dan `docs/desain/arah-visual.md`? | Pemilik memilih arah ini di mockup v2 (18 Nov 2026, https://claude.ai/artifact/Acc38ZrS9c64zx1VbA3MzE) karena gaya v1 terasa kurang modern; K-021 mengunci palet, tipografi, dan radius 6/8, jadi kode dan `data/design-tokens.json` belum boleh ikut sebelum diputuskan | K-021, K-017 |
 
 ## Terjawab
 
