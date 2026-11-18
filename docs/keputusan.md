@@ -423,3 +423,34 @@
   - Risiko performa di Infinix Hot 11 Play (K-016) harus diukur sebelum dikunci: tepi Zigzag/Sobek/Guntingan, kaca pembesar, dan kertas bermotif. Tepi dirender sekali saat simpan, bukan per frame (`animasi-buku`, `kamera-cutout`).
   - Rupa visual opsi-opsi ini mengikuti arah v5, yang masih menunggu Q-017. Bila arah visual berubah, daftar opsinya tetap berlaku.
 - **Menjawab**: Q-022
+
+### K-032 · Kartu share MVP: 4 gaya wajib, sisanya bertahap
+- **Tanggal**: 18 Nov 2026
+- **Keputusan**:
+  - **MVP (wajib)**:
+    - gaya 1 Halaman Kliping, 2 Video Buka Halaman, 3 Stiker Temuan, 4 Temuan Tunggal;
+    - format Story 9:16, Video 9:16, dan Stiker transparan (PNG);
+    - chip warna (Kobalt, Tinta, Lime, Kertas, warna Kategori) dan tombol **Acak**;
+    - tujuan berurutan WhatsApp, Instagram Stories (API lapisan latar dan lapisan stiker), TikTok (Share Kit), Simpan ke galeri, Lainnya (share sheet). Di MVP tombol WhatsApp membuka WhatsApp lewat share sheet/intent biasa;
+    - kalimat privasi di dekat tombol: "Hanya nama kota yang ikut. Lokasi dan EXIF dihapus.";
+    - titik masuk menentukan gaya bawaan: Sukses → Temuan Tunggal, Buku → Halaman Kliping.
+  - **Bagus (sesudah MVP, prioritas pertama)**: gaya 5 Kartu Pos Kota, 6 Sukabumi-ku dalam 4, 7 Label Pemburu (menunggu Q-024), 8 Tonggak Stempel (cap 25/50/100 dengan aksen emas `#E0A526`); format Feed 3:4; jalur khusus WhatsApp Status bila API-nya terkonfirmasi.
+  - **Nanti**: gaya 9 Cuci Cetak Mingguan, 10 Tambah Punyamu (Q-024), carousel, Rekap Tahunan, tautan web penerima (spesifikasi §8).
+  - Di layar Bagikan MVP, gaya dan format yang belum tersedia **tidak ditampilkan** (bukan ditampilkan terkunci).
+  - **Aturan semua gaya**: stempel kota dan watermark "Kliping Kota · <kamera>" selalu ada dan tidak bisa dimatikan; lokasi hanya nama kota (K-011); tanpa progres landmark (K-028); tanpa nama landmark sampai Q-018 diputuskan; EXIF/GPS dihapus. Di atas warna kategori, cap memakai tinta `#121212`.
+  - **Larangan**: tidak ada hadiah, lencana, atau konten yang ditukar dengan berbagi; tidak ada hitung mundur palsu; tidak ada tujuan yang dipilih otomatis; tidak ada posting atas nama pengguna; setelah berbagi, kembali ke layar asal tanpa ajakan berbagi lagi.
+- **Alasan**:
+  - Pemilik mengikuti usulan prioritas riset (18 Nov 2026): `docs/riset/2026-11-18-kartu-share-viral.md` bagian "Prioritas MVP".
+  - Gaya 1–2 sudah diwajibkan spesifikasi §4.8; gaya 3–4 berbiaya rendah dan paling dekat dengan inti aplikasi (stiker temuan). Empat gaya × lima warna × Acak sudah memberi variasi tanpa menambah beban render di Infinix Hot 11 Play (K-016).
+  - WhatsApp dipakai 92,7% pengguna internet Indonesia (GWI, lihat riset), jadi diletakkan pertama.
+- **Ditolak**:
+  - Semua 10 gaya di MVP: menambah kerja render dan uji, sedangkan gaya 9–10 bergantung pada misi (§4.6) dan gaya 7 masih menunggu tinjauan privasi.
+  - Satu gaya saja (spesifikasi asli): pemilik menilai kartu share adalah bagian terpenting untuk menarik pengguna dan harus bervariasi.
+  - Menampilkan gaya yang belum tersedia sebagai "terkunci": terasa seperti iming-iming dan menambah kebisingan pilihan.
+- **Konsekuensi**:
+  - Spesifikasi v1 §4.8 (gambar dan video 9:16) diperluas dengan format Stiker transparan, chip warna, Acak, dan 4 gaya; teks spesifikasi tidak diedit.
+  - `docs/desain/acuan/kartu-share.md` perlu diperbarui untuk 4 gaya MVP setelah Q-017 diputuskan (`desainer-visual`).
+  - Glosarium perlu istilah baru (K-014): gaya kartu share (`shareStyle`: `bookPage`/`pageFlipVideo`/`sticker`/`singleFinding`), varian warna (`shareColorway`), format (`shareFormat`: `story`/`sticker`/`video`).
+  - Render kartu dan video share (encoder native, tanpa FFmpegKit, K-003) dikerjakan `animasi-buku`; integrasi Instagram Stories dan TikTok Share Kit perlu dicek status API-nya oleh `peneliti` sebelum implementasi.
+  - Mockup kanvas tetap menggambar 10 gaya sebagai arah jangka panjang.
+- **Menjawab**: Q-023
