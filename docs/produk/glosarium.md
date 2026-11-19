@@ -2,7 +2,7 @@
 
 > Sumber tunggal istilah proyek potret. Dipakai di dokumen, kode, Trello, dan semua sub-agen.
 > Asal: §3 `spesifikasi-sistem-v1.md` (dipindah utuh). Aturan penamaan identifier: K-014.
-> Terakhir diverifikasi: 19 Nov 2026 (istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
+> Terakhir diverifikasi: 19 Nov 2026 (istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034, kolom editor K-037, julukan K-038 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
 
 ## 1. Istilah inti (dari spesifikasi v1, tidak diubah)
 
@@ -54,6 +54,12 @@ Istilah yang dipakai spesifikasi tetapi belum punya baris sendiri.
 | Gaya kartu share | Satu dari 10 gaya kartu share; MVP: `bookPage`, `pageFlipVideo`, `sticker`, `singleFinding` (K-032) | `ShareCard.style` |
 | Varian warna kartu | Warna kartu share: Kobalt, Tinta, Lime, Kertas, Kategori (K-032) | `ShareCard.colorway` |
 | Format kartu | `story` (9:16), `video` (9:16), `sticker` (PNG transparan); `feed` (3:4) sesudah MVP (K-032) | `ShareCard.format` |
+| Julukan label | Julukan kartu Label Pemburu per kategori, dipilih pengguna (K-033, K-038) | `Category.shareLabel` |
+| Baki "Belum ditempel" | Tempat temuan yang dilepas dari halaman; tidak ditempel ulang otomatis (K-037) | temuan tanpa `Placement` |
+| Tepi stiker | Gaya tepi cutout, satu sistem di Rapikan dan editor halaman (K-031, K-037) | `Finding.edgeStyle` (`none`/`dieCut`/`snipped`/`pinking`/`torn`), `Finding.edgeWidth` (`s`/`m`/`l`) |
+| Selotip | Posisi dan motif selotip penempatan (K-037) | `Placement.tapePosition`, `Placement.tapePattern` |
+| Tinta keterangan | Warna keterangan penempatan (K-031, K-037) | `Placement.noteInk` (`ink`/`cobalt`/`sepia`/`stampRed`/`magenta`/`green`) |
+| Kertas latar dan gaya halaman | Kertas dan preset gaya halaman (K-031, K-037) | `Page.paperStyle`, `Page.stylePresetId` |
 
 ## 3. Aturan penamaan (K-014)
 
@@ -73,11 +79,11 @@ Nama di spesifikasi §5 tetap sah sebagai deskripsi. Kode dan JSON memakai kolom
 | `User` | id, username, tahun_lahir, visibilitas | `id`, `username`, `ageVerificationMethod`, `ageVerifiedAt`, `visibility` (tahun lahir tidak disimpan, K-018) | `id`, `username`, `age_verification_method`, `age_verified_at`, `visibility` |
 | `City` | id, nama, provinsi, warna_aksen, stempel, sudah_dikurasi | `id`, `name`, `province`, `accentColor`, `stampAsset`, `findingTarget` (K-028), `isCurated` | `id`, `name`, `province`, `accent_color`, `stamp_asset`, `finding_target`, `is_curated` |
 | `Landmark` | id, city_id, nama, kategori, lat, lng, radius_m, fakta, siluet | `id`, `cityId`, `name`, `category`, `lat`, `lng`, `radiusM`, `facts`, `silhouetteAsset` | `id`, `city_id`, `name`, `category`, `lat`, `lng`, `radius_m`, `facts`, `silhouette_asset` |
-| `Finding` | id, user_id, city_id, landmark_id?, kategori, camera_id, cutout_url, thumb_url, path_foto_asli_lokal, catatan, dibuat_pada | `id`, `userId`, `cityId`, `landmarkId?`, `category`, `cameraId`, `cutoutUrl`, `thumbUrl`, `localOriginalPath`, `note`, `createdAt` | sama dalam `snake_case`, **tanpa** `local_original_path` (hanya di drift, K-019) |
-| `Book` | id, user_id, tema_id, sampul | `id`, `userId`, `themeId`, `cover` | `id`, `user_id`, `theme_id`, `cover` |
+| `Finding` | id, user_id, city_id, landmark_id?, kategori, camera_id, cutout_url, thumb_url, path_foto_asli_lokal, catatan, dibuat_pada | `id`, `userId`, `cityId`, `landmarkId?`, `category`, `cameraId`, `cutoutUrl`, `thumbUrl`, `localOriginalPath`, `note`, `createdAt`, `edgeStyle`, `edgeWidth` (K-037) | sama dalam `snake_case`, **tanpa** `local_original_path` (hanya di drift, K-019) |
+| `Book` | id, user_id, tema_id, sampul | `id`, `userId`, `themeId`, `cover` (`templateId`, `title` ≤ 24, `findingIds` 1–3, `decorationSetId`; K-037) | `id`, `user_id`, `theme_id`, `cover` (jsonb) |
 | `Chapter` | id, book_id, city_id, urutan | `id`, `bookId`, `cityId`, `order` | `id`, `book_id`, `city_id`, `sort_order` |
-| `Page` | id, chapter_id, jenis (pembatas/landmark/bebas), template_id, urutan | `id`, `chapterId`, `kind` (`divider`/`landmark`/`free`), `templateId`, `order` | `id`, `chapter_id`, `kind`, `template_id`, `sort_order` |
-| `Placement` | finding_id, page_id, x, y, skala, rotasi, z, diatur_manual | `findingId`, `pageId`, `x`, `y`, `scale`, `rotation`, `z`, `isManuallyArranged` | `finding_id`, `page_id`, `x`, `y`, `scale`, `rotation`, `z`, `is_manually_arranged` |
+| `Page` | id, chapter_id, jenis (pembatas/landmark/bebas), template_id, urutan | `id`, `chapterId`, `kind` (`divider`/`landmark`/`free`), `templateId`, `order`, `paperStyle`, `stylePresetId` (K-037) | `id`, `chapter_id`, `kind`, `template_id`, `sort_order`, `paper_style`, `style_preset_id` |
+| `Placement` | finding_id, page_id, x, y, skala, rotasi, z, diatur_manual | `findingId`, `pageId`, `x`, `y`, `scale`, `rotation`, `z`, `isManuallyArranged`, `tapePosition`, `tapePattern`, `noteInk`, `hasFrame` (K-037) | `finding_id`, `page_id`, `x`, `y`, `scale`, `rotation`, `z`, `is_manually_arranged`, `tape_position`, `tape_pattern`, `note_ink`, `has_frame` |
 | `Camera` | id, nama, lut, overlay, suara, sku?, gratis, terkunci | `id`, `name`, `lut`, `overlay`, `shutterSound`, `sku?`, `isFree`, `isLocked`, `isListed` (K-034) | `id`, `name`, `lut`, `overlay`, `shutter_sound`, `sku`, `is_free`, `is_locked`, `is_listed` |
 | `Entitlement` | user_id, item_id, sumber | `userId`, `itemId`, `source` | `user_id`, `item_id`, `source` |
 | `Follow` | follower_id, followee_id, status (menunggu/disetujui) | `followerId`, `followeeId`, `status` (`pending`/`approved`) | `follower_id`, `followee_id`, `status` |

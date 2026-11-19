@@ -13,6 +13,7 @@
       "name": "Papan nama dan tulisan",
       "tieBreakOrder": 1,
       "missionEligible": true,
+      "shareLabel": "Pemburu Papan Nama",
       "mlkitLabels": [
         { "text": "Poster", "index": 93 },
         { "text": "Neon", "index": 140 },
@@ -27,6 +28,7 @@
       "name": "Makanan",
       "tieBreakOrder": 2,
       "missionEligible": true,
+      "shareLabel": "Pemburu Jajanan",
       "mlkitLabels": [
         { "text": "Food", "index": 184 },
         { "text": "Fast food", "index": 48 },
@@ -57,6 +59,7 @@
       "name": "Minuman",
       "tieBreakOrder": 3,
       "missionEligible": true,
+      "shareLabel": "Pemburu Minuman",
       "mlkitLabels": [
         { "text": "Coffee", "index": 181 },
         { "text": "Cappuccino", "index": 331 },
@@ -69,6 +72,7 @@
       "name": "Kendaraan",
       "tieBreakOrder": 4,
       "missionEligible": true,
+      "shareLabel": "Pencatat Kendaraan",
       "mlkitLabels": [
         { "text": "Vehicle", "index": 316 },
         { "text": "Car", "index": 423 },
@@ -105,6 +109,7 @@
       "name": "Hewan",
       "tieBreakOrder": 5,
       "missionEligible": true,
+      "shareLabel": "Sahabat Hewan Jalanan",
       "mlkitLabels": [
         { "text": "Cat", "index": 118 },
         { "text": "Dog", "index": 360 },
@@ -141,6 +146,7 @@
       "name": "Tanaman",
       "tieBreakOrder": 6,
       "missionEligible": true,
+      "shareLabel": "Pengumpul Tanaman",
       "mlkitLabels": [
         { "text": "Plant", "index": 266 },
         { "text": "Flora", "index": 205 },
@@ -157,6 +163,7 @@
       "name": "Bangunan dan monumen",
       "tieBreakOrder": 7,
       "missionEligible": true,
+      "shareLabel": "Pengamat Bangunan",
       "mlkitLabels": [
         { "text": "Building", "index": 366 },
         { "text": "Skyscraper", "index": 308 },
@@ -193,6 +200,7 @@
       "name": "Barang",
       "tieBreakOrder": 8,
       "missionEligible": true,
+      "shareLabel": "Kolektor Benda Acak",
       "mlkitLabels": [
         { "text": "Product", "index": 78, "weak": true },
         { "text": "Toy", "index": 8 },
@@ -251,6 +259,7 @@
       "name": "Lainnya",
       "tieBreakOrder": 9,
       "missionEligible": false,
+      "shareLabel": "Pencatat Serba-serbi",
       "mlkitLabels": []
     }
   ]

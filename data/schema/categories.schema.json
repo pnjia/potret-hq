@@ -31,7 +31,8 @@
           "id": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$" },
           "name": { "type": "string", "minLength": 1, "description": "Nama tampilan Bahasa Indonesia" },
           "tieBreakOrder": { "type": "integer", "minimum": 1, "description": "Pemecah seri: angka kecil menang" },
-          "missionEligible": { "type": "boolean", "description": "Boleh dipakai misi mingguan dan lencana (K-009)" },
+          "shareLabel": { "type": "string", "minLength": 1, "description": "Julukan di kartu share Label Pemburu, dipilih pengguna (K-033, K-038)" },
+        "missionEligible": { "type": "boolean", "description": "Boleh dipakai misi mingguan dan lencana (K-009)" },
           "mlkitLabels": {
             "type": "array",
             "items": {

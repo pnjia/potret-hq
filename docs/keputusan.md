@@ -517,3 +517,116 @@
   - Harga adalah harga rencana; cek ulang titik harga App Store dan Play sebelum toko dibuka.
   - Sebelum toko dibuka, `penasihat-privasi` menilai Kepmenkomdigi 142/2026 (EK04 dark pattern pembelian, EK05 pembayaran tanpa verifikasi orang tua). Potongan Pas Kolektor bagi pembeli satuan belum diputuskan (Q-026).
 - **Menjawab**: Q-025
+
+### K-035 · Arah visual v5 "Karcis & Kliping"
+- **Tanggal**: 19 Nov 2026
+- **Keputusan**:
+  - Arah visual aplikasi mengikuti v5 "Karcis & Kliping" (`docs/desain/usulan-v5-karcis-kliping.md`):
+    - UI digambar seperti barang cetakan: karcis berlubang, cap pos kota, dan coretan stabilo;
+    - temuan tampil sebagai stiker ilustrasi bergaya cetak saring;
+    - buku berupa kertas.
+  - **Warna**:
+    - UI putih `#FFFFFF`;
+    - Kobalt `#3048FF` untuk aksi;
+    - Lime `#D4F25C` hanya untuk stabilo dan penanda;
+    - Tinta `#121212` dan `#5B5B66`;
+    - kertas buku `#F6F5F1`, kertas redup `#EDEDF0`, selotip `#EBE8DC`;
+    - galat `#B42318`.
+  - **9 warna kategori** (menjawab Q-019): Bangunan `#FF8A5B`, Makanan `#FF6FA3`, Kendaraan `#FFD84D`, Tanaman `#7FD6A6`, Papan nama `#9DB4FF`, Minuman `#5ED1E0`, Hewan `#C7A6FF`, Barang `#E0C39A`, Lainnya `#D6D6DC`. Teks di atasnya selalu memakai Tinta. Label kategori selalu ikon + teks dengan garis tinta, karena warna kategori < 3:1 terhadap putih.
+  - **Huruf**: Anybody (display, lebar 50–150), Plus Jakarta Sans (UI), Nanum Pen Script (keterangan di buku). Ketiganya OFL.
+  - **Bentuk**: radius 0/2/4, tanpa bayangan UI, target sentuh ≥ 48 px, kontras teks ≥ 4,5:1.
+  - **Gerak**: satu momen gerak, "Cap!", saat temuan ditempel.
+  - Uji 5 pengguna (`docs/riset/2026-11-18-kritik-v3-dan-rencana-uji.md`) dijalankan sebelum rilis sebagai pemeriksaan mutu, bukan gerbang (K-015).
+- **Alasan**:
+  - Pemilik menolak v1–v3 dan menilai v4 "masih AI slop". v5 dibangun dari audit aksesibilitas WCAG 2.2, riset aplikasi berkarakter, dan diagnosis AI slop (riset 18 Nov).
+  - Seluruh alur v5 sudah dibuat sebagai mockup dan lolos cek kontras otomatis.
+  - Pemilik mengikuti rekomendasi (19 Nov 2026).
+- **Ditolak**:
+  - Palet kertas hangat dan aksen merah muda K-021 (v1–v3): dinilai kalem dan generik oleh pemilik.
+  - v4 "Pop Kota": terasa seperti UI kit generik.
+  - Menunggu uji 5 pengguna sebelum memutuskan: menahan kode dan token, padahal uji tetap bisa mengoreksi detail sesudahnya.
+- **Konsekuensi**:
+  - `data/design-tokens.json` naik ke v2.0.0 dengan nilai di atas; `docs/desain/arah-visual.md` dan `docs/desain/acuan/` diperbarui.
+  - Fraunces dan Caveat tidak dipakai lagi.
+  - `City.accentColor` Sukabumi memakai Kobalt sampai kurator punya dasar warna kota. Syarat warna kota: putih di atasnya ≥ 4,5 dan Lime di atasnya ≥ 3.
+  - Spasi kelipatan 4 px dan rotasi penempatan otomatis maksimal ±4° dari K-021 tetap berlaku.
+- **Menggantikan**: K-021
+- **Menjawab**: Q-017, Q-019
+
+### K-036 · Kartu share tanpa nama landmark dan progres landmark
+- **Tanggal**: 19 Nov 2026
+- **Keputusan**: Kartu share dan video share tidak menampilkan nama landmark, nama tempat lain, maupun progres landmark. Lokasi hanya nama kota. Judul kartu adalah keterangan buatan pengguna, atau nama kategori bila keterangannya kosong.
+- **Alasan**:
+  - Nama tempat membuka lokasi lebih rinci daripada kota (K-011) dan bisa membentuk pola jejak di kartu yang tersebar publik.
+  - K-028 menaruh progres landmark di halaman pembatas, bukan di kartu share.
+  - Keterangan buatan pengguna sudah memberi karakter pada kartu.
+  - Pemilik mengikuti rekomendasi (19 Nov 2026).
+- **Ditolak**: Menampilkan nama landmark karena lebih menarik: risikonya privasi, dan kartu sudah bervariasi lewat 10 gaya (K-032).
+- **Konsekuensi**: Nama landmark tetap tampil di dalam aplikasi (Temuan, halaman landmark), dan buku teman menampilkan nama kota saja (K-011).
+- **Menjawab**: Q-018
+
+### K-037 · Rincian editor halaman dan sampul
+- **Tanggal**: 19 Nov 2026
+- **Keputusan**:
+  - **Atur manual stiker** (K-005, K-031):
+    - putar 2° per ketukan, batas ±15° (tata letak otomatis tetap ±4°);
+    - ukuran 60–150% dari slot template;
+    - geser 4 dp per ketukan, minimal 50% stiker tetap di dalam halaman;
+    - urungkan minimal 20 langkah sampai Simpan;
+    - semua gerakan punya tombol, tidak hanya seret (WCAG 2.5.7).
+  - **Kolom baru `Placement`**:
+    - `tapePosition` (`none`/`oneCorner`/`twoCorners`/`top`);
+    - `tapePattern` (6 motif selotip K-031);
+    - `noteInk` (`ink`/`cobalt`/`sepia`/`stampRed`/`magenta`/`green`, K-031);
+    - `hasFrame` (bingkai putih di sekeliling stiker).
+  - **Tepi stiker** satu sistem dengan Rapikan potongan (K-031): `Finding.edgeStyle` (`none`/`dieCut`/`snipped`/`pinking`/`torn`, bawaan `dieCut`) dan `Finding.edgeWidth` (`s`/`m`/`l`). Mengubah tepi di editor halaman mengubah temuan itu di semua tempat.
+  - **Kolom baru `Page`**: `paperStyle` (`plain`/`lined`/`dotted`/`grid`) dan `stylePresetId` (6 gaya halaman K-031).
+  - **Lepas dari halaman** menghapus `Placement`, sedangkan `Finding` tetap ada. Temuan tanpa `Placement` masuk baki "Belum ditempel" di editor halaman dan bab kotanya. Tata letak otomatis tidak menempelkannya lagi; pengguna yang menempelkan kembali.
+  - **Isi `Book.cover`**:
+    - `templateId` (8 template K-031, ditambah template dari paket tema setelah toko dibuka);
+    - `title` maksimal 24 karakter, dengan aturan perkecil atau turun baris per template;
+    - `findingIds`: 1–3 temuan berurutan (urutan pilih = posisi);
+    - `decorationSetId` (set hiasan K-031).
+    - Penempatan bebas di sampul tetap ditunda (spesifikasi §8).
+- **Alasan**:
+  - Batas menjaga halaman tetap rapi tanpa mengurangi kebebasan.
+  - Menyatukan dua daftar tepi K-031 (tepi stiker di halaman dan gaya tepi di Rapikan) menghindari dua sistem yang bertentangan.
+  - Pemilik mengikuti rekomendasi (19 Nov 2026).
+- **Ditolak**:
+  - Putar dan geser bebas tanpa batas: halaman mudah berantakan, dan gerak seret saja tidak aksesibel.
+  - Tepi berbeda per halaman: satu temuan bisa tampil dengan dua tepi, membingungkan, dan perlu dua kali render.
+  - Temuan yang dilepas otomatis ditempel ulang: melanggar K-005, karena sistem tidak pernah mengatur ulang pilihan pengguna.
+- **Konsekuensi**: Glosarium dan skema drift/Supabase mendapat kolom baru (`arsitek-flutter`, `backend-supabase`). Pilihan "bingkai" dari K-031 menjadi `Placement.hasFrame`, bukan gaya tepi.
+- **Menjawab**: Q-020, Q-021
+
+### K-038 · Harga Pas Kolektor tetap dan julukan Label Pemburu
+- **Tanggal**: 19 Nov 2026
+- **Keputusan**:
+  - **Pas Kolektor** satu harga untuk semua, tanpa potongan bagi yang sudah membeli satuan. Layarnya menulis terang nilai yang belum dimiliki pengguna, supaya ia bisa menilai sendiri apakah lebih hemat membeli satuan. Ditinjau ulang bila ada keluhan setelah toko dibuka.
+  - **Julukan Label Pemburu** per id kategori (K-020, K-033):
+
+    | id | Julukan |
+    |---|---|
+    | `building` | Pengamat Bangunan |
+    | `food` | Pemburu Jajanan |
+    | `vehicle` | Pencatat Kendaraan |
+    | `plant` | Pengumpul Tanaman |
+    | `sign` | Pemburu Papan Nama |
+    | `drink` | Pemburu Minuman |
+    | `animal` | Sahabat Hewan Jalanan |
+    | `object` | Kolektor Benda Acak |
+    | `other` | Pencatat Serba-serbi |
+
+  - Kartu boleh menampilkan jumlah temuan milik pengguna sendiri untuk kategori yang dipilihnya (mis. "4 papan nama tertempel di buku"), tanpa perbandingan dengan pengguna lain, persentase, atau peringkat.
+- **Alasan**:
+  - Harga per pengguna untuk produk non-consumable yang sama tidak tersedia di App Store dan Play. Potongan butuh SKU terpisah dan logika tambahan, terlalu berat untuk developer solo di rilis toko pertama.
+  - Julukan bernada netral dan sedikit jenaka menghindari "Pemburu Lainnya" yang janggal.
+  - Angka milik sendiri adalah ringkasan pengguna atas kontennya sendiri, bukan peringkat, sedangkan perbandingan antar-pengguna bisa termasuk pemrofilan (K-033).
+  - Pemilik mengikuti rekomendasi (19 Nov 2026).
+- **Ditolak**:
+  - Potongan Pas Kolektor bagi pembeli satuan: rumit di toko aplikasi.
+  - Pola "Pemburu <kategori>" untuk semua id: janggal untuk Barang dan Lainnya.
+- **Konsekuensi**:
+  - Julukan disimpan di `data/categories.json` (`shareLabel`).
+  - Mockup `V5PasKolektor` sudah sesuai.
+- **Menjawab**: Q-026, Q-027
