@@ -54,7 +54,7 @@ class PageCurlPainter extends CustomPainter {
           size: size,
           geometry: g,
           flipY: flipY,
-          paper: TokenColors.paperRaised,
+          paper: TokenColors.paperBook,
           front: f,
           under: u,
         );
@@ -149,7 +149,7 @@ class PageCurlPainter extends CustomPainter {
       ..[15] = 1;
     canvas
       ..transform(m)
-      ..drawRect(rect, Paint()..color = TokenColors.paperRaised);
+      ..drawRect(rect, Paint()..color = TokenColors.paperBook);
     canvas.drawImageRect(
       front,
       Rect.fromLTWH(0, 0, front.width.toDouble(), front.height.toDouble()),

@@ -66,7 +66,7 @@ void paintPage(
   final w = size.width;
   final h = size.height;
 
-  canvas.drawRect(Offset.zero & size, Paint()..color = TokenColors.paperBase);
+  canvas.drawRect(Offset.zero & size, Paint()..color = TokenColors.paperBook);
   _paperGrain(canvas, size, page.order);
   // Garis tepi jilid di kiri.
   canvas.drawRect(
@@ -75,7 +75,7 @@ void paintPage(
       ..shader = ui.Gradient.linear(
         Offset.zero,
         Offset(w * 0.02, 0),
-        [TokenColors.paperLine, TokenColors.paperBase],
+        [TokenColors.paperMuted, TokenColors.paperBook],
       ),
   );
 
@@ -109,7 +109,7 @@ void paintPage(
 void _paperGrain(Canvas canvas, Size size, int seed) {
   final rng = math.Random(seed * 31 + 7);
   final paint = Paint()
-    ..color = TokenColors.paperLine.withValues(alpha: 0.35)
+    ..color = TokenColors.paperMuted.withValues(alpha: 0.35)
     ..strokeWidth = 0.6;
   for (var i = 0; i < 90; i++) {
     final x = rng.nextDouble() * size.width;
@@ -131,7 +131,7 @@ void _paintDivider(
   final c = Offset(size.width * 0.5, size.height * 0.42);
   final r = size.width * 0.30;
   final stamp = Paint()
-    ..color = TokenColors.accentPrimary.withValues(alpha: 0.85)
+    ..color = TokenColors.actionPrimary.withValues(alpha: 0.85)
     ..style = PaintingStyle.stroke
     ..strokeWidth = size.width * 0.012;
   canvas
@@ -145,7 +145,7 @@ void _paintDivider(
     chapter.cityName.toUpperCase(),
     Offset(0, -r * 0.22),
     size: size.width * 0.075,
-    color: TokenColors.accentPrimary,
+    color: TokenColors.actionPrimary,
     center: true,
     weight: FontWeight.w700,
     family: TokenTypography.display,
@@ -156,7 +156,7 @@ void _paintDivider(
     '${book.findingCountInChapter(chapter.id)}/${chapter.targetFindings}',
     Offset(0, r * 0.12),
     size: size.width * 0.06,
-    color: TokenColors.accentPrimary,
+    color: TokenColors.actionPrimary,
     center: true,
   );
   canvas.restore();
@@ -191,8 +191,8 @@ void _paintLandmark(
       height: side,
     );
     canvas.drawRRect(
-      RRect.fromRectAndRadius(rect, const Radius.circular(TokenRadius.card)),
-      Paint()..color = TokenColors.paperLine,
+      RRect.fromRectAndRadius(rect, const Radius.circular(TokenRadius.paper)),
+      Paint()..color = TokenColors.paperMuted,
     );
     _text(
       canvas,

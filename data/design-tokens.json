@@ -1,45 +1,141 @@
 {
   "$schema": "./schema/design-tokens.schema.json",
   "meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "status": "final",
-    "verifiedAt": "2026-11-17",
-    "note": "Palet dan tipografi v1 (K-021, menjawab Q-007). Dasar kertas netral; warna ramai dibawa konten (spesifikasi §2). Kontras WCAG dihitung 17 Nov 2026: semua pasangan teks di atas paper.base dan paper.raised >= 4,5. Font berlisensi OFL (google/fonts METADATA.pb). Durasi page-curl masih placeholder sampai prototipe K-012 diukur."
+    "verifiedAt": "2026-11-19",
+    "note": "Arah visual v5 'Karcis & Kliping' (K-035, menggantikan token v1). Nilai dari docs/desain/usulan-v5-karcis-kliping.md §3. Tiga lapis: UI = cetakan datar di atas putih (tanpa bayangan), temuan = stiker berwarna penuh, buku = kertas. Kontras WCAG 2.x dihitung ulang 19 Nov 2026 dengan rumus docs/desain/usulan-v5/kontras.py; semua pasangan teks >= 4,5. Warna kategori < 3 terhadap putih, jadi label kategori selalu ikon + teks Tinta dengan garis border.tag. Warna aksen kota: putih di atasnya >= 4,5 dan Lime di atasnya >= 3 (Sukabumi memakai Kobalt). Ketiga font berlisensi OFL. Durasi page-curl masih placeholder sampai prototipe K-012 diukur."
   },
   "color": {
     "paper": {
-      "base": { "value": "#F3EEE4", "status": "final", "note": "Latar layar dan halaman buku; kertas hangat" },
-      "raised": { "value": "#FBF8F2", "status": "final", "note": "Kartu, lembar di atas halaman" },
-      "line": { "value": "#DCD3C3", "status": "final", "note": "Garis tipis dan tepi kertas; dekoratif, bukan teks (kontras 1,28)" },
-      "tape": { "value": "#E6D6A3", "status": "final", "note": "Selotip kertas; dipakai dengan opasitas ±80% supaya tembus pandang" }
+      "screen": { "value": "#FFFFFF", "status": "final", "note": "Latar semua layar UI" },
+      "book": { "value": "#F6F5F1", "status": "final", "note": "Hanya halaman buku, kliping di kartu share, dan latar Sukses. Abu hangat sangat muda, bukan krem; jangan dipakai untuk layar UI" },
+      "muted": { "value": "#EDEDF0", "status": "final", "note": "Skeleton, tombol nonaktif, garis grid alas potong" },
+      "tape": { "value": "#EBE8DC", "opacity": 0.82, "status": "final", "note": "Selotip; hasil di atas paper.book sekitar #EDEAE0" }
     },
     "ink": {
-      "primary": { "value": "#1F1C19", "status": "final", "note": "Teks utama. Kontras 14,66 di paper.base" },
-      "secondary": { "value": "#5F584F", "status": "final", "note": "Keterangan, teks sekunder. Kontras 6,06 di paper.base" }
+      "primary": {
+        "value": "#121212", "status": "final",
+        "contrast": { "paper.screen": 18.73, "paper.book": 17.17, "paper.muted": 16.03, "paper.tape": 15.56, "highlight.primary": 14.86 },
+        "note": "Tinta: teks utama, garis komponen 2 px, garis atas navigasi, teks di atas warna kategori. Putih dan Lime di atas Tinta: 18,73 dan 14,86"
+      },
+      "secondary": {
+        "value": "#5B5B66", "status": "final",
+        "contrast": { "paper.screen": 6.70, "paper.book": 6.14, "paper.muted": 5.74, "paper.tape": 5.57, "highlight.primary": 5.32 },
+        "note": "Teks sekunder, garis putus placeholder"
+      }
     },
-    "accent": {
-      "primary": { "value": "#C2385F", "status": "final", "note": "Merah muda tinta stempel: tombol utama, stempel. Kontras 4,51 di paper.base; teks putih di atasnya 5,22. Bukan warna dasar (anti kekanak-kanakan)" },
-      "secondary": { "value": "#2F5D8C", "status": "final", "note": "Biru pulpen: tautan dan aksi sekunder. Kontras 5,92 di paper.base" }
+    "action": {
+      "primary": {
+        "value": "#3048FF", "status": "final",
+        "contrast": { "paper.screen": 6.01, "paper.book": 5.51, "paper.tape": 4.99, "highlight.primary": 4.76 },
+        "note": "Kobalt: satu-satunya warna aksi, juga tinta cap dan tulisan pulpen di buku, dan panel hero. Teks putih di atasnya 6,01. Selalu warna datar tanpa gradasi. Aksen kota bawaan sampai kota punya warna sendiri"
+      },
+      "onPrimarySoft": {
+        "value": "#DCE1FF", "status": "final",
+        "contrast": { "action.primary": 4.65 },
+        "note": "Teks sekunder di atas Kobalt polos, hanya >= 14 px bobot 700. Tidak di atas raster titik (3,1)"
+      }
+    },
+    "highlight": {
+      "primary": {
+        "value": "#D4F25C", "status": "final",
+        "contrast": { "ink.primary": 14.86, "action.primary": 4.76, "paper.screen": 1.26, "paper.book": 1.16 },
+        "note": "Lime: hanya coretan stabilo, karcis Potret, tombol 'Ya, betul', isi bilah progres, cap di atas Kobalt. Bukan teks di atas putih atau kertas, bukan badge kapsul, dan tidak pernah satu-satunya penanda status"
+      }
     },
     "state": {
-      "error": { "value": "#B42318", "status": "final", "note": "Galat. Kontras 5,69 di paper.base" },
-      "success": { "value": "#2E7652", "status": "final", "note": "Berhasil, misalnya landmark ditemukan. Kontras 4,74 di paper.base" }
+      "error": {
+        "value": "#B42318", "status": "final",
+        "contrast": { "paper.screen": 6.57, "paper.book": 6.03 },
+        "note": "Galat"
+      },
+      "success": {
+        "value": "#2E7652", "status": "final",
+        "contrast": { "paper.screen": 5.48, "paper.book": 5.03 },
+        "note": "Berhasil; dipertahankan dari v1 (usulan v5 §3.1)"
+      }
+    },
+    "noteInk": {
+      "ink": { "value": "#121212", "status": "final", "contrast": { "paper.book": 17.17, "paper.tape": 15.56 }, "note": "Tinta; sama dengan ink.primary" },
+      "cobalt": { "value": "#3048FF", "status": "final", "contrast": { "paper.book": 5.51, "paper.tape": 4.99 }, "note": "Kobalt (pulpen); sama dengan action.primary" },
+      "sepia": { "value": "#6B4226", "status": "final", "contrast": { "paper.book": 7.91, "paper.tape": 7.17 }, "note": "Sepia" },
+      "stampRed": { "value": "#B42318", "status": "final", "contrast": { "paper.book": 6.03, "paper.tape": 5.46 }, "note": "Merah cap; sama dengan state.error" },
+      "magenta": { "value": "#C2185B", "status": "final", "contrast": { "paper.book": 5.38, "paper.tape": 4.88 }, "note": "Magenta" },
+      "green": { "value": "#276B4A", "status": "final", "contrast": { "paper.book": 5.85, "paper.tape": 5.31 }, "note": "Hijau" }
+    },
+    "category": {
+      "sign": { "value": "#9DB4FF", "status": "final", "contrast": { "ink.primary": 9.28, "paper.screen": 2.02 }, "note": "Papan nama" },
+      "food": { "value": "#FF6FA3", "status": "final", "contrast": { "ink.primary": 7.19, "paper.screen": 2.61 }, "note": "Makanan" },
+      "drink": { "value": "#5ED1E0", "status": "final", "contrast": { "ink.primary": 10.41, "paper.screen": 1.80 }, "note": "Minuman" },
+      "vehicle": { "value": "#FFD84D", "status": "final", "contrast": { "ink.primary": 13.54, "paper.screen": 1.38 }, "note": "Kendaraan" },
+      "animal": { "value": "#C7A6FF", "status": "final", "contrast": { "ink.primary": 9.21, "paper.screen": 2.03 }, "note": "Hewan" },
+      "plant": { "value": "#7FD6A6", "status": "final", "contrast": { "ink.primary": 10.77, "paper.screen": 1.74 }, "note": "Tanaman" },
+      "building": { "value": "#FF8A5B", "status": "final", "contrast": { "ink.primary": 8.06, "paper.screen": 2.32 }, "note": "Bangunan" },
+      "object": { "value": "#E0C39A", "status": "final", "contrast": { "ink.primary": 11.10, "paper.screen": 1.69 }, "note": "Barang (cokelat kardus)" },
+      "other": { "value": "#D6D6DC", "status": "final", "contrast": { "ink.primary": 12.95, "paper.screen": 1.45 }, "note": "Lainnya (netral)" }
     }
   },
   "typography": {
-    "display": { "family": "Fraunces", "status": "final", "note": "Judul, sampul, stempel kota. Serif variabel yang berkarakter; OFL" },
+    "display": { "family": "Anybody", "status": "final", "note": "Display dan angka. Variabel wdth 50–150, wght 100–900: sempit-tebal untuk nama kota, karcis, nomor seri; lebar-ringan untuk angka pasangan '/100'. Tyler Finck; OFL" },
     "body": { "family": "Plus Jakarta Sans", "status": "final", "note": "Teks UI. Karya Tokotype (Indonesia); OFL" },
-    "handwriting": { "family": "Caveat", "status": "final", "note": "Keterangan tulisan tangan di halaman buku; OFL. Jangan untuk teks UI panjang" }
+    "handwriting": { "family": "Nanum Pen Script", "status": "final", "note": "Keterangan di buku saja, bukan teks UI. Sandoll; OFL. Dipakai sebagai subset Latin karena file aslinya memuat Hangul" }
+  },
+  "textStyle": {
+    "displayXl": { "font": "display", "size": 64, "lineHeight": 0.86, "weight": 900, "width": 50, "letterSpacing": 0.5, "uppercase": true, "status": "final", "note": "Nama kota di hero" },
+    "numberLarge": { "font": "display", "size": 44, "lineHeight": 1.0, "weight": 900, "width": 55, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Angka besar ('13'); lebar 55–60%" },
+    "numberPair": { "font": "display", "size": 24, "lineHeight": 1.0, "weight": 300, "width": 130, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Angka pasangan ('/100'); lebar 130–140%, bobot minimal 300. Di karcis kecil minimal 16 px bobot 400" },
+    "h1": { "font": "display", "size": 28, "lineHeight": 1.0, "weight": 800, "width": 75, "letterSpacing": -0.2, "uppercase": false, "status": "final", "note": "Judul layar" },
+    "landmarkName": { "font": "display", "size": 32, "lineHeight": 1.0, "weight": 800, "width": 75, "letterSpacing": -0.2, "uppercase": false, "status": "final", "note": "Nama landmark di Temuan dan Sukses (tidak pernah di kartu share, K-036)" },
+    "successTitle": { "font": "display", "size": 56, "lineHeight": 0.9, "weight": 900, "width": 60, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Judul Sukses 'Tertempel.'" },
+    "h2": { "font": "display", "size": 20, "lineHeight": 1.1, "weight": 800, "width": 75, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Judul bagian" },
+    "ticketLarge": { "font": "display", "size": 30, "lineHeight": 0.9, "weight": 900, "width": 60, "letterSpacing": 0.3, "uppercase": true, "status": "final", "note": "Karcis besar ('POTRET SEKARANG'); kapital hanya di karcis, sobekan, dan cap" },
+    "ticketSerial": { "font": "display", "size": 13, "lineHeight": 1.0, "weight": 700, "width": 70, "letterSpacing": 0.5, "uppercase": true, "status": "final", "note": "Sobekan karcis dan nomor seri ('No. 014'), teks vertikal di sobekan. Bukan monospace" },
+    "body": { "font": "body", "size": 16, "lineHeight": 1.45, "weight": 400, "width": null, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Isi; tebal 700" },
+    "button": { "font": "body", "size": 16, "lineHeight": 1.0, "weight": 800, "width": null, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Label tombol" },
+    "label": { "font": "body", "size": 13, "lineHeight": null, "weight": 700, "width": null, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Label karcis kategori dan tab, 13–14 px; tab aktif 800" },
+    "meta": { "font": "body", "size": 13, "lineHeight": 1.35, "weight": 500, "width": null, "letterSpacing": 0, "uppercase": false, "status": "final", "note": "Ukuran teks minimum" },
+    "bookNote": { "font": "handwriting", "size": 24, "lineHeight": 1.05, "weight": 400, "width": null, "letterSpacing": 0.3, "uppercase": false, "status": "final", "note": "Keterangan di buku (Finding.note), minimal 22 px, huruf apa adanya. Di kartu share 1080 px semua ukuran x2,5" }
   },
   "spacing": {
-    "unit": { "value": 4, "unit": "px", "status": "final", "note": "Satuan dasar; spasi memakai kelipatan 4" }
+    "unit": { "value": 4, "unit": "px", "status": "final", "note": "Satuan dasar; spasi memakai kelipatan 4" },
+    "screenMargin": { "value": 16, "unit": "px", "status": "final", "note": "Margin sisi layar" },
+    "blockGap": { "value": 16, "unit": "px", "status": "final", "note": "Jarak antarblok" }
   },
   "radius": {
-    "card": { "value": 6, "unit": "px", "status": "final", "note": "Sudut kartu; sengaja kecil supaya tidak terasa kekanak-kanakan" },
-    "button": { "value": 8, "unit": "px", "status": "final", "note": "Sudut tombol" }
+    "none": { "value": 0, "unit": "px", "status": "final", "note": "Kliping, tepi luar halaman buku, garis navigasi" },
+    "paper": { "value": 2, "unit": "px", "status": "final", "note": "Hero kliping" },
+    "ticket": { "value": 4, "unit": "px", "status": "final", "note": "Karcis, tombol, input, tombol kota, thumbnail halaman. Tidak ada radius 12–32 atau kapsul; lingkaran hanya untuk benda bulat (rana, cap, avatar, lubang pons)" }
+  },
+  "border": {
+    "ink": { "value": 2, "unit": "px", "status": "final", "note": "Garis Tinta komponen putih (tombol kedua, karcis putih, tombol kembali), garis atas navigasi" },
+    "tag": { "value": 1.5, "unit": "px", "status": "final", "note": "Garis Tinta karcis kategori (wajib, karena warna kategori < 3 terhadap putih); karcis terpilih memakai border.ink" }
+  },
+  "size": {
+    "touchTargetMin": { "value": 48, "unit": "px", "status": "final", "note": "Target sentuh minimum" },
+    "buttonHeight": { "value": 56, "unit": "px", "status": "final", "note": "Tinggi tombol 52–56; tombol utama lebar penuh 56" },
+    "ticketStub": { "value": 30, "unit": "px", "status": "final", "note": "Lebar sobekan karcis (tetap, bukan persen)" },
+    "ticketNotch": { "value": 8, "unit": "px", "status": "final", "note": "Jari-jari takik karcis; label kategori memakai takik 4 px di kiri dan kanan" },
+    "stampMinScreen": { "value": 96, "unit": "px", "status": "final", "note": "Diameter minimal cap pos kota di layar" },
+    "stampMinShare": { "value": 240, "unit": "px", "status": "final", "note": "Diameter minimal cap pos kota di kartu share 1080 px" }
   },
   "motion": {
-    "pageCurl": { "value": null, "unit": "ms", "status": "placeholder", "note": "Durasi buka halaman; ditetapkan dari hasil prototipe K-012 di Infinix Hot 11 Play" },
-    "placementRotationMax": { "value": 4, "unit": "deg", "status": "final", "note": "Batas rotasi acak penempatan: -4 sampai +4 derajat" }
+    "pageCurl": { "value": null, "unit": "ms", "status": "placeholder", "note": "Durasi buka halaman; ditetapkan dari hasil prototipe K-012 di Infinix Hot 11 Play (prototipe memakai konstanta lokal 520 ms)" },
+    "placementRotationMax": { "value": 4, "unit": "deg", "status": "final", "note": "Batas rotasi acak penempatan otomatis stiker: -4 sampai +4 derajat" },
+    "manualRotationStep": { "value": 2, "unit": "deg", "status": "final", "note": "Putar per ketukan saat atur manual stiker (K-037)" },
+    "manualRotationMax": { "value": 15, "unit": "deg", "status": "final", "note": "Batas putar manual stiker: -15 sampai +15 derajat (K-037)" },
+    "manualNudgeStep": { "value": 4, "unit": "px", "status": "final", "note": "Geser per ketukan saat atur manual stiker (K-037)" },
+    "clippingRotationMax": { "value": 3, "unit": "deg", "status": "final", "note": "Rotasi kliping dan kartu share: -3 sampai +3 derajat. Kontrol UI selalu 0" },
+    "stampRotationMin": { "value": -12, "unit": "deg", "status": "final", "note": "Rotasi cap pos: -12 sampai -6 derajat" },
+    "stampRotationMax": { "value": -6, "unit": "deg", "status": "final", "note": "Lihat stampRotationMin" },
+    "heroRotation": { "value": -1, "unit": "deg", "status": "final", "note": "Rotasi kliping hero Beranda" },
+    "capTotal": { "value": 1100, "unit": "ms", "status": "final", "note": "Momen gerak 'Cap!' (Temuan ke Sukses), satu-satunya animasi khusus; hanya transform dan opacity" },
+    "capLift": { "value": 250, "unit": "ms", "status": "final", "note": "0–250: stiker terangkat, skala 1 ke 1,06, bayangan membesar" },
+    "capSlide": { "value": 300, "unit": "ms", "status": "final", "note": "250–550: stiker meluncur ke kliping dan berputar ke rotasinya; ease-out, lewatan <= 3%" },
+    "capTapeEach": { "value": 80, "unit": "ms", "status": "final", "note": "550–720: tiap selotip ditarik (scaleX 0 ke 1) 80 ms, berselang capTapeStagger" },
+    "capTapeStagger": { "value": 40, "unit": "ms", "status": "final", "note": "Jeda antar-selotip" },
+    "capStamp": { "value": 230, "unit": "ms", "status": "final", "note": "720–950: cap turun, skala 1,25 ke 0,97 ke 1, opasitas 0 ke 1; bunyi 'tok' dan haptic ringan" },
+    "capCounter": { "value": 150, "unit": "ms", "status": "final", "note": "950–1100: angka cap berganti dengan flip vertikal (penghitung yang sama di kamera dan hero)" },
+    "reduceMotionCrossfade": { "value": 200, "unit": "ms", "status": "final", "note": "Pengganti 'Cap!' bila reduce motion aktif: crossfade tanpa gerak" }
   }
 }

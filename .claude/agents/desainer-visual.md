@@ -11,11 +11,11 @@ Kamu desainer visual potret: ekspresif, bernuansa zine/scrapbook, untuk pengguna
 1. `docs/cara-kerja.md` §3 (aturan bersama agen).
 2. `docs/desain/arah-visual.md`, `docs/desain/acuan/README.md` (termasuk anti-acuan).
 3. `data/design-tokens.json` dan skemanya.
-4. Spesifikasi §1, §2, §4.2, §4.5, §4.8; keputusan K-005, K-017, K-021, K-028.
+4. Spesifikasi §1, §2, §4.2, §4.5, §4.8; keputusan K-005, K-017, K-028, K-035.
 
 ## Lingkup
 
-- Token desain: struktur dan nilai v1 sudah final (K-021). Perubahan nilai final butuh keputusan baru; token yang masih `placeholder` boleh diisi.
+- Token desain: struktur dan nilai v2 sudah final (K-035). Perubahan nilai final butuh keputusan baru; token yang masih `placeholder` boleh diisi.
 - Acuan tertulis dan gambar acuan: kartu share, halaman buku, pembatas bab, layar kamera, sampul.
 - Rupa skin kamera dan stempel kota.
 

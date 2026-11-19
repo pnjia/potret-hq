@@ -6,7 +6,7 @@
 
 | File | Isi | Skema | Pemilik (agen) | Keadaan |
 |---|---|---|---|---|
-| `design-tokens.json` | Warna, tipografi, spasi, radius, gerak | `schema/design-tokens.schema.json` | `desainer-visual` | v1.0.0 final (K-021); `motion.pageCurl` menunggu prototipe K-012 |
+| `design-tokens.json` | Warna (termasuk kategori dan tinta keterangan), tipografi, gaya teks, spasi, radius, garis, ukuran, gerak | `schema/design-tokens.schema.json` | `desainer-visual` | v2.0.0 final (K-035); `motion.pageCurl` menunggu prototipe K-012 |
 | `cameras.json` | Skin kamera (`Camera`) | `schema/cameras.schema.json` | `kamera-cutout` (data), `desainer-visual` (visual) | 1 entri contoh |
 | `cities.json` | Kota (`City`) dan landmark (`Landmark`) | `schema/cities.schema.json` | `kurator-katalog` | Kota MVP Sukabumi (K-029), belum dikurasi; Bandung–Gedung Sate hanya contoh |
 | `categories.json` | Kategori temuan dan pemetaan label ML Kit | `schema/categories.schema.json` | `kurator-katalog` (kategori), `kamera-cutout` (aturan pemilihan) | v1 (K-020), 9 kategori, 174 label; diuji ulang dengan foto kota nyata |
@@ -25,9 +25,11 @@
 ```
 design-tokens.json
   meta {version, status, verifiedAt, note}
-  color.{paper|ink|accent|state}.<nama> {value "#RRGGBB"|"TBD", status, note}
+  color.{paper|ink|action|highlight|state}.<nama> {value "#RRGGBB"|"TBD", opacity?, contrast?{<token>: rasio}, status, note}
+  color.noteInk.{ink|cobalt|sepia|stampRed|magenta|green}, color.category.<id kategori>  (bentuk sama)
   typography.{display|body|handwriting} {family, status, note}
-  spacing|radius|motion.<nama> {value number|null, unit px|ms|deg, status, note}
+  textStyle.<nama> {font display|body|handwriting, size, lineHeight|null, weight, width|null, letterSpacing, uppercase, status, note}
+  spacing|radius|border|size|motion.<nama> {value number|null, unit px|ms|deg, status, note}
 
 cameras.json
   cameras[] {id, name, lut, overlay, shutterSound, sku|null, isFree, isLocked, example}

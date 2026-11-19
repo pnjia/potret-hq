@@ -466,7 +466,7 @@ class BookReaderState extends ConsumerState<BookReader>
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
                 color: TokenColors.inkPrimary.withValues(alpha: 0.7),
-                borderRadius: BorderRadius.circular(TokenRadius.card),
+                borderRadius: BorderRadius.circular(TokenRadius.paper),
               ),
               child: Text(
                 '${probe.backend.label} · ${renderer.label}'
@@ -475,7 +475,7 @@ class BookReaderState extends ConsumerState<BookReader>
                 '${_recorder.flipCount} balikan'
                 '${_autoRunning ? ' · UJI OTOMATIS' : ''}',
                 style: textTheme.labelSmall?.copyWith(
-                  color: TokenColors.paperRaised,
+                  color: TokenColors.paperBook,
                 ),
               ),
             ),
@@ -540,11 +540,11 @@ class _ThumbnailStrip extends StatelessWidget {
               width: thumbWidth,
               margin: const EdgeInsets.only(right: 8),
               decoration: BoxDecoration(
-                color: TokenColors.paperBase,
+                color: TokenColors.paperBook,
                 border: Border.all(
                   color: i == current
-                      ? TokenColors.accentPrimary
-                      : TokenColors.paperLine,
+                      ? TokenColors.actionPrimary
+                      : TokenColors.paperMuted,
                   width: 2,
                 ),
               ),

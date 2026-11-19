@@ -65,7 +65,7 @@ Rasio dihitung dengan rumus luminans relatif WCAG 2.x (`kontras.py`, 18 Nov 2026
 | `paper.muted` | `#EDEDF0` | Skeleton, tombol nonaktif, garis alas potong. Menggantikan peran "permukaan" `#F3F3F6` sebagai isi kartu | Menggantikan `#F3F3F6` |
 | `action.onPrimarySoft` | `#DCE1FF` | Teks sekunder di atas Kobalt **polos** (≥14 px, bobot 700) | v4, dipertahankan |
 | `tape` | `#EBE8DC` @82% | Selotip; hasil di atas `paper.book` ≈ `#EDEAE0` | Baru |
-| `state.error` / `state.success` | `#B42318` / `#2E7652` | Galat dan berhasil | Dari K-021, dipertahankan |
+| `state.error` / `state.success` | `#B42318` / `#2E7652` | Galat dan berhasil | Dari K-021 (kini digantikan K-035), dipertahankan |
 
 **Kategori: 9 warna (5 dari v4 + 4 baru untuk K-020).** Teks di atas warna kategori selalu Tinta. Karena kontras warna kategori terhadap putih < 3 (gagal WCAG 1.4.11), karcis kategori **wajib** bergaris Tinta 1,5–2 px dan selalu memuat ikon + label (warna bukan satu-satunya penanda).
 
@@ -118,7 +118,7 @@ Tetap tiga keluarga dengan peran tetap (kritik v3 #4). Dua diganti:
 | Peran | v4 | v5 | Alasan |
 |---|---|---|---|
 | Display + angka | Unbounded | **Anybody** (Tyler Finck, OFL, variabel `wdth` 50–150 dan `wght` 100–900; diverifikasi di `google/fonts/ofl/anybody/METADATA.pb`, 18 Nov 2026) | Satu keluarga memberi dua suara: **sangat sempit dan sangat tebal** (seperti huruf karcis, papan nama toko, judul koran) lawan **lebar dan ringan** (angka "/100"). Kontras bobot 900 lawan 250–300 dan lebar 50 lawan 140 sesuai saran Anthropic. Huruf sempit menyelesaikan masalah nama landmark panjang (pertanyaan terbuka di riset kritik v3). Unbounded berasal dari proyek Web3 (Polkadot) dan selalu lebar, jadi tidak punya rentang ini. Lihat `spesimen.png`. |
-| Teks UI | Plus Jakarta Sans | **Plus Jakarta Sans** (dipertahankan) | Buatan Tokotype (Indonesia), terbaca baik, sudah di K-021 |
+| Teks UI | Plus Jakarta Sans | **Plus Jakarta Sans** (dipertahankan) | Buatan Tokotype (Indonesia), terbaca baik, sudah di K-021, kini digantikan K-035 |
 | Tulisan tangan | Caveat | **Nanum Pen Script** (Sandoll, OFL; diverifikasi di `METADATA.pb`) | Caveat adalah huruf "tulisan tangan" bawaan paling umum. Nanum Pen lebih mirip spidol atau pulpen sungguhan dengan ritme tidak rata (lihat `spesimen.png`). Untuk aplikasi, subset Latin saja (`pyftsubset`) karena file aslinya memuat Hangul. Opsi jangka panjang (tidak memblokir): font dari tulisan tangan pemilik sendiri, sejalan dengan semangat K-024 (suara direkam sendiri). |
 
 Skala (dp/px CSS di layar 360 dp, setara 720×1640 @2x):
@@ -548,10 +548,10 @@ Perubahan lain setelah meninjau render (bukan dari daftar, tetapi ditemukan saat
 
 ## Perlu dicatat (untuk koordinator dan pemilik)
 
-1. **Usulan K- (lewat Q-017):** arah v5 "Karcis & Kliping" menggantikan sebagian K-021: palet inti, 9 warna kategori, Anybody + Plus Jakarta Sans + Nanum Pen Script, radius 0/2/4, tiga elemen tanda tangan, dan aturan "UI datar, benda berbayangan".
+1. **Usulan K- (lewat Q-017):** arah v5 "Karcis & Kliping" menggantikan sebagian K-021 (diputuskan sebagai K-035, yang menggantikan K-021): palet inti, 9 warna kategori, Anybody + Plus Jakarta Sans + Nanum Pen Script, radius 0/2/4, tiga elemen tanda tangan, dan aturan "UI datar, benda berbayangan".
 2. **Konflik yang perlu baris Q- baru** (tidak saya tulis, karena `docs/pertanyaan.md` di luar file yang boleh saya sentuh):
    - (a) Apakah nama landmark boleh tampil di kartu share? Acuan `kartu-share.md` menyebut lokasi hanya nama kota, "tidak pernah ... nama tempat yang lebih rinci" (K-011), sementara v4 menampilkannya.
-   - (b) Acuan `kartu-share.md` masih menetapkan latar `paper.base` dan font Fraunces (K-021). v4 dan v5 sama-sama menyimpang, jadi acuan harus diperbarui bila Q-017 diputuskan.
+   - (b) Acuan `kartu-share.md` masih menetapkan latar `paper.base` dan font Fraunces (K-021, kini digantikan K-035). v4 dan v5 sama-sama menyimpang, jadi acuan harus diperbarui bila Q-017 diputuskan.
    - (c) Warna 4 kategori baru (K-020) belum pernah diputuskan.
 3. **Fakta yang perlu dicek pemilik di lapangan:**
    - rupa asli Gereja Sidang Kristus dan Gedung Capitol, untuk menggambar ulang ilustrasi;

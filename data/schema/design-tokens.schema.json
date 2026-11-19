@@ -2,22 +2,54 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "design-tokens.schema.json",
   "title": "Design tokens potret",
-  "description": "Token desain (K-021). Token yang belum ditetapkan boleh bernilai 'TBD'/null dengan status 'placeholder'.",
+  "description": "Token desain v2 (K-035, arah visual v5 'Karcis & Kliping'). Token yang belum ditetapkan boleh bernilai 'TBD'/null dengan status 'placeholder'. Ukuran dalam px = piksel logis (dp) di layar acuan 360 dp.",
   "type": "object",
-  "required": ["meta", "color", "typography", "spacing", "radius", "motion"],
+  "required": ["meta", "color", "typography", "textStyle", "spacing", "radius", "border", "size", "motion"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
     "meta": { "$ref": "#/$defs/meta" },
     "color": {
       "type": "object",
-      "required": ["paper", "ink", "accent", "state"],
+      "required": ["paper", "ink", "action", "highlight", "state", "noteInk", "category"],
       "additionalProperties": false,
       "properties": {
         "paper": { "$ref": "#/$defs/colorGroup" },
         "ink": { "$ref": "#/$defs/colorGroup" },
-        "accent": { "$ref": "#/$defs/colorGroup" },
-        "state": { "$ref": "#/$defs/colorGroup" }
+        "action": { "$ref": "#/$defs/colorGroup" },
+        "highlight": { "$ref": "#/$defs/colorGroup" },
+        "state": { "$ref": "#/$defs/colorGroup" },
+        "noteInk": {
+          "description": "Tinta keterangan di buku (K-031); key sama dengan enum Placement.noteInk (K-037).",
+          "type": "object",
+          "required": ["ink", "cobalt", "sepia", "stampRed", "magenta", "green"],
+          "additionalProperties": false,
+          "properties": {
+            "ink": { "$ref": "#/$defs/colorToken" },
+            "cobalt": { "$ref": "#/$defs/colorToken" },
+            "sepia": { "$ref": "#/$defs/colorToken" },
+            "stampRed": { "$ref": "#/$defs/colorToken" },
+            "magenta": { "$ref": "#/$defs/colorToken" },
+            "green": { "$ref": "#/$defs/colorToken" }
+          }
+        },
+        "category": {
+          "description": "Warna kategori temuan (K-035); key sama dengan id di data/categories.json (K-020).",
+          "type": "object",
+          "required": ["sign", "food", "drink", "vehicle", "animal", "plant", "building", "object", "other"],
+          "additionalProperties": false,
+          "properties": {
+            "sign": { "$ref": "#/$defs/colorToken" },
+            "food": { "$ref": "#/$defs/colorToken" },
+            "drink": { "$ref": "#/$defs/colorToken" },
+            "vehicle": { "$ref": "#/$defs/colorToken" },
+            "animal": { "$ref": "#/$defs/colorToken" },
+            "plant": { "$ref": "#/$defs/colorToken" },
+            "building": { "$ref": "#/$defs/colorToken" },
+            "object": { "$ref": "#/$defs/colorToken" },
+            "other": { "$ref": "#/$defs/colorToken" }
+          }
+        }
       }
     },
     "typography": {
@@ -30,8 +62,15 @@
         "handwriting": { "$ref": "#/$defs/fontToken" }
       }
     },
+    "textStyle": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/textStyleToken" }
+    },
     "spacing": { "$ref": "#/$defs/numberGroup" },
     "radius": { "$ref": "#/$defs/numberGroup" },
+    "border": { "$ref": "#/$defs/numberGroup" },
+    "size": { "$ref": "#/$defs/numberGroup" },
     "motion": { "$ref": "#/$defs/numberGroup" }
   },
   "$defs": {
@@ -53,6 +92,12 @@
       "additionalProperties": false,
       "properties": {
         "value": { "type": "string", "pattern": "^(#[0-9A-Fa-f]{6}|TBD)$" },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "contrast": {
+          "description": "Rasio kontras WCAG 2.x terhadap token warna lain (key = path tanpa 'color.', mis. 'paper.screen'). Untuk token beropasitas, rasio dihitung terhadap hasil campurannya di atas paper.book.",
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 1, "maximum": 21 }
+        },
         "status": { "$ref": "#/$defs/status" },
         "note": { "type": "string" }
       }
@@ -68,6 +113,22 @@
       "additionalProperties": false,
       "properties": {
         "family": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/status" },
+        "note": { "type": "string" }
+      }
+    },
+    "textStyleToken": {
+      "type": "object",
+      "required": ["font", "size", "lineHeight", "weight", "width", "letterSpacing", "uppercase", "status", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "font": { "type": "string", "enum": ["display", "body", "handwriting"] },
+        "size": { "type": "number", "minimum": 1 },
+        "lineHeight": { "type": ["number", "null"] },
+        "weight": { "type": "integer", "minimum": 100, "maximum": 900 },
+        "width": { "type": ["number", "null"], "minimum": 50, "maximum": 150 },
+        "letterSpacing": { "type": "number" },
+        "uppercase": { "type": "boolean" },
         "status": { "$ref": "#/$defs/status" },
         "note": { "type": "string" }
       }
