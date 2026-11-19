@@ -47,6 +47,7 @@ Trello hanya melacak **status tugas**. Isi kerja (spesifikasi, keputusan, catata
 
 - Board: [potret · Kliping Kota](https://trello.com/b/8RGssqWK/potret-kliping-kota) (OK Workspace, privat).
 - List, berurutan: `Backlog` → `Minggu ini` → `Dikerjakan` → `Menunggu` (butuh orang lain, data, atau perangkat) → `Selesai` (memenuhi "Selesai bila").
+- List `Setelah MVP`: pekerjaan yang sengaja ditunda sampai MVP terbit (toko K-034, gaya share 5–10 K-032). Urutan kerja MVP ada di kartu "[HQ] Peta jalan MVP v5".
 
 - Nama kartu: `[AREA] <judul dengan istilah glosarium>`. Area: `BUKU`, `KAMERA`, `TEMUAN`, `KOTA`, `AKUN`, `SOSIAL`, `SHARE`, `RETENSI`, `DATA` (Supabase, drift, sinkronisasi), `HQ`.
 - Deskripsi kartu: tautan path repo yang relevan (misalnya `docs/teknis/buku.md`) dan "Selesai bila" (pakai `templates/kartu-trello.md`).
