@@ -4,17 +4,30 @@
   "title": "Katalog kamera (skin)",
   "description": "Entitas Camera (glosarium). Skin = overlay bodi + LUT + suara shutter. Path aset relatif terhadap app/ (belum ada).",
   "type": "object",
-  "required": ["meta", "cameras"],
+  "required": [
+    "meta",
+    "cameras"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "meta": {
       "type": "object",
-      "required": ["verifiedAt", "note"],
+      "required": [
+        "verifiedAt",
+        "note"
+      ],
       "additionalProperties": false,
       "properties": {
-        "verifiedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-        "note": { "type": "string" }
+        "verifiedAt": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "note": {
+          "type": "string"
+        }
       }
     },
     "cameras": {
@@ -22,18 +35,61 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "name", "lut", "overlay", "shutterSound", "sku", "isFree", "isLocked", "example"],
+        "required": [
+          "id",
+          "name",
+          "lut",
+          "overlay",
+          "shutterSound",
+          "sku",
+          "isFree",
+          "isLocked",
+          "example"
+        ],
         "additionalProperties": false,
         "properties": {
-          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
-          "name": { "type": "string", "minLength": 1 },
-          "lut": { "type": "string", "minLength": 1 },
-          "overlay": { "type": "string", "minLength": 1 },
-          "shutterSound": { "type": "string", "minLength": 1 },
-          "sku": { "type": ["string", "null"], "description": "Null selama toko belum dibuka (K-007)" },
-          "isFree": { "type": "boolean" },
-          "isLocked": { "type": "boolean", "description": "true = 'terkunci, segera hadir'; ketukan dicatat sebagai Event" },
-          "example": { "type": "boolean", "description": "true = entri contoh, bukan data final" }
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lut": {
+            "type": "string",
+            "minLength": 1
+          },
+          "overlay": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shutterSound": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sku": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Null selama toko belum dibuka (K-007)"
+          },
+          "isFree": {
+            "type": "boolean"
+          },
+          "isLocked": {
+            "type": "boolean",
+            "description": "true = 'terkunci, segera hadir'; ketukan dicatat sebagai Event"
+          },
+          "example": {
+            "type": "boolean",
+            "description": "true = entri contoh, bukan data final"
+          },
+          "isListed": {
+            "type": "boolean",
+            "description": "false = belum tampil di etalase (mis. kamera toko saat MVP, K-034). Bila tidak ada, dianggap true"
+          }
         }
       }
     }

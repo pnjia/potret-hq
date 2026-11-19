@@ -1,20 +1,110 @@
 {
   "$schema": "./schema/cameras.schema.json",
   "meta": {
-    "verifiedAt": "2026-11-16",
-    "note": "Satu entri CONTOH. Target MVP: 3–4 skin gratis dan 2–3 skin terkunci (spesifikasi §4.2). Nama dan aset belum ada."
+    "verifiedAt": "2026-11-19",
+    "note": "Katalog K-034: 4 kamera gratis dan 5 berbayar (toko di luar MVP, K-007). Di MVP Hujan, Kilat, Layar Tancap tampil 'Segera hadir'; Studio Foto dan Warung belum tampil. Path aset masih placeholder (aset belum dibuat). Ciri bodi, efek, dan suara rana: docs/desain/usulan-v5-karcis-kliping.md (tambahan kamera dan toko)."
   },
   "cameras": [
     {
-      "id": "contoh-saku",
-      "name": "CONTOH Kamera Saku",
-      "lut": "assets/cameras/contoh-saku/lut.png",
-      "overlay": "assets/cameras/contoh-saku/overlay.png",
-      "shutterSound": "assets/cameras/contoh-saku/shutter.wav",
+      "id": "saku-35",
+      "name": "Saku 35",
+      "lut": "assets/cameras/saku-35/lut.png",
+      "overlay": "assets/cameras/saku-35/overlay.png",
+      "shutterSound": "assets/cameras/saku-35/shutter.wav",
       "sku": null,
       "isFree": true,
       "isLocked": false,
-      "example": true
+      "example": false
+    },
+    {
+      "id": "kotak-pos",
+      "name": "Kotak Pos",
+      "lut": "assets/cameras/kotak-pos/lut.png",
+      "overlay": "assets/cameras/kotak-pos/overlay.png",
+      "shutterSound": "assets/cameras/kotak-pos/shutter.wav",
+      "sku": null,
+      "isFree": true,
+      "isLocked": false,
+      "example": false
+    },
+    {
+      "id": "koran",
+      "name": "Koran",
+      "lut": "assets/cameras/koran/lut.png",
+      "overlay": "assets/cameras/koran/overlay.png",
+      "shutterSound": "assets/cameras/koran/shutter.wav",
+      "sku": null,
+      "isFree": true,
+      "isLocked": false,
+      "example": false
+    },
+    {
+      "id": "pagi",
+      "name": "Pagi",
+      "lut": "assets/cameras/pagi/lut.png",
+      "overlay": "assets/cameras/pagi/overlay.png",
+      "shutterSound": "assets/cameras/pagi/shutter.wav",
+      "sku": null,
+      "isFree": true,
+      "isLocked": false,
+      "example": false
+    },
+    {
+      "id": "hujan",
+      "name": "Hujan",
+      "lut": "assets/cameras/hujan/lut.png",
+      "overlay": "assets/cameras/hujan/overlay.png",
+      "shutterSound": "assets/cameras/hujan/shutter.wav",
+      "sku": null,
+      "isFree": false,
+      "isLocked": true,
+      "example": false
+    },
+    {
+      "id": "kilat",
+      "name": "Kilat",
+      "lut": "assets/cameras/kilat/lut.png",
+      "overlay": "assets/cameras/kilat/overlay.png",
+      "shutterSound": "assets/cameras/kilat/shutter.wav",
+      "sku": null,
+      "isFree": false,
+      "isLocked": true,
+      "example": false
+    },
+    {
+      "id": "layar-tancap",
+      "name": "Layar Tancap",
+      "lut": "assets/cameras/layar-tancap/lut.png",
+      "overlay": "assets/cameras/layar-tancap/overlay.png",
+      "shutterSound": "assets/cameras/layar-tancap/shutter.wav",
+      "sku": null,
+      "isFree": false,
+      "isLocked": true,
+      "example": false
+    },
+    {
+      "id": "studio-foto",
+      "name": "Studio Foto",
+      "lut": "assets/cameras/studio-foto/lut.png",
+      "overlay": "assets/cameras/studio-foto/overlay.png",
+      "shutterSound": "assets/cameras/studio-foto/shutter.wav",
+      "sku": null,
+      "isFree": false,
+      "isLocked": true,
+      "example": false,
+      "isListed": false
+    },
+    {
+      "id": "warung",
+      "name": "Warung",
+      "lut": "assets/cameras/warung/lut.png",
+      "overlay": "assets/cameras/warung/overlay.png",
+      "shutterSound": "assets/cameras/warung/shutter.wav",
+      "sku": null,
+      "isFree": false,
+      "isLocked": true,
+      "example": false,
+      "isListed": false
     }
   ]
 }

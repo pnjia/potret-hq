@@ -454,3 +454,66 @@
   - Render kartu dan video share (encoder native, tanpa FFmpegKit, K-003) dikerjakan `animasi-buku`; integrasi Instagram Stories dan TikTok Share Kit perlu dicek status API-nya oleh `peneliti` sebelum implementasi.
   - Mockup kanvas tetap menggambar 10 gaya sebagai arah jangka panjang.
 - **Menjawab**: Q-023
+
+### K-033 · Syarat privasi kartu share: Label Pemburu dipilih pengguna
+- **Tanggal**: 19 Nov 2026
+- **Keputusan**:
+  - **Label Pemburu** (gaya 7) hanya dalam varian **dipilih pengguna**:
+    - pengguna memilih sendiri kategorinya dari daftar 9 kategori, dengan jumlah temuan di samping tiap kategori dan tanpa pilihan yang sudah terpilih;
+    - jumlah dihitung di perangkat hanya saat gaya ini dibuka;
+    - hasilnya tidak disimpan, tidak disinkronkan, tidak masuk `Event`, dan tidak dipakai untuk misi, rekomendasi, atau notifikasi;
+    - julukan hanya dibentuk dari 9 id kategori (K-020), tidak pernah dari label ML Kit mentah;
+    - nadanya tidak mengejek.
+    - Versi julukan otomatis dari kategori dominan **tidak dibuat**.
+  - **Tambah Punyamu** (gaya 10) boleh dengan syarat: tanpa hadiah untuk berbagi atau untuk teman yang ikut, tanpa teks keterangan bawaan, dibagikan lewat share sheet dengan penerima dipilih pengguna, tanpa username, kode rujukan, penghitung peserta, atau hitung mundur. Judul misi tidak boleh mengajak memotret orang, plat nomor, atau tempat berbahaya.
+  - **Cuci Cetak Mingguan** (gaya 9) muncul setelah pekan berakhir, tanpa hari dan jam; rentang tanggal bisa dimatikan.
+  - **Semua kartu share**:
+    - username tidak tampil secara baku;
+    - tanpa jam, dan tanggal paling rinci per pekan;
+    - metadata lokasi dihapus dari PNG, JPG, dan MP4, dan penghapusan ini diuji per format;
+    - kalimat privasi di layar Bagikan menjadi: "Hanya nama kota yang ikut. Lokasi dan EXIF dihapus. Cek isi foto: plat nomor, nomor rumah, wajah."
+  - **Batas K-011**: K-011 mengatur data lokasi buatan aplikasi. Isi foto (plat nomor, nomor rumah, papan nama) adalah tanggung jawab pengguna, dibantu pengingat di layar Bagikan dan alat Rapikan potongan.
+- **Alasan**:
+  - Tinjauan `penasihat-privasi` (18 Nov): julukan otomatis dari kategori dominan kemungkinan termasuk pemrofilan menurut PP 17/2025 Ps. 19 ayat (4) beserta penjelasannya, sedangkan K-017 menjanjikan tanpa pemrofilan untuk semua pengguna. Varian dipilih pengguna tidak menyimpulkan apa pun dari riwayat secara otomatis.
+  - Kalimat privasi lama di K-032 terlalu menenangkan karena isi foto tetap bisa membuka lokasi.
+  - Pemilik mengikuti rekomendasi (19 Nov 2026). Rincian: `docs/riset/2026-11-18-tinjauan-privasi-kartu-share.md`.
+- **Ditolak**:
+  - Label Pemburu otomatis: risiko pemrofilan.
+  - Menerima risiko setelah konsultasi hukum: biaya dan ketidakpastian tidak sebanding untuk satu gaya kartu.
+  - Menunda Label Pemburu sepenuhnya: varian dipilih pengguna tetap memberi daya tarik label identitas tanpa pemrofilan.
+- **Konsekuensi**:
+  - Prioritas gaya tetap mengikuti K-032 (gaya 7 sesudah MVP, gaya 9–10 nanti). Kalimat privasi di K-032 diganti oleh kalimat di atas; isi K-032 yang lain tetap.
+  - Mockup Label Pemburu dan layar Bagikan diperbarui (layar pilih kategori, kalimat privasi baru, tanpa username).
+  - Uji metadata per format masuk checklist rilis (`animasi-buku` untuk video, `kamera-cutout` untuk gambar).
+- **Menjawab**: Q-024
+
+### K-034 · Toko di luar MVP; struktur jual kosmetik dan katalog 9 kamera
+- **Tanggal**: 19 Nov 2026
+- **Keputusan**:
+  - **K-007 tetap**: MVP tanpa toko. Etalase kamera MVP menampilkan 4 kamera gratis dan 3 kamera "Segera hadir" (Hujan, Kilat, Layar Tancap) dengan tombol "Kabari saya" yang hanya mencatat minat (`Event`), tanpa notifikasi.
+  - **Katalog kamera**: gratis Saku 35 (bawaan), Kotak Pos, Koran, Pagi; berbayar setelah toko dibuka Hujan, Kilat, Layar Tancap, Studio Foto, Warung. Setiap kamera punya overlay bodi sendiri yang memenuhi layar kamera, efek warna (LUT), dan suara rana sendiri. Semua bodi dirancang sendiri tanpa merek.
+  - **Saat toko dibuka (di luar MVP)**, yang dijual hanya kosmetik, sekali bayar, non-consumable (K-025), terikat akun:
+    - kamera satuan, harga rencana Rp29.000 (Hujan, Kilat, Warung) dan Rp39.000 (Layar Tancap, Studio Foto);
+    - paket tema buku (2 template sampul, 6 hiasan, 2 motif selotip, 1 kertas latar), harga rencana Rp19.000;
+    - **Pas Kolektor** sekali bayar, harga rencana Rp149.000: semua kamera dan paket tema, termasuk yang terbit setelah membeli.
+    - Kamera berbayar bisa dicoba dulu (bodi dan efek) sebelum dibeli; ada Pulihkan pembelian di Toko dan Profil.
+  - **Tetap gratis untuk semua**: memotret, hapus latar dan Rapikan, buku dan editornya (K-031), semua kota dan landmark, misi dan lencana, semua kartu share, 4 kamera gratis, sinkronisasi.
+  - **Tidak dipakai**: iklan, langganan, kotak acak/gacha, koin atau mata uang virtual, kuota hapus latar, hapus watermark berbayar, hadiah untuk berbagi, harga coret, hitung mundur, pilihan berbayar yang sudah terpilih lebih dulu, notifikasi promo.
+  - **Nanti (calon)**: cetak buku fisik, dibayar di luar IAP (barang fisik).
+  - Desain toko dibuat lengkap sekarang agar siap dieksekusi saat toko dibuka.
+- **Alasan**:
+  - Pemilik mengikuti rekomendasi (19 Nov 2026): toko di luar MVP, tetapi halamannya disiapkan.
+  - Patokan pasar App Store Indonesia: kamera satuan Rp19–59rb, paket semua Rp179–299rb; pembeli IN/SEA termasuk yang paling jarang membayar (`docs/riset/2026-11-18-monetisasi-kosmetik.md`), jadi harga dibuat terjangkau dan semua fitur inti tetap gratis.
+  - Rp25rb bukan titik harga App Store yang teramati; Rp19rb dan Rp29rb ada.
+- **Ditolak**:
+  - Toko sejak MVP: bertentangan dengan fokus K-007 (membuktikan produk disukai dulu).
+  - Langganan: konversi rendah di IN/SEA dan terasa tidak sebanding untuk kosmetik; risiko dark pattern perpanjangan otomatis (Kepmenkomdigi 142/2026 EK06).
+  - Gacha, koin, dan hadiah berbagi: dark pattern dan berbobot risiko di Kepmenkomdigi 142/2026.
+  - Hapus watermark berbayar: watermark adalah jalur pertumbuhan dan wajib di spesifikasi §4.8.
+- **Konsekuensi**:
+  - `data/cameras.json` diisi 9 kamera (aset masih placeholder, `sku` null, 3 kamera `isLocked`; Studio Foto dan Warung belum tampil di MVP).
+  - Glosarium perlu istilah: paket tema (`ThemePack`), Pas Kolektor (`CollectorPass`), coba dulu (`tryOn`).
+  - Spesifikasi §4.2 (3–4 skin gratis, 2–3 terkunci) terpenuhi: 4 gratis, 3 terkunci.
+  - Harga adalah harga rencana; cek ulang titik harga App Store dan Play sebelum toko dibuka.
+  - Sebelum toko dibuka, `penasihat-privasi` menilai Kepmenkomdigi 142/2026 (EK04 dark pattern pembelian, EK05 pembayaran tanpa verifikasi orang tua). Potongan Pas Kolektor bagi pembeli satuan belum diputuskan (Q-026).
+- **Menjawab**: Q-025
