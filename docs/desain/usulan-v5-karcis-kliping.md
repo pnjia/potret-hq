@@ -576,3 +576,11 @@ Perubahan lain setelah meninjau render (bukan dari daftar, tetapi ditemukan saat
 - **Toko** (`V5Toko`, `V5PaketTema`, `V5PasKolektor`, `V5Pembelian`): toko diawali kalimat tentang apa yang gratis selamanya. Isinya Pas Kolektor (kartu anggota, perbandingan jujur tanpa harga coret), kamera satuan, dan paket tema buku (contoh: Pasar Malam). Pembelian di Profil menampilkan riwayat, tombol Pulihkan pembelian, dan cara uang kembali lewat toko aplikasi.
 - Ilustrasi 9 kamera tampak depan dibuat sendiri tanpa merek: Saku 35, Kotak Pos, Koran, Pagi, Hujan, Kilat, Layar Tancap, Studio Foto, Warung.
 - Screenshot: `usulan-v5/V5Kamera*.png`, `usulan-v5/V5Rak*.png`, `usulan-v5/V5Toko.png`, `usulan-v5/V5PaketTema.png`, `usulan-v5/V5PasKolektor.png`, `usulan-v5/V5Pembelian.png`.
+
+**Tambahan 19 Nov: halaman toko lengkap (K-033, K-034).** Toko ada di luar MVP (K-034), tetapi semua halamannya disiapkan agar tinggal dieksekusi saat toko dibuka.
+
+- **Semua kamera berbodi**: Pagi (`V5KameraPagi`, gratis), Kilat (`V5KameraKilat`, contoh kamera yang sudah dimiliki), serta mode Coba dulu untuk Hujan, Studio Foto, dan Warung (`V5KameraCoba*`).
+- **Detail per kamera** (`V5KameraDetail*`). Status pembayaran memakai dua layar: **tertunda** (`V5BeliTertunda`: menunggu bayar di minimarket/e-wallet, terpasang otomatis, tidak ditagih dua kali) dan **gagal/dibatalkan** (`V5BeliGagal`: "Tidak ada tagihan", "Coba lagi" setara dengan "Kembali ke etalase").
+- **Toko lengkap**: paket tema Stasiun dan Hujan Sore (`V5PaketTemaStasiun`, `V5PaketTemaHujan`), coba paket di sampul (`V5CobaPaket`: sampul kembali ke template lama bila tidak dibeli), sukses Pas Kolektor (`V5PasKolektorSukses`), hasil pulihkan (`V5PulihkanHasil`), dan Profil versi toko dengan baris Toko dan Pembelian (`V5AkunToko`).
+- **Label Pemburu dipilih pengguna** (K-033): `V5BagikanLabel` berisi 9 kategori dalam urutan tetap dengan jumlah temuan dan tanpa pilihan yang sudah terpilih. Kategori tanpa temuan tampil redup. Kalimat privasi baru dipasang di `V5Bagikan` dan `V5BagikanStiker`.
+- Isi contoh yang belum konsisten: Toko dan Pas Kolektor menggambarkan keadaan sebelum Layar Tancap dibeli, sedangkan Pembelian dan Pulihkan menggambarkan keadaan sesudahnya. Layar sukses beli masih memakai contoh Layar Tancap untuk semua kamera.
