@@ -2,7 +2,7 @@
 
 > Sumber tunggal istilah proyek potret. Dipakai di dokumen, kode, Trello, dan semua sub-agen.
 > Asal: §3 `spesifikasi-sistem-v1.md` (dipindah utuh). Aturan penamaan identifier: K-014.
-> Terakhir diverifikasi: 18 Nov 2026 (pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028; pola nama repositori ditambah).
+> Terakhir diverifikasi: 19 Nov 2026 (istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
 
 ## 1. Istilah inti (dari spesifikasi v1, tidak diubah)
 
@@ -46,6 +46,14 @@ Istilah yang dipakai spesifikasi tetapi belum punya baris sendiri.
 | Event | Catatan metrik dasar, termasuk ketukan kamera terkunci. Dicatat agregat, tanpa id pengguna (K-017) | `Event` |
 | Verifikasi usia | Bukti pengguna 18+: metode (`self_declared`/`platform_signal`) dan waktu (K-017, K-018) | `ageVerificationMethod`, `ageVerifiedAt` |
 | Catatan lisensi suara | Sumber dan lisensi setiap file suara (K-024) | `data/sounds.json` |
+| Etalase kamera | Layar memilih kamera; di MVP berisi kamera gratis dan kamera terkunci (K-034) | `CameraShelf` |
+| Kamera tampil | Kamera ditampilkan di etalase; `false` untuk kamera toko yang belum tampil di MVP (K-034) | `Camera.isListed` |
+| Coba dulu | Memakai bodi dan efek kamera atau paket tema berbayar sebelum membeli, tanpa menyimpan hasil (K-034) | `tryOn` |
+| Paket tema | Item berbayar berisi template sampul, hiasan, motif selotip, dan kertas latar (K-034) | `ThemePack` |
+| Pas Kolektor | Item berbayar sekali bayar yang membuka semua kamera dan paket tema, termasuk yang terbit nanti (K-034) | `CollectorPass` |
+| Gaya kartu share | Satu dari 10 gaya kartu share; MVP: `bookPage`, `pageFlipVideo`, `sticker`, `singleFinding` (K-032) | `ShareCard.style` |
+| Varian warna kartu | Warna kartu share: Kobalt, Tinta, Lime, Kertas, Kategori (K-032) | `ShareCard.colorway` |
+| Format kartu | `story` (9:16), `video` (9:16), `sticker` (PNG transparan); `feed` (3:4) sesudah MVP (K-032) | `ShareCard.format` |
 
 ## 3. Aturan penamaan (K-014)
 
@@ -70,7 +78,7 @@ Nama di spesifikasi §5 tetap sah sebagai deskripsi. Kode dan JSON memakai kolom
 | `Chapter` | id, book_id, city_id, urutan | `id`, `bookId`, `cityId`, `order` | `id`, `book_id`, `city_id`, `sort_order` |
 | `Page` | id, chapter_id, jenis (pembatas/landmark/bebas), template_id, urutan | `id`, `chapterId`, `kind` (`divider`/`landmark`/`free`), `templateId`, `order` | `id`, `chapter_id`, `kind`, `template_id`, `sort_order` |
 | `Placement` | finding_id, page_id, x, y, skala, rotasi, z, diatur_manual | `findingId`, `pageId`, `x`, `y`, `scale`, `rotation`, `z`, `isManuallyArranged` | `finding_id`, `page_id`, `x`, `y`, `scale`, `rotation`, `z`, `is_manually_arranged` |
-| `Camera` | id, nama, lut, overlay, suara, sku?, gratis, terkunci | `id`, `name`, `lut`, `overlay`, `shutterSound`, `sku?`, `isFree`, `isLocked` | `id`, `name`, `lut`, `overlay`, `shutter_sound`, `sku`, `is_free`, `is_locked` |
+| `Camera` | id, nama, lut, overlay, suara, sku?, gratis, terkunci | `id`, `name`, `lut`, `overlay`, `shutterSound`, `sku?`, `isFree`, `isLocked`, `isListed` (K-034) | `id`, `name`, `lut`, `overlay`, `shutter_sound`, `sku`, `is_free`, `is_locked`, `is_listed` |
 | `Entitlement` | user_id, item_id, sumber | `userId`, `itemId`, `source` | `user_id`, `item_id`, `source` |
 | `Follow` | follower_id, followee_id, status (menunggu/disetujui) | `followerId`, `followeeId`, `status` (`pending`/`approved`) | `follower_id`, `followee_id`, `status` |
 | `Mission`, `MissionProgress`, `Badge`, `UserBadge`, `Report`, `Block`, `Event` | belum dirinci | ditetapkan saat skemanya dibuat; `Event` tanpa `userId` (K-017) | ditetapkan saat skemanya dibuat |
