@@ -630,3 +630,27 @@
   - Julukan disimpan di `data/categories.json` (`shareLabel`).
   - Mockup `V5PasKolektor` sudah sesuai.
 - **Menjawab**: Q-026, Q-027
+
+### K-039 · Jalur teknis tujuan share di MVP
+- **Tanggal**: 20 Nov 2026
+- **Keputusan**:
+  - **Instagram Stories**: platform channel sendiri yang tipis (Kotlin + Swift) mengikuti dokumen Meta "Sharing to Stories": intent `com.instagram.share.ADD_TO_STORY` di Android, `instagram-stories://share` + pasteboard di iOS. Tanpa paket pihak ketiga dan tanpa Facebook SDK. Memakai Meta App ID milik aplikasi (`source_application`).
+  - **TikTok**: di MVP lewat intent Android (`ACTION_SEND` + `setPackage` ke `com.zhiliaoapp.musically`, cadangan `com.ss.android.ugc.trill`) dan share sheet di iOS. TikTok Share Kit dipasang setelah aplikasi terbit dan lolos review TikTok. Bagian "TikTok (Share Kit)" di K-032 diganti oleh butir ini; bagian lain K-032 tetap berlaku.
+  - **WhatsApp**: intent Android dengan `setPackage("com.whatsapp")`, iOS lewat share sheet. Jalur Share to Status (`wa.me/status`) tidak dipakai di MVP karena belum terdokumentasi resmi.
+  - **Simpan dan Lainnya**: `share_plus` dan penyimpanan galeri biasa.
+  - **Metadata**: EXIF/GPS dan metadata lain dibuang saat berkas kartu share dibuat (PNG, JPG, MP4), tidak diserahkan ke share sheet atau aplikasi tujuan (K-033). Diuji per format sebelum rilis.
+  - **Gaya Stiker Temuan** ke tujuan tanpa lapisan stiker (WhatsApp, TikTok, Lainnya, Simpan) dikirim sebagai PNG transparan apa adanya, sesuai format "Stiker transparan" K-032.
+- **Alasan**:
+  - Review TikTok Share Kit mensyaratkan aplikasi sudah terbit di toko dan ada video demo, jadi Share Kit tidak mungkin siap saat rilis MVP. TikTok sendiri mendokumentasikan jalur intent Android tanpa client key.
+  - Paket Flutter untuk Instagram Stories yang dirawat menarik Facebook SDK di iOS dan sempat tidak dirilis 2 tahun; kode sendiri kecil dan mudah diaudit untuk K-033.
+  - Tidak ada sumber yang menyatakan share sheet menghapus EXIF dari berkas buatan aplikasi.
+  - Sumber: `docs/riset/2026-11-20-api-share-instagram-tiktok-whatsapp.md`. Diputuskan atas wewenang yang diberikan pemilik (20 Nov 2026: "lakukan sesuai rekomendasi").
+- **Ditolak**:
+  - `appinio_social_share` untuk semua tujuan: memasang Facebook SDK di iOS, WhatsApp iOS hanya teks, riwayat rilis tidak teratur.
+  - Share Kit TikTok di MVP: terhalang syarat review.
+  - Menyembunyikan tombol TikTok sampai Share Kit siap: intent/share sheet sudah cukup untuk membuka TikTok dengan berkasnya.
+- **Konsekuensi**:
+  - Pemilik perlu membuat Meta App ID sebelum fitur Bagikan diuji di perangkat (langkah di riset). Kunci TikTok baru diurus setelah rilis.
+  - Kartu Bagikan (§4.8) memakai jalur ini. Batas TikTok yang ambigu ("1100 px" untuk video Android, jumlah gambar minimum) diuji di perangkat.
+  - Video Buka Halaman + stiker ke Instagram Stories belum terbukti: Q-028.
+  - Pemilik akun developer Meta dan TikTok: Q-029.
