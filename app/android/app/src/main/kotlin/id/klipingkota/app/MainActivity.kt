@@ -1,4 +1,4 @@
-package id.potret.prototype
+package id.klipingkota.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -60,4 +60,4 @@ flutter build apk --profile     # APK untuk ukur frame time
 
 ## Bundle ID
 
-Placeholder `id.potret.prototype` (Android `applicationId`/`namespace`, iOS `PRODUCT_BUNDLE_IDENTIFIER`). Nilai final menunggu Q-015 di `../docs/pertanyaan.md`.
+`id.klipingkota.app` (Android `applicationId`/`namespace`, iOS `PRODUCT_BUNDLE_IDENTIFIER`; tes iOS `id.klipingkota.app.RunnerTests`), K-040. Permanen setelah unggahan pertama ke Play/App Store. APK prototipe lama memakai `id.potret.prototype` dan terpasang terpisah.

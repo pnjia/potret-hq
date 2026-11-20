@@ -2,13 +2,12 @@
 
 > Celah atau konflik yang menunggu keputusan pemilik. Sub-agen **tidak** memutuskan sendiri; mereka menambah baris di sini dan melaporkannya.
 > Begitu terjawab: catat sebagai keputusan baru (`/catat-keputusan`), lalu pindahkan baris ke tabel "Terjawab" dengan nomor K-nya. Baris tidak dihapus.
-> Terakhir diverifikasi: 17 Nov 2026. Q-001 s/d Q-014 dijawab 17 Nov 2026 (Q-011 oleh pemilik; sisanya diputuskan atas wewenang yang diberikan pemilik).
+> Terakhir diverifikasi: 20 Nov 2026. Q-001 s/d Q-014 dijawab 17 Nov 2026 (Q-011 oleh pemilik; sisanya diputuskan atas wewenang yang diberikan pemilik).
 
 ## Terbuka
 
 | ID | Pertanyaan | Kenapa penting | Terkait |
 |---|---|---|---|
-| Q-015 | Bundle ID final (Android applicationId dan iOS bundle identifier)? | Permanen begitu terbit di Play/App Store; prototipe memakai placeholder id.potret.prototype | K-023 |
 | Q-028 | Bila Instagram Stories tidak menerima video latar + lapisan stiker, apakah stempel kota dan watermark cukup dibakar ke dalam Video Buka Halaman? | Dokumen Stories hanya mencontohkan gambar; video + stiker baru terdokumentasi untuk Reels/Facebook Stories. Perlu uji di perangkat sebelum dijawab | K-032, K-039 |
 | Q-029 | Akun developer Meta (App ID) dan nanti TikTok atas nama pribadi atau organisasi? Perlu situs resmi dengan Kebijakan Privasi dan Ketentuan? | Meta App ID dibutuhkan sebelum uji fitur Bagikan; review TikTok mensyaratkan akun organisasi dan situs terverifikasi; situs bergantung pada domain (Q-015) | K-039, K-023 |
 
@@ -42,3 +41,4 @@
 | Q-021 | Isi `Book.cover`? | `templateId`, `title` ≤ 24 karakter, `findingIds` 1–3, `decorationSetId` | K-037 |
 | Q-026 | Potongan Pas Kolektor bagi pembeli satuan? | Tidak; satu harga, nilai yang belum dimiliki ditulis terang; ditinjau setelah toko dibuka | K-038 |
 | Q-027 | Julukan Label Pemburu per kategori? | 9 julukan netral di `data/categories.json`; angka milik sendiri boleh, tanpa perbandingan | K-038 |
+| Q-015 | Bundle ID final (Android applicationId dan iOS bundle identifier)? | `id.klipingkota.app`; domain klipingkota.id + .com dibeli pemilik; PDKI dicek pemilik langsung | K-040 |

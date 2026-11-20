@@ -654,3 +654,25 @@
   - Kartu Bagikan (§4.8) memakai jalur ini. Batas TikTok yang ambigu ("1100 px" untuk video Android, jumlah gambar minimum) diuji di perangkat.
   - Video Buka Halaman + stiker ke Instagram Stories belum terbukti: Q-028.
   - Pemilik akun developer Meta dan TikTok: Q-029.
+
+### K-040 · Bundle ID `id.klipingkota.app`
+- **Tanggal**: 20 Nov 2026
+- **Keputusan**:
+  - Android `applicationId`/`namespace` dan iOS `PRODUCT_BUNDLE_IDENTIFIER`: **`id.klipingkota.app`** (target tes iOS `id.klipingkota.app.RunnerTests`). Dipasang di `app/` sekarang.
+  - Domain yang dianjurkan untuk dibeli pemilik: **klipingkota.id** (utama) dan **klipingkota.com** (pelindung). Pembelian dilakukan pemilik sendiri karena .id butuh identitas pemilik dan ini pengeluaran uang (CLAUDE.md aturan 11).
+  - Nama "Kliping Kota" (K-023) tetap dipakai.
+- **Alasan**:
+  - WIPO Global Brand Database (data DGIP sampai 30 Okt 2026) tidak memuat merek berkata "kliping"; yang terdekat KELILINGKOTA (kelas 43), klip.id (kelas 42), dan Ternak Klip (kelas 35).
+  - Tidak ada aplikasi "Kliping Kota" atau ID `id.klipingkota.*` di App Store dan Google Play.
+  - Semua domain `klipingkota.*` (.com, .id, .app, .co.id, .my.id, .net, .org) belum terdaftar per 20 Nov 2026.
+  - Pola reverse-DNS cocok dengan domain .id yang dianjurkan. `id.potret.app` ditolak karena potret.id milik pihak lain.
+  - Bundle ID tidak terlihat pengguna, jadi bila nama publik kelak harus diganti karena merek, ID ini tetap bisa dipakai.
+  - Sumber: `docs/riset/2026-11-20-cek-nama-kliping-kota.md`. Diputuskan atas wewenang yang diberikan pemilik (20 Nov 2026: "lakukan sesuai rekomendasi").
+- **Ditolak**:
+  - `com.klipingkota.app`: sah, tetapi tidak lebih unggul untuk pasar Indonesia.
+  - Menunggu domain terbeli dulu: ID belum mengikat sampai unggahan pertama ke toko, dan pemasangan sekarang menghindari migrasi kode nanti.
+- **Konsekuensi**:
+  - PDKI tidak bisa dicek dari sesi cloud (diblokir Imperva). Pemilik mengecek PDKI langsung di peramban (kata "kliping", "kliping kota", "klipingkota"; kelas 9, 35, 41, 42) dan handle Instagram/Threads @klipingkota. Bila bentrok, nama publik diganti lewat keputusan baru; bundle ID ditinjau hanya bila klipingkota.id gagal dimiliki sebelum unggahan pertama ke toko.
+  - Daya pembeda "Kliping Kota" sebagai merek ditanyakan ke konsultan KI bila pemilik mau mendaftarkan merek (masuk konsultasi hukum di kartu kepatuhan).
+  - APK prototipe lama (`id.potret.prototype`) terpasang terpisah dari build baru.
+- **Menjawab**: Q-015

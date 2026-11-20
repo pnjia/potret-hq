@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "id.potret.prototype"
+    namespace = "id.klipingkota.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         // Placeholder; bundle id final belum diputuskan (Q-015).
-        applicationId = "id.potret.prototype"
+        applicationId = "id.klipingkota.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

@@ -1,7 +1,7 @@
 # Teknis: arsitektur aplikasi
 
 > Area agen `arsitek-flutter`. Bagian 1 terkunci (spesifikasi v1 + keputusan sesudahnya). Bagian 2 diputuskan di K-027.
-> Terakhir diverifikasi: 18 Nov 2026 (bagian 4: kerangka `app/`).
+> Terakhir diverifikasi: 20 Nov 2026 (bundle ID K-040).
 
 ## 1. Yang sudah terkunci
 
@@ -57,7 +57,7 @@ Fakta saat kerangka dibuat dengan `flutter create --platforms=android,ios --org 
 | Toolchain | Flutter 3.50.0 (stable), Dart 3.14.0 |
 | Nama paket Dart | `potret` |
 | Label di HP | "Kliping Kota" (`android:label`, `CFBundleDisplayName`), K-023 |
-| Bundle ID | Placeholder `id.potret.prototype` untuk Android dan iOS; final menunggu Q-015 |
+| Bundle ID | `id.klipingkota.app` untuk Android dan iOS (K-040) |
 | Android | minSdk 24 (bawaan Flutter), compileSdk/targetSdk 36 |
 | iOS | `IPHONEOS_DEPLOYMENT_TARGET = 17.0` (K-003). Plugin lewat Swift Package Manager bawaan Flutter 3.50; tidak ada Podfile |
 | Material | Diimpor dari paket `material_ui` (template Flutter 3.50 memisahkan Material dari SDK) |
