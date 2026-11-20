@@ -676,3 +676,23 @@
   - Daya pembeda "Kliping Kota" sebagai merek ditanyakan ke konsultan KI bila pemilik mau mendaftarkan merek (masuk konsultasi hukum di kartu kepatuhan).
   - APK prototipe lama (`id.potret.prototype`) terpasang terpisah dari build baru.
 - **Menjawab**: Q-015
+
+### K-041 · Aturan kurasi landmark Kota Sukabumi
+- **Tanggal**: 20 Nov 2026
+- **Keputusan**:
+  - Entri contoh Bandung dan Bandung–Gedung Sate **dihapus** dari `data/cities.json`. Kalimat "Contoh Bandung–Gedung Sate tetap sebagai entri contoh" di konsekuensi K-029 tidak berlaku lagi; bagian lain K-029 tetap (Bandung kandidat kota kurasi kedua).
+  - Sukabumi menjadi `isCurated: true` setelah **minimal 20 landmark** lolos survei lapangan dan bertanda `verified: true`. Kandidat yang gagal survei (tidak publik, sudah hilang, titik tidak bisa dipastikan) dihapus dari data, bukan dibiarkan tak terverifikasi.
+  - **Landmark berdekatan**: bila posisi sesaat berada di dalam dua radius atau lebih, aplikasi menanyakan landmark yang titiknya paling dekat. Radius boleh 30–50 m untuk kawasan rapat (alun-alun), asal tidak tumpang tindih, dan wajib diuji di lokasi dengan Infinix Hot 11 Play.
+  - **Sebaran** landmark mengikuti letak objek yang layak. Kecamatan tanpa landmark tidak diisi objek yang dipaksakan; temuan bebas dan misi tetap berlaku di seluruh kota.
+- **Alasan**:
+  - `data/README.md` dan kartu kurasi mewajibkan entri contoh dihapus sebelum data dipakai; entri itu tidak dipakai skrip mana pun.
+  - Ambang 20 sama dengan batas bawah target 20–30 landmark (spesifikasi §4.4, K-029).
+  - Titik terdekat adalah aturan paling sederhana dan bisa dijelaskan ke pengguna; tiga landmark di sekitar alun-alun hanya berjarak 69–112 m.
+  - Sumber: `docs/riset/2026-11-20-landmark-kota-sukabumi.md`. Diputuskan atas wewenang yang diberikan pemilik (20 Nov 2026: "lakukan sesuai rekomendasi").
+- **Ditolak**:
+  - Mempertahankan entri contoh Bandung: berisiko ikut terbaca aplikasi.
+  - `isCurated: true` hanya setelah semua kandidat lolos: kandidat yang gagal survei akan menahan bab kota tanpa alasan.
+  - Menampilkan pilihan semua landmark yang radiusnya kena: menambah langkah di layar Temuan untuk kasus yang jarang.
+- **Konsekuensi**:
+  - Pemilik menyurvei 21 kandidat memakai checklist di riset 20 Nov, lalu menandai `verified: true` per landmark yang lolos.
+  - Kartu deteksi kota (§4.4) memakai aturan titik terdekat.
