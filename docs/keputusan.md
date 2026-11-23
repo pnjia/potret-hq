@@ -696,3 +696,22 @@
 - **Konsekuensi**:
   - Pemilik menyurvei 21 kandidat memakai checklist di riset 20 Nov, lalu menandai `verified: true` per landmark yang lolos.
   - Kartu deteksi kota (§4.4) memakai aturan titik terdekat.
+
+### K-042 · Fondasi UI v5: modul `home`, komponen bersama, font utuh
+- **Tanggal**: 23 Nov 2026
+- **Keputusan**:
+  - Modul baru **`app/lib/features/home/`** untuk Beranda dan kerangka navigasi (`AppShell`, navigasi bawah 5 tab). Beranda membaca provider modul lain; modul lain tidak mengimpor `home`. Struktur K-027 tetap, ditambah satu modul ini.
+  - Komponen bersama v5 tinggal di `app/lib/core/widgets/`: `AppButton`, `Ticket` (karcis berlubang), `CityStamp` (cap pos kota), `Highlight`/`HighlightedText` (coretan stabilo), `CategoryLabel`, `AppNavigationBar`, `AppIcon`. Ikon digambar dari path SVG mockup v5 lewat pengurai kecil (`core/graphics/svg_path.dart`), tanpa paket ikon atau SVG.
+  - Id kategori di Dart bernama **`CategoryId`** (`Category` bentrok dengan anotasi bawaan Flutter). Nilainya tetap id di `data/categories.json`.
+  - **Nanum Pen Script dibundel utuh** (±3,2 MB), tidak di-subset seperti usulan v5 §3.2. Lisensinya memuat *Reserved Font Name* "Nanum", dan subset adalah versi modifikasi yang wajib diganti nama.
+  - Cap pos kota untuk sementara digambar vektor bersih. Efek tinta tidak rata menyusul sebagai `stampAsset` PNG per kota (usulan v5 §3.4).
+- **Alasan**:
+  - Beranda tidak milik satu modul glosarium: ia menggabungkan progres kota, misi, dan temuan. Menaruhnya di modul tersendiri menghindari modul fitur saling mengimpor UI.
+  - Mengganti nama font hanya untuk menghemat ±3 MB menambah beban lisensi; keputusan ukuran aplikasi bisa diambil nanti.
+  - Diputuskan atas wewenang yang diberikan pemilik (20 Nov 2026: "lakukan sesuai rekomendasi").
+- **Ditolak**:
+  - Beranda di `core/`: `core` tidak boleh bergantung pada fitur.
+  - Paket `flutter_svg` untuk ikon: menambah dependensi untuk 16 ikon garis sederhana.
+- **Konsekuensi**:
+  - `docs/teknis/arsitektur.md` §2 dan `app/CLAUDE.md` mencatat modul `home` dan komponen bersama.
+  - Stiker di Beranda memakai aset contoh (`app/assets/demo/`) sampai `FindingRepository` ada.

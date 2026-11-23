@@ -117,4 +117,40 @@ void main() {
     final pageCurl = (token('motion.pageCurl') as Map)['value'] as num?;
     expect(TokenMotion.pageCurl?.inMilliseconds, pageCurl?.toInt());
   });
+
+  test('ukuran karcis/cap dan rotasi sama dengan JSON', () {
+    num v(String path) => (token(path) as Map)['value'] as num;
+    expect(TokenSize.ticketStub, v('size.ticketStub'));
+    expect(TokenSize.ticketNotch, v('size.ticketNotch'));
+    expect(TokenSize.stampMinScreen, v('size.stampMinScreen'));
+    expect(TokenSize.stampMinShare, v('size.stampMinShare'));
+    expect(TokenMotion.clippingRotationMaxDeg, v('motion.clippingRotationMax'));
+    expect(TokenMotion.stampRotationMinDeg, v('motion.stampRotationMin'));
+    expect(TokenMotion.stampRotationMaxDeg, v('motion.stampRotationMax'));
+    expect(TokenMotion.heroRotationDeg, v('motion.heroRotation'));
+  });
+
+  test('gaya teks sama dengan JSON', () {
+    final styles = token('textStyle') as Map<String, dynamic>;
+    expect(
+      TokenTextStyles.all.keys.toSet(),
+      styles.keys.toSet(),
+      reason: 'gaya teks bertambah atau berkurang',
+    );
+    for (final e in TokenTextStyles.all.entries) {
+      final j = styles[e.key] as Map<String, dynamic>;
+      final t = e.value;
+      expect(t.font.name, j['font'], reason: '${e.key}.font');
+      expect(t.size, j['size'], reason: '${e.key}.size');
+      expect(t.lineHeight, j['lineHeight'], reason: '${e.key}.lineHeight');
+      expect(t.weight, j['weight'], reason: '${e.key}.weight');
+      expect(t.width, j['width'], reason: '${e.key}.width');
+      expect(
+        t.letterSpacing,
+        j['letterSpacing'],
+        reason: '${e.key}.letterSpacing',
+      );
+      expect(t.uppercase, j['uppercase'], reason: '${e.key}.uppercase');
+    }
+  });
 }

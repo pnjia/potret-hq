@@ -1,7 +1,7 @@
 # Teknis: arsitektur aplikasi
 
 > Area agen `arsitek-flutter`. Bagian 1 terkunci (spesifikasi v1 + keputusan sesudahnya). Bagian 2 diputuskan di K-027.
-> Terakhir diverifikasi: 20 Nov 2026 (bundle ID K-040).
+> Terakhir diverifikasi: 23 Nov 2026 (modul `home` dan komponen bersama, K-042).
 
 ## 1. Yang sudah terkunci
 
@@ -36,7 +36,8 @@ app/
         ├── book/        Book, Chapter, Page, Placement, page-curl
         ├── social/      Follow, lapor, blokir, buku teman
         ├── share/       ShareCard, ShareVideo, hapus EXIF
-        └── retention/   Mission, Badge
+        ├── retention/   Mission, Badge
+        └── home/        Beranda dan kerangka navigasi 5 tab (K-042)
 ```
 
 Repositori per entitas ada di `data/` (drift + Supabase). Drift satu-satunya pemakai code generation. Konvensi rinci ditulis di `app/CLAUDE.md` saat `app/` dibuat.

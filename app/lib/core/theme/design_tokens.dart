@@ -51,10 +51,8 @@ abstract final class TokenColors {
   static const Color categoryOther = Color(0xFFD6D6DC);
 }
 
-/// `typography.*` di data/design-tokens.json.
-///
-/// File font belum dibundel di `assets/`. Sampai ditambahkan, Flutter jatuh ke
-/// font bawaan sistem.
+/// `typography.*` di data/design-tokens.json. Font dibundel di
+/// `assets/fonts/` (lihat README di sana); nama keluarga = nama di pubspec.
 abstract final class TokenTypography {
   static const String display = 'Anybody';
   static const String body = 'Plus Jakarta Sans';
@@ -86,6 +84,16 @@ abstract final class TokenBorder {
 abstract final class TokenSize {
   static const double touchTargetMin = 48;
   static const double buttonHeight = 56;
+
+  /// Lebar sobekan karcis (tetap, bukan persen).
+  static const double ticketStub = 30;
+
+  /// Jari-jari takik karcis besar. Label kategori memakai setengahnya (4).
+  static const double ticketNotch = 8;
+
+  /// Diameter minimal cap pos kota di layar dan di kartu share 1080 px.
+  static const double stampMinScreen = 96;
+  static const double stampMinShare = 240;
 }
 
 /// `motion.*` di data/design-tokens.json (sebagian; tambahkan saat dipakai).
@@ -100,6 +108,204 @@ abstract final class TokenMotion {
   static const double manualRotationStepDeg = 2;
   static const double manualRotationMaxDeg = 15;
 
+  /// Rotasi kliping (dan kartu share): -3 sampai +3 derajat.
+  static const double clippingRotationMaxDeg = 3;
+
+  /// Rotasi cap pos: -12 sampai -6 derajat.
+  static const double stampRotationMinDeg = -12;
+  static const double stampRotationMaxDeg = -6;
+
+  /// Rotasi kliping hero Beranda.
+  static const double heroRotationDeg = -1;
+
   /// Total momen "Cap!".
   static const Duration capTotal = Duration(milliseconds: 1100);
+}
+
+/// Peran font di `textStyle.*.font`.
+enum TokenFont { display, body, handwriting }
+
+/// Satu entri `textStyle.*` di data/design-tokens.json. Data saja; diubah
+/// menjadi `TextStyle` oleh `core/theme/app_text_styles.dart`.
+final class TokenTextStyle {
+  const TokenTextStyle({
+    required this.font,
+    required this.size,
+    required this.lineHeight,
+    required this.weight,
+    required this.width,
+    required this.letterSpacing,
+    required this.uppercase,
+  });
+
+  final TokenFont font;
+  final double size;
+
+  /// Kelipatan ukuran huruf; null = bawaan font.
+  final double? lineHeight;
+  final int weight;
+
+  /// Sumbu `wdth` Anybody dalam persen; null = tidak dipasang.
+  final double? width;
+  final double letterSpacing;
+  final bool uppercase;
+}
+
+/// `textStyle.*` di data/design-tokens.json.
+abstract final class TokenTextStyles {
+  /// Nama kota di hero.
+  static const displayXl = TokenTextStyle(
+    font: TokenFont.display,
+    size: 64,
+    lineHeight: 0.86,
+    weight: 900,
+    width: 50,
+    letterSpacing: 0.5,
+    uppercase: true,
+  );
+
+  /// Angka besar ("13").
+  static const numberLarge = TokenTextStyle(
+    font: TokenFont.display,
+    size: 44,
+    lineHeight: 1.0,
+    weight: 900,
+    width: 55,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+
+  /// Angka pasangan ("/100").
+  static const numberPair = TokenTextStyle(
+    font: TokenFont.display,
+    size: 24,
+    lineHeight: 1.0,
+    weight: 300,
+    width: 130,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+  static const h1 = TokenTextStyle(
+    font: TokenFont.display,
+    size: 28,
+    lineHeight: 1.0,
+    weight: 800,
+    width: 75,
+    letterSpacing: -0.2,
+    uppercase: false,
+  );
+  static const landmarkName = TokenTextStyle(
+    font: TokenFont.display,
+    size: 32,
+    lineHeight: 1.0,
+    weight: 800,
+    width: 75,
+    letterSpacing: -0.2,
+    uppercase: false,
+  );
+  static const successTitle = TokenTextStyle(
+    font: TokenFont.display,
+    size: 56,
+    lineHeight: 0.9,
+    weight: 900,
+    width: 60,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+  static const h2 = TokenTextStyle(
+    font: TokenFont.display,
+    size: 20,
+    lineHeight: 1.1,
+    weight: 800,
+    width: 75,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+
+  /// Karcis besar ("POTRET SEKARANG").
+  static const ticketLarge = TokenTextStyle(
+    font: TokenFont.display,
+    size: 30,
+    lineHeight: 0.9,
+    weight: 900,
+    width: 60,
+    letterSpacing: 0.3,
+    uppercase: true,
+  );
+
+  /// Sobekan karcis dan nomor seri ("NO. 014").
+  static const ticketSerial = TokenTextStyle(
+    font: TokenFont.display,
+    size: 13,
+    lineHeight: 1.0,
+    weight: 700,
+    width: 70,
+    letterSpacing: 0.5,
+    uppercase: true,
+  );
+  static const body = TokenTextStyle(
+    font: TokenFont.body,
+    size: 16,
+    lineHeight: 1.45,
+    weight: 400,
+    width: null,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+  static const button = TokenTextStyle(
+    font: TokenFont.body,
+    size: 16,
+    lineHeight: 1.0,
+    weight: 800,
+    width: null,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+  static const label = TokenTextStyle(
+    font: TokenFont.body,
+    size: 13,
+    lineHeight: null,
+    weight: 700,
+    width: null,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+  static const meta = TokenTextStyle(
+    font: TokenFont.body,
+    size: 13,
+    lineHeight: 1.35,
+    weight: 500,
+    width: null,
+    letterSpacing: 0,
+    uppercase: false,
+  );
+
+  /// Keterangan di buku (tulisan tangan).
+  static const bookNote = TokenTextStyle(
+    font: TokenFont.handwriting,
+    size: 24,
+    lineHeight: 1.05,
+    weight: 400,
+    width: null,
+    letterSpacing: 0.3,
+    uppercase: false,
+  );
+
+  /// Semua entri, dengan key JSON-nya (dipakai tes kecocokan).
+  static const all = <String, TokenTextStyle>{
+    'displayXl': displayXl,
+    'numberLarge': numberLarge,
+    'numberPair': numberPair,
+    'h1': h1,
+    'landmarkName': landmarkName,
+    'successTitle': successTitle,
+    'h2': h2,
+    'ticketLarge': ticketLarge,
+    'ticketSerial': ticketSerial,
+    'body': body,
+    'button': button,
+    'label': label,
+    'meta': meta,
+    'bookNote': bookNote,
+  };
 }

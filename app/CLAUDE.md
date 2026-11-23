@@ -7,9 +7,9 @@ Dimuat saat bekerja di `app/`. Peta HQ: `../CLAUDE.md`. Arsitektur: `../docs/tek
 ```
 lib/
 ├── main.dart           ProviderScope + MaterialApp ("Kliping Kota")
-├── core/               tema (theme/), nanti router, error, util
+├── core/               tema (theme/), komponen bersama v5 (widgets/), gambar (graphics/)
 ├── data/               repositori per entitas: drift (lokal) + Supabase
-└── features/<modul>/   account, camera, finding, book, social, share, retention
+└── features/<modul>/   account, camera, finding, book, social, share, retention, home (K-042)
     ├── ui/             widget dan layar
     └── state/          provider Riverpod
 ```
@@ -18,6 +18,14 @@ lib/
 - Akses data hanya lewat repositori di `data/` (`FindingRepository`, dst.). UI tidak memanggil drift atau Supabase langsung.
 - Antarmodul boleh saling membaca provider; jangan mengimpor widget privat modul lain.
 - Material diimpor dari `package:material_ui/material_ui.dart` (bawaan template Flutter 3.50).
+
+## Komponen bersama v5 (`lib/core/widgets/`, K-035, K-042)
+
+- Pakai yang ada sebelum membuat baru: `AppButton` (utama Kobalt / kedua bergaris), `Ticket` (karcis berlubang), `CityStamp` (cap pos kota), `Highlight`/`HighlightedText` (stabilo), `CategoryLabel`, `AppNavigationBar`, `AppIcon`.
+- Gaya teks dari `AppTextStyles` (dibangun dari `TokenTextStyles`). Anybody dan Plus Jakarta Sans variabel: lebar/bobot lewat `fontVariations`, jadi ganti bobot dengan `AppTextStyles.withWeight`, bukan `copyWith(fontWeight:)`.
+- Teks KAPITAL dari token lewat `AppTextStyles.applyCase`; beri `semanticsLabel` teks aslinya.
+- Satu tanda tangan (karcis, cap, atau stabilo) jadi fokus per layar. Kontrol UI tidak diputar; tanpa bayangan UI; radius 0/2/4.
+- Setiap komponen baru: golden test (`test/core/widgets/`) dan `meetsGuideline` target sentuh, label, kontras. Pasangan warna teks baru masuk `test/core/contrast_test.dart`.
 
 ## Riverpod (`flutter_riverpod` 3.x, tanpa generator)
 
@@ -43,6 +51,7 @@ lib/
 ```
 flutter analyze                 # wajib "No issues found"
 flutter test
+flutter test --update-goldens   # setelah perubahan rupa yang disengaja; periksa PNG-nya
 flutter build apk --profile     # APK untuk ukur frame time
 ```
 

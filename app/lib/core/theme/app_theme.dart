@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 
+import 'app_text_styles.dart';
 import 'design_tokens.dart';
 
 /// Tema terang aplikasi (K-035), dibangun dari [TokenColors] dan kawan-kawan.
@@ -31,6 +32,26 @@ ThemeData buildAppTheme() {
     colorScheme: scheme,
     scaffoldBackgroundColor: TokenColors.paperScreen,
     fontFamily: TokenTypography.body,
+    textTheme: TextTheme(
+      headlineSmall: AppTextStyles.h1,
+      titleLarge: AppTextStyles.h2,
+      bodyLarge: AppTextStyles.body,
+      bodyMedium: AppTextStyles.body,
+      labelLarge: AppTextStyles.button,
+      labelMedium: AppTextStyles.label,
+      bodySmall: AppTextStyles.meta,
+    ),
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: TokenColors.inkPrimary,
+      contentTextStyle: AppTextStyles.body.copyWith(
+        color: TokenColors.paperScreen,
+      ),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(TokenRadius.ticket),
+      ),
+      elevation: 0,
+    ),
     cardTheme: CardThemeData(
       color: TokenColors.paperScreen,
       elevation: 0,
