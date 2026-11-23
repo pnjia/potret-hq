@@ -7,7 +7,7 @@ Terakhir diperbarui: 23 Nov 2026
 
 ## Fokus sekarang
 
-Fase 1 peta jalan MVP v5. Fondasi UI v5 selesai; Fase 0 tinggal pekerjaan lapangan pemilik.
+Fase 1 peta jalan MVP v5. Fondasi UI v5 dan hiasan/selotip/kertas latar selesai; Fase 0 tinggal pekerjaan lapangan pemilik.
 
 - Board: https://trello.com/b/8RGssqWK/potret-kliping-kota
 - Kartu peta jalan (urutan fase 0–5): https://trello.com/c/i9LI5ikx
@@ -15,6 +15,7 @@ Fase 1 peta jalan MVP v5. Fondasi UI v5 selesai; Fase 0 tinggal pekerjaan lapang
 
 ## Titik berhenti sesi terakhir
 
+- Hiasan selesai (K-043): 12 hiasan dalam 3 set, 6 motif selotip, 4 kertas latar sebagai SVG di `app/assets/decorations/`, dibuat ulang oleh `app/tool/make_decorations.py`; katalog `data/decorations.json`. `cek-hq` kini memeriksa file aset ada. 80 tes Flutter lulus.
 - Fondasi UI v5 selesai (K-042): font OFL dibundel, gaya teks dari token, 7 komponen bersama di `app/lib/core/widgets/`, Beranda sesuai V5Beranda (data contoh di `assets/demo/`), navigasi 5 tab; tab Buku membuka prototipe K-012. 57 tes lulus termasuk golden dan pedoman aksesibilitas.
 - APK profile `id.klipingkota.app` terbangun dari sesi ini (Flutter dan Android SDK ada di `/opt`, tambahkan `/opt/flutter/bin` ke PATH).
 - Sesi 20 Nov: K-039 (jalur share), K-040 (bundle ID), K-041 (kurasi landmark), prototipe uji v5 dengan panel fasilitator.
@@ -23,7 +24,7 @@ Fase 1 peta jalan MVP v5. Fondasi UI v5 selesai; Fase 0 tinggal pekerjaan lapang
 ## Langkah berikutnya
 
 1. Pemilik (lapangan): ukur APK profile di Infinix Hot 11 Play (K-012); survei 21 landmark; jalankan 5 sesi uji; beli klipingkota.id + .com; cek PDKI dan handle Instagram/Threads di peramban; buat Meta App ID.
-2. Claude: lanjut Fase 1. Usulan urutan: Hiasan/selotip/kertas latar (tanpa ketergantungan), lalu migrasi Supabase lokal di `supabase/` (membuat proyek Supabase sungguhan butuh persetujuan pemilik soal biaya), lalu Login dan onboarding.
+2. Claude: lanjut Fase 1. Usulan urutan: migrasi Supabase lokal di `supabase/` (membuat proyek Supabase sungguhan butuh persetujuan pemilik soal biaya), lalu Login dan onboarding. Rekam suara menunggu rekaman pemilik (sintesis K-030 bisa jadi pengganti sementara).
 3. Setelah 5 sesi uji: baca koleksi `sessions` dari artifact uji dan tulis riset sintesis.
 
 ## Tertunda
