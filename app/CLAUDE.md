@@ -15,7 +15,8 @@ lib/
 ```
 
 - Layar dan widget di `features/<modul>/ui/`. Provider di `features/<modul>/state/`.
-- Akses data hanya lewat repositori di `data/` (`FindingRepository`, dst.). UI tidak memanggil drift atau Supabase langsung.
+- Akses data hanya lewat repositori di `data/` (`FindingRepository`, `BookRepository`, `CatalogRepository`) dan provider di `data/providers.dart`. UI tidak memanggil drift atau Supabase langsung. Rincian: `lib/data/README.md`.
+- Tes yang memakai database: `memoryDatabase()` dan `unmountApp()` di `test/support/test_database.dart`.
 - Antarmodul boleh saling membaca provider; jangan mengimpor widget privat modul lain.
 - Material diimpor dari `package:material_ui/material_ui.dart` (bawaan template Flutter 3.50).
 
@@ -53,6 +54,9 @@ flutter analyze                 # wajib "No issues found"
 flutter test
 flutter test --update-goldens   # setelah perubahan rupa yang disengaja; periksa PNG-nya
 flutter build apk --profile     # APK untuk ukur frame time
+flutter build apk --profile --dart-define=DEMO_DATA=true   # dengan 13 temuan contoh
+dart run build_runner build     # setelah mengubah tabel drift (lib/data/local/)
+python3 tool/sync_catalog.py    # setelah data/cities.json atau categories.json berubah
 ```
 
 ## Performa (perangkat acuan Infinix Hot 11 Play, K-016)

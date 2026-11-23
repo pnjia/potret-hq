@@ -1,0 +1,467 @@
+{
+  "$schema": "./schema/cities.schema.json",
+  "meta": {
+    "verifiedAt": "2026-11-20",
+    "note": "Kota MVP: Sukabumi (K-029). 21 kandidat landmark di dalam batas administratif Kota Sukabumi hasil kurasi meja 20 Nov 2026 (docs/riset/2026-11-20-landmark-kota-sukabumi.md). Semua verified=false: koordinat dan radius dari OpenStreetMap/Wikidata/Wikimedia Commons, belum disurvei. Hanya pemilik yang menandai verified=true setelah survei lapangan. isCurated tetap false sampai survei selesai. Entri contoh Bandung–Gedung Sate dihapus."
+  },
+  "cities": [
+    {
+      "id": "sukabumi",
+      "name": "Sukabumi",
+      "province": "Jawa Barat",
+      "accentColor": "TBD",
+      "stampAsset": "assets/cities/sukabumi/stamp.png",
+      "findingTarget": 100,
+      "isCurated": false,
+      "example": false
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "sukabumi-stasiun",
+      "cityId": "sukabumi",
+      "name": "Stasiun Sukabumi",
+      "category": "building",
+      "lat": -6.92497,
+      "lng": 106.92962,
+      "radiusM": 70,
+      "facts": [
+        {
+          "text": "Satu-satunya stasiun kereta api di Kota Sukabumi, berada di ketinggian +584 meter.",
+          "source": "https://id.wikipedia.org/wiki/Stasiun_Sukabumi"
+        },
+        {
+          "text": "Jalur kereta Buitenzorg (Bogor)–Soekaboemi tersambung pada 1882.",
+          "source": "https://id.wikipedia.org/wiki/Kota_Sukabumi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-stasiun/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-masjid-agung",
+      "cityId": "sukabumi",
+      "name": "Masjid Agung Kota Sukabumi",
+      "category": "building",
+      "lat": -6.92122,
+      "lng": 106.92532,
+      "radiusM": 30,
+      "facts": [
+        {
+          "text": "Puncak menaranya dihiasi kujang, lambang identitas Sunda.",
+          "source": "https://www.detik.com/jabar/wisata/d-6025250/masjid-agung-sukabumi-yang-sempat-jadi-tempat-latihan-pejuang"
+        },
+        {
+          "text": "Masjid ini pernah menjadi tempat para pejuang berlatih dan menyusun strategi melawan tentara Sekutu.",
+          "source": "https://www.detik.com/jabar/wisata/d-6025250/masjid-agung-sukabumi-yang-sempat-jadi-tempat-latihan-pejuang"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-masjid-agung/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-alun-alun",
+      "cityId": "sukabumi",
+      "name": "Alun-alun Kota Sukabumi",
+      "category": "building",
+      "lat": -6.92152,
+      "lng": 106.92587,
+      "radiusM": 35,
+      "facts": [
+        {
+          "text": "Merah Putih yang dijahit dari kain sumbangan Lay Tin Yung pada Agustus 1945 dikibarkan di alun-alun ini dan di depan Masjid Agung.",
+          "source": "https://www.detik.com/jabar/budaya/d-7975516/lay-tin-yung-sosok-yang-jahit-bendera-merah-putih-pertama-di-sukabumi"
+        },
+        {
+          "text": "Alun-alun direnovasi mulai 2020 dan diresmikan Gubernur Jawa Barat pada 2022.",
+          "source": "https://id.wikipedia.org/wiki/Masjid_Agung_Sukabumi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-alun-alun/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-lapang-merdeka",
+      "cityId": "sukabumi",
+      "name": "Taman Kota Lapang Merdeka",
+      "category": "plant",
+      "lat": -6.91972,
+      "lng": 106.92675,
+      "radiusM": 60,
+      "facts": [
+        {
+          "text": "Bung Karno berpidato dalam bahasa Sunda di lapangan ini pada 1 Maret 1951.",
+          "source": "https://www.detik.com/jabar/berita/d-6586768/pidato-berbahasa-sunda-soekarno-pukau-ribuan-warga-sukabumi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-lapang-merdeka/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-gedung-juang-45",
+      "cityId": "sukabumi",
+      "name": "Gedung Juang '45",
+      "category": "building",
+      "lat": -6.91891,
+      "lng": 106.92753,
+      "radiusM": 40,
+      "facts": [
+        {
+          "text": "Dulu gedung Societeit Soekamanah di Societeit Straat, sebelum perkumpulan itu pindah ke Gedung Capitol.",
+          "source": "https://www.detik.com/jabar/berita/d-7032332/hikayat-capitol-saksi-bisu-pertemuan-ekspatriat-belanda-di-sukabumi"
+        },
+        {
+          "text": "Diambil alih para pejuang pada 20 Agustus 1945, sehari sebelum kain Merah Putih disumbangkan Lay Tin Yung.",
+          "source": "https://www.detik.com/jabar/budaya/d-7975516/lay-tin-yung-sosok-yang-jahit-bendera-merah-putih-pertama-di-sukabumi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-gedung-juang-45/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-balai-kota",
+      "cityId": "sukabumi",
+      "name": "Balai Kota Sukabumi",
+      "category": "building",
+      "lat": -6.91773,
+      "lng": 106.93168,
+      "radiusM": 60,
+      "facts": [
+        {
+          "text": "Dulunya Residentiehuis, rumah residen pada masa kolonial.",
+          "source": "https://bernas.id/nasional/news/jejak-kolonial-sukabumi-disulap-jadi-rute-heritage-walk"
+        },
+        {
+          "text": "Satu dari tiga objek diduga cagar budaya yang dibawa ke sidang penetapan cagar budaya Kota Sukabumi pada Desember 2023.",
+          "source": "https://www.sukabumiupdate.com/sukabumi/131891/3-cagar-budaya-baru-di-kota-sukabumi-segera-ditetapkan-ini-daftarnya"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-balai-kota/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-gereja-sidang-kristus",
+      "cityId": "sukabumi",
+      "name": "Gereja Sidang Kristus",
+      "category": "building",
+      "lat": -6.92055,
+      "lng": 106.9256,
+      "radiusM": 30,
+      "facts": [
+        {
+          "text": "Berdiri sejak 1911 dengan nama Protestansche Kerk, dan ditetapkan sebagai cagar budaya Kota Sukabumi pada Desember 2023.",
+          "source": "https://www.detik.com/jabar/budaya/d-7074676/gereja-sidang-kristus-sukabumi-ditetapkan-jadi-cagar-budaya"
+        },
+        {
+          "text": "Loncengnya dipasang pada 1914, buatan pengecoran Eijsbouts dari Asten, Belanda.",
+          "source": "https://www.detik.com/jabar/budaya/d-7074676/gereja-sidang-kristus-sukabumi-ditetapkan-jadi-cagar-budaya"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-gereja-sidang-kristus/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-gereja-santo-joseph",
+      "cityId": "sukabumi",
+      "name": "Gereja Santo Joseph",
+      "category": "building",
+      "lat": -6.91809,
+      "lng": 106.92827,
+      "radiusM": 50,
+      "facts": [
+        {
+          "text": "Paroki ini tercatat sejak 1889, ditandai pembaptisan seorang bayi pada 10 September 1889.",
+          "source": "https://www.detik.com/jabar/berita/d-7884217/paroki-santo-joseph-jejak-sejarah-gereja-katolik-di-priangan-barat"
+        },
+        {
+          "text": "Pada 9 Desember 1948 paroki ini menjadi pusat Prefektur Apostolik Sukabumi.",
+          "source": "https://www.detik.com/jabar/berita/d-7884217/paroki-santo-joseph-jejak-sejarah-gereja-katolik-di-priangan-barat"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-gereja-santo-joseph/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-vihara-widhi-sakti",
+      "cityId": "sukabumi",
+      "name": "Vihara Widhi Sakti",
+      "category": "building",
+      "lat": -6.92528,
+      "lng": 106.92553,
+      "radiusM": 40,
+      "facts": [
+        {
+          "text": "Vihara tertua di Sukabumi, dibangun pada 1912 dengan nama Kelenteng Bie Hian Kong.",
+          "source": "https://www.detik.com/jabar/berita/d-7182047/vihara-tertua-di-kota-sukabumi-bersolek-jelang-imlek"
+        },
+        {
+          "text": "Ada tiga altar utama: Kongco Han Tan Kong, Sang Buddha, dan Dewi Kwan Im.",
+          "source": "https://www.detik.com/jabar/berita/d-7182047/vihara-tertua-di-kota-sukabumi-bersolek-jelang-imlek"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-vihara-widhi-sakti/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-museum-tionghoa",
+      "cityId": "sukabumi",
+      "name": "Museum Tionghoa Sukabumi",
+      "category": "building",
+      "lat": -6.92638,
+      "lng": 106.92554,
+      "radiusM": 40,
+      "facts": [
+        {
+          "text": "Diresmikan pada Februari 2022, hasil kerja sama Masyarakat Sadar Wisata dan Yayasan Dapuran Kipahare.",
+          "source": "https://megapolitan.antaranews.com/berita/178085/museum-tionghoa-kota-sukabumi-bisa-jadi-daya-tarik-wisatawan"
+        },
+        {
+          "text": "Lantai pertamanya menampilkan lukisan dinding tentang kedatangan orang Tionghoa ke Sukabumi, termasuk Laksamana Cheng Ho.",
+          "source": "https://id.wikipedia.org/wiki/Museum_Tionghoa_(Sukabumi)"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-museum-tionghoa/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-museum-pegadaian",
+      "cityId": "sukabumi",
+      "name": "Museum Pegadaian",
+      "category": "building",
+      "lat": -6.92824,
+      "lng": 106.92673,
+      "radiusM": 50,
+      "facts": [
+        {
+          "text": "Pegadaian Negara pertama resmi beroperasi di Sukabumi pada 1 April 1901.",
+          "source": "https://ceritakawan.goodnewsfromindonesia.id/wisata/museum-pegadaian-sukabumi-saksi-lahirnya-pegadaian-pertama-di-indonesia"
+        },
+        {
+          "text": "Bekas rumah dinas pimpinan Pegadaian ini menjadi museum sejak 10 April 2010.",
+          "source": "https://ceritakawan.goodnewsfromindonesia.id/wisata/museum-pegadaian-sukabumi-saksi-lahirnya-pegadaian-pertama-di-indonesia"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-museum-pegadaian/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-museum-prabu-siliwangi",
+      "cityId": "sukabumi",
+      "name": "Museum Prabu Siliwangi",
+      "category": "building",
+      "lat": -6.90659,
+      "lng": 106.91333,
+      "radiusM": 80,
+      "facts": [
+        {
+          "text": "Diresmikan Gubernur Jawa Barat pada 4 Mei 2011 di kompleks Pesantren Dzikir Al-Fath.",
+          "source": "https://id.wikipedia.org/wiki/Museum_Prabu_Siliwangi"
+        },
+        {
+          "text": "Koleksinya tercatat 641 benda, termasuk 65 keris dan 30 kujang.",
+          "source": "https://id.wikipedia.org/wiki/Museum_Prabu_Siliwangi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-museum-prabu-siliwangi/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-museum-ki-pahare",
+      "cityId": "sukabumi",
+      "name": "Museum Ki Pahare",
+      "category": "building",
+      "lat": -6.96428,
+      "lng": 106.93973,
+      "radiusM": 60,
+      "facts": [
+        {
+          "text": "Diresmikan Wali Kota Sukabumi pada 25 Maret 2017.",
+          "source": "https://megapolitan.antaranews.com/berita/74060/museum-kipahare-sukabumi-diminati-wisatawan-mancanegara"
+        },
+        {
+          "text": "Koleksinya antara lain bedog, tombak, keris, dan kujang.",
+          "source": "https://megapolitan.antaranews.com/berita/74060/museum-kipahare-sukabumi-diminati-wisatawan-mancanegara"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-museum-ki-pahare/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-gedung-capitol",
+      "cityId": "sukabumi",
+      "name": "Gedung Capitol",
+      "category": "building",
+      "lat": -6.92172,
+      "lng": 106.92694,
+      "radiusM": 50,
+      "facts": [
+        {
+          "text": "Societeit Soekamanah di kompleks ini diresmikan 19 Juli 1930, dirancang A.F. Aalbers dan C.P. Wolff Schoemaker.",
+          "source": "https://www.detik.com/jabar/berita/d-7032332/hikayat-capitol-saksi-bisu-pertemuan-ekspatriat-belanda-di-sukabumi"
+        },
+        {
+          "text": "Dulu berisi ruang dansa, ruang biliar, bioskop Capitol Theater, dan kasino.",
+          "source": "https://www.detik.com/jabar/berita/d-7032332/hikayat-capitol-saksi-bisu-pertemuan-ekspatriat-belanda-di-sukabumi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-gedung-capitol/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-pendopo",
+      "cityId": "sukabumi",
+      "name": "Pendopo Sukabumi",
+      "category": "building",
+      "lat": -6.92267,
+      "lng": 106.92537,
+      "radiusM": 50,
+      "facts": [
+        {
+          "text": "Gedung pemerintahan Kabupaten Sukabumi ini berdiri di wilayah Kota Sukabumi.",
+          "source": "https://news.republika.co.id/berita/meng2v/pendopo-pemkab-sukabumi-diteror-bom"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-pendopo/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-pasar-pelita",
+      "cityId": "sukabumi",
+      "name": "Pasar Pelita",
+      "category": "food",
+      "lat": -6.92411,
+      "lng": 106.92847,
+      "radiusM": 70,
+      "facts": [
+        {
+          "text": "Gedung barunya dibuka pada 2022 dengan 1.811 kios dan 848 los di dua blok.",
+          "source": "https://www.detik.com/jabar/berita/d-5979778/aktivasi-pasar-pelita-sukabumi-begini-kondisinya-kini"
+        },
+        {
+          "text": "Lantai basement khusus untuk bahan pangan.",
+          "source": "https://www.detik.com/jabar/berita/d-5979778/aktivasi-pasar-pelita-sukabumi-begini-kondisinya-kini"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-pasar-pelita/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-terminal-kh-ahmad-sanusi",
+      "cityId": "sukabumi",
+      "name": "Terminal K.H. Ahmad Sanusi",
+      "category": "vehicle",
+      "lat": -6.95119,
+      "lng": 106.92544,
+      "radiusM": 120,
+      "facts": [
+        {
+          "text": "Diresmikan 10 Oktober 2016 dan mulai beroperasi 28 Oktober 2016, bertepatan dengan Hari Sumpah Pemuda.",
+          "source": "https://id.wikipedia.org/wiki/Terminal_K.H._Ahmad_Sanusi"
+        },
+        {
+          "text": "Namanya diambil dari K.H. Ahmad Sanusi, pahlawan nasional asal Sukabumi dan anggota BPUPKI.",
+          "source": "https://id.wikipedia.org/wiki/Terminal_K.H._Ahmad_Sanusi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-terminal-kh-ahmad-sanusi/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-stadion-suryakencana",
+      "cityId": "sukabumi",
+      "name": "Stadion Suryakencana",
+      "category": "building",
+      "lat": -6.93189,
+      "lng": 106.91859,
+      "radiusM": 100,
+      "facts": [
+        {
+          "text": "Kandang klub sepak bola Perssi Sukabumi, berkapasitas sekitar 5.000 penonton.",
+          "source": "https://en.wikipedia.org/wiki/Perssi_Sukabumi"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-stadion-suryakencana/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-pemandian-cikundul",
+      "cityId": "sukabumi",
+      "name": "Pemandian Air Panas Cikundul",
+      "category": "other",
+      "lat": -6.97591,
+      "lng": 106.91311,
+      "radiusM": 60,
+      "facts": [
+        {
+          "text": "Dikelola Pemerintah Kota Sukabumi sejak 1960-an.",
+          "source": "https://www.detik.com/jabar/wisata/d-7376869/pemandian-cikundul-mau-bersolek-sedot-anggaran-rp-2-2-m"
+        },
+        {
+          "text": "Menurut Badan Geologi, mata air panas ini menandai jejak longsor purba dan sesar aktif.",
+          "source": "https://www.inews.id/regional/jabar/jejak-longsor-purba-ditemukan-di-kota-sukabumi-ditandai-air-panas-cikundul"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-pemandian-cikundul/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-mochi-kaswari-lampion",
+      "cityId": "sukabumi",
+      "name": "Mochi Kaswari Lampion",
+      "category": "food",
+      "lat": -6.91245,
+      "lng": 106.93047,
+      "radiusM": 40,
+      "facts": [
+        {
+          "text": "Toko mochi ini berdiri sejak 1983, didirikan Engkus Kuswandi.",
+          "source": "https://www.goodnewsfromindonesia.id/2025/03/12/mengenal-mochi-sukabumi-yang-unik-dan-asli-indonesia"
+        },
+        {
+          "text": "Mochi Sukabumi ditetapkan Pemprov Jawa Barat sebagai Warisan Budaya Takbenda pada 2022.",
+          "source": "https://www.goodnewsfromindonesia.id/2025/03/12/mengenal-mochi-sukabumi-yang-unik-dan-asli-indonesia"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-mochi-kaswari-lampion/silhouette.png",
+      "verified": false,
+      "example": false
+    },
+    {
+      "id": "sukabumi-monumen-kusukabumiku",
+      "cityId": "sukabumi",
+      "name": "Monumen Kusukabumiku",
+      "category": "building",
+      "lat": -6.92022,
+      "lng": 106.93113,
+      "radiusM": 40,
+      "facts": [
+        {
+          "text": "Disebut monumen ikonik yang melambangkan kebanggaan warga Kota Sukabumi.",
+          "source": "https://www.haibunda.com/moms-life/20260512154850-76-391409/10-tempat-wisata-dekat-stasiun-sukabumi-jelajahi-alam-hingga-alun-alun"
+        }
+      ],
+      "silhouetteAsset": "assets/landmarks/sukabumi-monumen-kusukabumiku/silhouette.png",
+      "verified": false,
+      "example": false
+    }
+  ]
+}

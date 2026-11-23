@@ -5,11 +5,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
 import 'core/theme/app_theme.dart';
+import 'data/demo_seed.dart';
+import 'data/providers.dart';
 import 'features/home/ui/app_shell.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   registerFontLicenses();
-  runApp(const ProviderScope(child: PotretApp()));
+  final container = ProviderContainer();
+  if (demoDataEnabled) {
+    await seedDemoFindings(container.read(findingRepositoryProvider));
+  }
+  runApp(
+    UncontrolledProviderScope(container: container, child: const PotretApp()),
+  );
 }
 
 /// Mendaftarkan lisensi OFL ketiga font (assets/fonts/) ke halaman lisensi.

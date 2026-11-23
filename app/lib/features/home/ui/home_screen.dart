@@ -29,7 +29,22 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final summary = ref.watch(homeSummaryProvider);
+    final async = ref.watch(homeSummaryProvider);
+    // Nilai lama tetap tampil saat ringkasan dihitung ulang.
+    final summary = async.value;
+    if (summary == null) {
+      if (!async.hasError) return const SizedBox.shrink();
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(TokenSpacing.screenMargin),
+          child: Text(
+            'Beranda gagal dimuat. Tutup lalu buka lagi aplikasinya.',
+            style: AppTextStyles.body,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      );
+    }
     return SafeArea(
       bottom: false,
       child: ListView(
@@ -132,7 +147,7 @@ class _CityHero extends StatelessWidget {
       0.0,
       1.0,
     );
-    final sticker = summary.latestSticker;
+    final sticker = summary.latestLandmarkSticker;
     return Transform.rotate(
       angle: TokenMotion.heroRotationDeg * math.pi / 180,
       child: Stack(
@@ -224,19 +239,20 @@ class _CityHero extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            right: -4,
-            bottom: -26,
-            width: 118,
-            child: Transform.rotate(
-              angle: sticker.rotationDeg * math.pi / 180,
-              child: Image.asset(
-                sticker.asset,
-                semanticLabel: sticker.description,
-                fit: BoxFit.contain,
+          if (sticker != null)
+            Positioned(
+              right: -4,
+              bottom: -26,
+              width: 118,
+              child: Transform.rotate(
+                angle: sticker.rotationDeg * math.pi / 180,
+                child: Image(
+                  image: sticker.image,
+                  semanticLabel: sticker.description,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
-          ),
         ],
       ),
     );
@@ -466,8 +482,8 @@ class _StickerSlot extends StatelessWidget {
               height: 96,
               child: Transform.rotate(
                 angle: sticker.rotationDeg * math.pi / 180,
-                child: Image.asset(
-                  sticker.asset,
+                child: Image(
+                  image: sticker.image,
                   semanticLabel: sticker.description,
                   fit: BoxFit.contain,
                 ),
