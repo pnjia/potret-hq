@@ -2,7 +2,7 @@
 
 > Data yang dibaca kode dan agen. Setiap file punya skema JSON Schema (draft 2020-12) di `schema/`, dan file data merujuk skemanya lewat key `$schema` (editor seperti VS Code memakainya untuk validasi otomatis).
 > Key berbahasa Inggris `camelCase` (K-014, `docs/produk/glosarium.md` bagian 4).
-> Terakhir diverifikasi: 17 Nov 2026.
+> Terakhir diverifikasi: 23 Nov 2026 (decorations.json; cek-hq memeriksa file aset suara dan dekorasi ada di app/).
 
 | File | Isi | Skema | Pemilik (agen) | Keadaan |
 |---|---|---|---|---|
@@ -10,6 +10,7 @@
 | `cameras.json` | Skin kamera (`Camera`) | `schema/cameras.schema.json` | `kamera-cutout` (data), `desainer-visual` (visual) | 1 entri contoh |
 | `cities.json` | Kota (`City`) dan landmark (`Landmark`) | `schema/cities.schema.json` | `kurator-katalog` | Kota MVP Sukabumi (K-029): 21 kandidat landmark, semua `verified: false` sampai disurvei pemilik; `isCurated: false`. Entri contoh Bandung dihapus |
 | `categories.json` | Kategori temuan dan pemetaan label ML Kit | `schema/categories.schema.json` | `kurator-katalog` (kategori), `kamera-cutout` (aturan pemilihan) | v1 (K-020), 9 kategori, 174 label; diuji ulang dengan foto kota nyata |
+| `decorations.json` | Hiasan sampul (12, dalam 3 set), motif selotip (6), kertas latar (4); sumber dan lisensi tiap SVG | `schema/decorations.schema.json` | `desainer-visual` (aset), `kurator-katalog` (data) | Lengkap (K-031, K-043); SVG dibuat `app/tool/make_decorations.py` |
 | `sounds.json` | Catatan sumber dan lisensi setiap file suara | `schema/sounds.schema.json` | `animasi-buku`, `kamera-cutout` | Kosong (K-024) |
 
 ## Aturan
@@ -17,7 +18,7 @@
 - Entri contoh ditandai `"example": true` dan wajib dihapus atau diganti sebelum data dipakai di aplikasi.
 - Landmark `"verified": true` hanya bila koordinat, radius, dan **setiap** fakta sudah punya sumber URL.
 - Koordinat landmark adalah titik tempat publik untuk pencocokan radius di perangkat. Lokasi **pengguna** tidak pernah disimpan (K-011).
-- Path aset (`assets/...`) relatif terhadap `app/`, yang belum ada.
+- Path aset (`assets/...`) relatif terhadap `app/`. `cek-hq` memeriksa file yang dirujuk `sounds.json` dan `decorations.json` benar-benar ada.
 - Validasi: `node scripts/cek-hq.mjs` (skema, plus cek silang `landmarks[].cityId` ke `cities[].id`, kategori landmark ke `categories.json`, label ML Kit yang dipetakan ganda, dan sumber fakta untuk landmark terverifikasi).
 
 ## Skema singkat
@@ -41,6 +42,10 @@ cities.json
 categories.json
   meta {verifiedAt, source, confidenceThreshold, rule, note}
   categories[] {id, name, tieBreakOrder, missionEligible, mlkitLabels[{text, index, weak?}]}
+
+decorations.json
+  ornaments[], tapePatterns[], paperStyles[]  {id, name, file assets/decorations/*.svg, source script|drawn, license own, author, addedAt}
+  decorationSets[] {id, name, ornamentIds[4]}
 
 sounds.json
   sounds[] {id, file, use page-turn|shutter|ui, source foley|freesound|pixabay, license, url|null, author, addedAt}

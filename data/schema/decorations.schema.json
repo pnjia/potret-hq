@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "decorations.schema.json",
+  "title": "Katalog hiasan, motif selotip, dan kertas latar",
+  "description": "Aset dekorasi buku buatan sendiri (K-031, K-037), dicatat seperti suara (K-024): sumber dan lisensi tiap file. Hiasan dipakai lewat set hiasan sampul (Book.cover.decorationSetId); motif selotip = Placement.tapePattern; kertas latar = Page.paperStyle. Hanya karya sendiri (lisensi own).",
+  "type": "object",
+  "required": ["meta", "ornaments", "tapePatterns", "paperStyles", "decorationSets"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "required": ["verifiedAt", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "verifiedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note": { "type": "string" }
+      }
+    },
+    "ornaments": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/asset" } },
+    "tapePatterns": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/asset" } },
+    "paperStyles": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/asset" } },
+    "decorationSets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "ornamentIds"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "name": { "type": "string", "minLength": 1, "description": "Nama di UI (Bahasa Indonesia)" },
+          "ornamentIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/id" },
+            "description": "Isi set, urut sesuai tampilan; posisinya diatur template sampul"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$" },
+    "asset": {
+      "type": "object",
+      "required": ["id", "name", "file", "source", "license", "author", "addedAt"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1, "description": "Nama di UI (Bahasa Indonesia)" },
+        "file": { "type": "string", "pattern": "^assets/decorations/.+\\.svg$", "description": "Path relatif terhadap app/" },
+        "source": { "type": "string", "enum": ["script", "drawn"], "description": "script = dibuat app/tool/make_decorations.py; drawn = digambar tangan" },
+        "license": { "type": "string", "enum": ["own"] },
+        "author": { "type": "string", "minLength": 1 },
+        "addedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+      }
+    }
+  }
+}

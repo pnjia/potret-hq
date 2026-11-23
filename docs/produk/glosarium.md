@@ -2,7 +2,7 @@
 
 > Sumber tunggal istilah proyek potret. Dipakai di dokumen, kode, Trello, dan semua sub-agen.
 > Asal: §3 `spesifikasi-sistem-v1.md` (dipindah utuh). Aturan penamaan identifier: K-014.
-> Terakhir diverifikasi: 19 Nov 2026 (istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034, kolom editor K-037, julukan K-038 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
+> Terakhir diverifikasi: 23 Nov 2026 (nilai motif selotip, kertas latar, dan set hiasan K-043; istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034, kolom editor K-037, julukan K-038 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
 
 ## 1. Istilah inti (dari spesifikasi v1, tidak diubah)
 
@@ -57,9 +57,10 @@ Istilah yang dipakai spesifikasi tetapi belum punya baris sendiri.
 | Julukan label | Julukan kartu Label Pemburu per kategori, dipilih pengguna (K-033, K-038) | `Category.shareLabel` |
 | Baki "Belum ditempel" | Tempat temuan yang dilepas dari halaman; tidak ditempel ulang otomatis (K-037) | temuan tanpa `Placement` |
 | Tepi stiker | Gaya tepi cutout, satu sistem di Rapikan dan editor halaman (K-031, K-037) | `Finding.edgeStyle` (`none`/`dieCut`/`snipped`/`pinking`/`torn`), `Finding.edgeWidth` (`s`/`m`/`l`) |
-| Selotip | Posisi dan motif selotip penempatan (K-037) | `Placement.tapePosition`, `Placement.tapePattern` |
+| Selotip | Posisi dan motif selotip penempatan (K-037). Motif: Polos, Garis, Grid, Raster, Karcis, Teks (K-043, `data/decorations.json`) | `Placement.tapePosition`, `Placement.tapePattern` (`plain`/`striped`/`grid`/`halftone`/`ticket`/`text`) |
 | Tinta keterangan | Warna keterangan penempatan (K-031, K-037) | `Placement.noteInk` (`ink`/`cobalt`/`sepia`/`stampRed`/`magenta`/`green`) |
-| Kertas latar dan gaya halaman | Kertas dan preset gaya halaman (K-031, K-037) | `Page.paperStyle`, `Page.stylePresetId` |
+| Kertas latar dan gaya halaman | Kertas dan preset gaya halaman (K-031, K-037) | `Page.paperStyle` (`plain`/`lined`/`dotted`/`grid`), `Page.stylePresetId` |
+| Hiasan dan set hiasan | Stiker hiasan buatan sendiri untuk sampul, dipilih per set; posisinya diatur template (K-031, K-043, `data/decorations.json`) | `Book.cover.decorationSetId` (`ticket`/`post`/`scribble`); id hiasan di `ornaments[].id` |
 
 ## 3. Aturan penamaan (K-014)
 

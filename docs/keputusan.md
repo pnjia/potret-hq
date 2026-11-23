@@ -715,3 +715,23 @@
 - **Konsekuensi**:
   - `docs/teknis/arsitektur.md` §2 dan `app/CLAUDE.md` mencatat modul `home` dan komponen bersama.
   - Stiker di Beranda memakai aset contoh (`app/assets/demo/`) sampai `FindingRepository` ada.
+
+### K-043 · Id hiasan, motif selotip, dan kertas latar
+- **Tanggal**: 23 Nov 2026
+- **Keputusan**:
+  - Nilai `Placement.tapePattern`: `plain` (Polos), `striped` (Garis), `grid` (Grid), `halftone` (Raster), `ticket` (Karcis), `text` (Teks).
+  - Nilai `Book.cover.decorationSetId`: `ticket` (Karcis), `post` (Pos), `scribble` (Coretan). Masing-masing 4 hiasan; daftar dan urutannya di `data/decorations.json`.
+  - `Page.paperStyle` tetap `plain`/`lined`/`dotted`/`grid` (K-037).
+  - Hiasan "Cap Sukabumi" di mockup menjadi **Cap pos** umum, tanpa nama kota dan tanpa tanggal. Cap kota yang sebenarnya digambar aplikasi (`CityStamp`).
+  - Aset dibuat oleh skrip `app/tool/make_decorations.py` (sumber `script`, lisensi `own`), sebagai SVG dasar tanpa teks, filter, atau pattern. Grain dan bayangan ditambahkan aplikasi.
+- **Alasan**:
+  - Nilai ini disimpan di drift dan Supabase, jadi harus tetap sejak awal.
+  - Aset statis berisi nama satu kota tidak berlaku untuk kota lain; tanggal di hiasan bertentangan dengan semangat K-033.
+  - SVG dasar bisa dirender `flutter_svg`/`vector_graphics` tanpa kejutan, dan skrip membuat aset bisa dibuat ulang bila arah visual berubah.
+  - Diputuskan atas wewenang yang diberikan pemilik (20 Nov 2026: "lakukan sesuai rekomendasi").
+- **Ditolak**:
+  - Hiasan cap berisi nama kota: harus dibuat ulang per kota.
+  - SVG dengan `<text>` dan filter tinta seperti mockup: bergantung font sistem dan tidak didukung renderer SVG Flutter.
+- **Konsekuensi**:
+  - `data/decorations.json` + skema; `cek-hq` memeriksa jumlah (12/6/4), isi set, dan keberadaan file.
+  - Editor halaman dan sampul (kartu terpisah) perlu renderer SVG; paket dipilih saat kartu itu dikerjakan.

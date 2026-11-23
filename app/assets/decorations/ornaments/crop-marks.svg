@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 48" width="58" height="48">
+<!-- Hiasan Tanda potong. Kliping Kota, buatan sendiri (lisensi own). -->
+<path d="M0 15 H12 M15 0 V12 M46 15 H58 M43 0 V12 M0 33 H12 M15 36 V48 M46 33 H58 M43 36 V48" fill="none" stroke="#3048FF" stroke-width="2" stroke-linecap="square"/>
+<path d="M15 15 H43 V33 H15 Z" fill="none" stroke="#5B5B66" stroke-width="1" stroke-dasharray="2 2"/>
+</svg>

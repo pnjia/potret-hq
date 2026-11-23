@@ -1,0 +1,243 @@
+{
+  "$schema": "./schema/decorations.schema.json",
+  "meta": {
+    "verifiedAt": "2026-11-23",
+    "note": "Semua aset buatan sendiri (K-031), dibuat ulang dengan `python3 tool/make_decorations.py` dari app/. SVG sederhana tanpa teks, filter, atau pattern supaya aman dirender flutter_svg/vector_graphics; grain dan bayangan ditambahkan aplikasi. Bentuk mengikuti mockup v5 (V5EditSampulHiasan, V5EditKeterangan, V5EditGayaHalaman). Cap pos dibuat umum (tanpa nama kota dan tanggal); cap kota yang sebenarnya digambar CityStamp."
+  },
+  "ornaments": [
+    {
+      "id": "ticket-angkot",
+      "name": "Karcis angkot",
+      "file": "assets/decorations/ornaments/ticket-angkot.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "tape-plain",
+      "name": "Selotip polos",
+      "file": "assets/decorations/tapes/plain.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "category-tag",
+      "name": "Label kategori",
+      "file": "assets/decorations/ornaments/category-tag.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "punch-holes",
+      "name": "Lubang pons",
+      "file": "assets/decorations/ornaments/punch-holes.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "post-stamp",
+      "name": "Cap pos",
+      "file": "assets/decorations/ornaments/post-stamp.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "tape-grid",
+      "name": "Selotip grid",
+      "file": "assets/decorations/tapes/grid.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "number-label",
+      "name": "Label nomor",
+      "file": "assets/decorations/ornaments/number-label.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "crop-marks",
+      "name": "Tanda potong",
+      "file": "assets/decorations/ornaments/crop-marks.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "pen-arrow",
+      "name": "Panah pulpen",
+      "file": "assets/decorations/ornaments/pen-arrow.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "tape-striped",
+      "name": "Selotip garis",
+      "file": "assets/decorations/tapes/striped.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "highlighter",
+      "name": "Coretan stabilo",
+      "file": "assets/decorations/ornaments/highlighter.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "marker-circle",
+      "name": "Lingkaran spidol",
+      "file": "assets/decorations/ornaments/marker-circle.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    }
+  ],
+  "tapePatterns": [
+    {
+      "id": "plain",
+      "name": "Polos",
+      "file": "assets/decorations/tapes/plain.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "striped",
+      "name": "Garis",
+      "file": "assets/decorations/tapes/striped.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "grid",
+      "name": "Grid",
+      "file": "assets/decorations/tapes/grid.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "halftone",
+      "name": "Raster",
+      "file": "assets/decorations/tapes/halftone.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "ticket",
+      "name": "Karcis",
+      "file": "assets/decorations/tapes/ticket.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "text",
+      "name": "Teks",
+      "file": "assets/decorations/tapes/text.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    }
+  ],
+  "paperStyles": [
+    {
+      "id": "plain",
+      "name": "Polos",
+      "file": "assets/decorations/papers/plain.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "lined",
+      "name": "Garis",
+      "file": "assets/decorations/papers/lined.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "dotted",
+      "name": "Titik",
+      "file": "assets/decorations/papers/dotted.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "grid",
+      "name": "Grid",
+      "file": "assets/decorations/papers/grid.svg",
+      "source": "script",
+      "license": "own",
+      "author": "Kliping Kota (app/tool/make_decorations.py)",
+      "addedAt": "2026-11-23"
+    }
+  ],
+  "decorationSets": [
+    {
+      "id": "ticket",
+      "name": "Karcis",
+      "ornamentIds": [
+        "ticket-angkot",
+        "tape-plain",
+        "category-tag",
+        "punch-holes"
+      ]
+    },
+    {
+      "id": "post",
+      "name": "Pos",
+      "ornamentIds": [
+        "post-stamp",
+        "tape-grid",
+        "number-label",
+        "crop-marks"
+      ]
+    },
+    {
+      "id": "scribble",
+      "name": "Coretan",
+      "ornamentIds": [
+        "pen-arrow",
+        "tape-striped",
+        "highlighter",
+        "marker-circle"
+      ]
+    }
+  ]
+}

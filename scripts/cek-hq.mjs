@@ -164,6 +164,39 @@ if (jsonData.categories) {
   for (const l of jsonData.cities?.landmarks || [])
     if (!catIds.has(l.category)) err("data/cities.json", `landmark ${l.id}: kategori "${l.category}" tidak ada di data/categories.json`);
 }
+// file aset yang dirujuk data/ harus ada di app/
+const appDir = join(ROOT, "app");
+const assetRefs = [
+  ...(jsonData.sounds?.sounds || []).map((x) => ["sounds", x.id, x.file]),
+  ...["ornaments", "tapePatterns", "paperStyles"].flatMap((k) =>
+    (jsonData.decorations?.[k] || []).map((x) => ["decorations", `${k}/${x.id}`, x.file])),
+];
+for (const [name, id, file] of assetRefs)
+  if (existsSync(appDir) && !existsSync(join(appDir, file))) err(`data/${name}.json`, `${id}: file tidak ada: app/${file}`);
+if (jsonData.decorations) {
+  const d = jsonData.decorations;
+  const r = "data/decorations.json";
+  for (const k of ["ornaments", "tapePatterns", "paperStyles", "decorationSets"]) {
+    const ids = (d[k] || []).map((x) => x.id);
+    if (new Set(ids).size !== ids.length) err(r, `${k}: id ganda`);
+  }
+  // Jumlah dari K-031: 12 hiasan dalam 3 set, 6 motif selotip, 4 kertas latar (id K-037).
+  if ((d.ornaments || []).length !== 12) err(r, `ornaments: ${(d.ornaments || []).length} hiasan, K-031 menetapkan 12`);
+  if ((d.tapePatterns || []).length !== 6) err(r, `tapePatterns: ${(d.tapePatterns || []).length} motif, K-031 menetapkan 6`);
+  const papers = (d.paperStyles || []).map((x) => x.id).sort().join(",");
+  if (papers !== "dotted,grid,lined,plain") err(r, `paperStyles harus plain/lined/dotted/grid (K-037), sekarang ${papers}`);
+  const ornamentIds = new Set((d.ornaments || []).map((x) => x.id));
+  const used = new Map();
+  for (const set of d.decorationSets || []) {
+    if (set.ornamentIds.length !== 4) err(r, `set ${set.id}: ${set.ornamentIds.length} hiasan, harus 4`);
+    for (const o of set.ornamentIds) {
+      if (!ornamentIds.has(o)) err(r, `set ${set.id}: hiasan "${o}" tidak ada di ornaments`);
+      if (used.has(o)) err(r, `hiasan "${o}" ada di set ${used.get(o)} dan ${set.id}`);
+      used.set(o, set.id);
+    }
+  }
+  for (const o of ornamentIds) if (!used.has(o)) warn(r, `hiasan "${o}" tidak masuk set mana pun`);
+}
 for (const [name, obj] of Object.entries(jsonData)) {
   if (obj.meta?.status === "placeholder") warn(`data/${name}.json`, "masih PLACEHOLDER");
   for (const c of obj.cameras || []) if (c.example) warn(`data/${name}.json`, `kamera ${c.id} masih entri contoh`);

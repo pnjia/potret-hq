@@ -66,10 +66,14 @@ flutter:
     - shaders/renderer_probe.frag
 
   # Suara buka halaman placeholder (sintesis sendiri, lihat data/sounds.json),
-  # stiker contoh Beranda (assets/demo/README.md), dan lisensi font.
+  # stiker contoh Beranda (assets/demo/README.md), hiasan/selotip/kertas latar
+  # (data/decorations.json), dan lisensi font.
   assets:
     - assets/sounds/
     - assets/demo/
+    - assets/decorations/ornaments/
+    - assets/decorations/tapes/
+    - assets/decorations/papers/
     - assets/fonts/OFL-Anybody.txt
     - assets/fonts/OFL-PlusJakartaSans.txt
     - assets/fonts/OFL-NanumPenScript.txt
