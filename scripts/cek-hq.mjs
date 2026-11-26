@@ -173,6 +173,17 @@ const assetRefs = [
 ];
 for (const [name, id, file] of assetRefs)
   if (existsSync(appDir) && !existsSync(join(appDir, file))) err(`data/${name}.json`, `${id}: file tidak ada: app/${file}`);
+if (jsonData.cameras && existsSync(appDir)) {
+  // K-034/K-044: kamera gratis lengkap; kamera terkunci yang tampil cukup ilustrasi etalase.
+  for (const c of jsonData.cameras.cameras || []) {
+    const listed = c.isListed !== false;
+    const need = c.isFree ? ["overlay", "layout", "lut", "shelfImage"] : listed ? ["shelfImage"] : [];
+    for (const k of need)
+      if (c[k] && !existsSync(join(appDir, c[k]))) err("data/cameras.json", `${c.id}.${k}: file tidak ada: app/${c[k]}`);
+    if (c.isFree && !existsSync(join(appDir, c.shutterSound)))
+      warn("data/cameras.json", `${c.id}: suara rana belum ada (kartu Rekam suara)`);
+  }
+}
 if (jsonData.decorations) {
   const d = jsonData.decorations;
   const r = "data/decorations.json";

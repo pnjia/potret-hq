@@ -1,0 +1,102 @@
+{
+  "reference": {
+    "width": 390,
+    "height": 844
+  },
+  "stretchBand": {
+    "top": 260,
+    "bottom": 460
+  },
+  "viewfinder": {
+    "x": 42,
+    "y": 168,
+    "width": 306,
+    "height": 398,
+    "radius": 18
+  },
+  "controls": {
+    "close": {
+      "x": 24,
+      "y": 92,
+      "width": 48,
+      "height": 48
+    },
+    "flash": {
+      "x": 264,
+      "y": 92,
+      "width": 48,
+      "height": 48
+    },
+    "counter": {
+      "x": 318,
+      "y": 92,
+      "width": 52,
+      "height": 48
+    },
+    "timer": {
+      "x": 24,
+      "y": 594,
+      "width": 64,
+      "height": 73
+    },
+    "zoom": {
+      "x": 92,
+      "y": 594,
+      "width": 64,
+      "height": 73
+    },
+    "flip": {
+      "x": 302,
+      "y": 594,
+      "width": 64,
+      "height": 73
+    },
+    "lastResult": {
+      "x": 24,
+      "y": 692,
+      "width": 68,
+      "height": 68
+    },
+    "shutter": {
+      "x": 145,
+      "y": 676,
+      "width": 100,
+      "height": 100
+    },
+    "switchCamera": {
+      "x": 296,
+      "y": 686,
+      "width": 80,
+      "height": 89
+    }
+  },
+  "style": {
+    "button": {
+      "shape": "circle",
+      "radius": 0,
+      "fill": "#1E1B18",
+      "border": null,
+      "borderWidth": 0,
+      "icon": "#FFFFFF"
+    },
+    "label": {
+      "text": "#121212",
+      "background": "#FF7A2F"
+    },
+    "counter": {
+      "fill": "#121212",
+      "border": "#1E1B18",
+      "text": "#D4F25C"
+    },
+    "shutter": {
+      "ring": "#1E1B18",
+      "ringWidth": 8,
+      "fill": "#3048FF",
+      "outline": "#FFFFFF"
+    }
+  },
+  "effect": {
+    "name": "Warna pop cerah",
+    "grain": 0.0
+  }
+}

@@ -2,7 +2,7 @@
 
 > Sumber tunggal istilah proyek potret. Dipakai di dokumen, kode, Trello, dan semua sub-agen.
 > Asal: §3 `spesifikasi-sistem-v1.md` (dipindah utuh). Aturan penamaan identifier: K-014.
-> Terakhir diverifikasi: 23 Nov 2026 (nilai motif selotip, kertas latar, dan set hiasan K-043; istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034, kolom editor K-037, julukan K-038 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
+> Terakhir diverifikasi: 26 Nov 2026 (field aset kamera K-044; nilai motif selotip, kertas latar, dan set hiasan K-043; istilah kartu share K-032, etalase, paket tema, dan Pas Kolektor K-034, kolom editor K-037, julukan K-038 ditambah; pemetaan field disesuaikan dengan K-017 s/d K-020, K-024, K-028, K-034).
 
 ## 1. Istilah inti (dari spesifikasi v1, tidak diubah)
 
@@ -85,7 +85,7 @@ Nama di spesifikasi §5 tetap sah sebagai deskripsi. Kode dan JSON memakai kolom
 | `Chapter` | id, book_id, city_id, urutan | `id`, `bookId`, `cityId`, `order` | `id`, `book_id`, `city_id`, `sort_order` |
 | `Page` | id, chapter_id, jenis (pembatas/landmark/bebas), template_id, urutan | `id`, `chapterId`, `kind` (`divider`/`landmark`/`free`), `templateId`, `order`, `paperStyle`, `stylePresetId` (K-037) | `id`, `chapter_id`, `kind`, `template_id`, `sort_order`, `paper_style`, `style_preset_id` |
 | `Placement` | finding_id, page_id, x, y, skala, rotasi, z, diatur_manual | `findingId`, `pageId`, `x`, `y`, `scale`, `rotation`, `z`, `isManuallyArranged`, `tapePosition`, `tapePattern`, `noteInk`, `hasFrame` (K-037) | `finding_id`, `page_id`, `x`, `y`, `scale`, `rotation`, `z`, `is_manually_arranged`, `tape_position`, `tape_pattern`, `note_ink`, `has_frame` |
-| `Camera` | id, nama, lut, overlay, suara, sku?, gratis, terkunci | `id`, `name`, `lut`, `overlay`, `shutterSound`, `sku?`, `isFree`, `isLocked`, `isListed` (K-034) | `id`, `name`, `lut`, `overlay`, `shutter_sound`, `sku`, `is_free`, `is_locked`, `is_listed` |
+| `Camera` | id, nama, lut, overlay, suara, sku?, gratis, terkunci | `id`, `name`, `lut`, `overlay`, `layout`, `shutterSound`, `shelfImage`, `effectName?`, `sku?`, `isFree`, `isLocked`, `isListed` (K-034, K-044) | `id`, `name`, `lut`, `overlay`, `layout`, `shutter_sound`, `shelf_image`, `effect_name`, `sku`, `is_free`, `is_locked`, `is_listed` |
 | `Entitlement` | user_id, item_id, sumber | `userId`, `itemId`, `source` | `user_id`, `item_id`, `source` |
 | `Follow` | follower_id, followee_id, status (menunggu/disetujui) | `followerId`, `followeeId`, `status` (`pending`/`approved`) | `follower_id`, `followee_id`, `status` |
 | `Mission`, `MissionProgress`, `Badge`, `UserBadge`, `Report`, `Block`, `Event` | belum dirinci | ditetapkan saat skemanya dibuat; `Event` tanpa `userId` (K-017) | ditetapkan saat skemanya dibuat |

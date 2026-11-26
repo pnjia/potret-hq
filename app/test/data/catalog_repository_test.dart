@@ -7,7 +7,7 @@ import 'package:potret/data/catalog_repository.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  for (final name in ['cities.json', 'categories.json']) {
+  for (final name in ['cities.json', 'categories.json', 'cameras.json']) {
     test('assets/catalog/$name sama dengan data/$name', () {
       expect(
         File('assets/catalog/$name').readAsStringSync(),

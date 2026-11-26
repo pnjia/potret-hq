@@ -7,7 +7,7 @@
 | File | Isi | Skema | Pemilik (agen) | Keadaan |
 |---|---|---|---|---|
 | `design-tokens.json` | Warna (termasuk kategori dan tinta keterangan), tipografi, gaya teks, spasi, radius, garis, ukuran, gerak | `schema/design-tokens.schema.json` | `desainer-visual` | v2.0.0 final (K-035); `motion.pageCurl` menunggu prototipe K-012 |
-| `cameras.json` | Skin kamera (`Camera`) | `schema/cameras.schema.json` | `kamera-cutout` (data), `desainer-visual` (visual) | 1 entri contoh |
+| `cameras.json` | Skin kamera (`Camera`): 9 kamera K-034, path aset, catatan efek | `schema/cameras.schema.json` | `kamera-cutout` (data), `desainer-visual` (visual) | Aset 4 kamera gratis + 7 ilustrasi etalase ada (K-044); suara rana belum |
 | `cities.json` | Kota (`City`) dan landmark (`Landmark`) | `schema/cities.schema.json` | `kurator-katalog` | Kota MVP Sukabumi (K-029): 21 kandidat landmark, semua `verified: false` sampai disurvei pemilik; `isCurated: false`. Entri contoh Bandung dihapus |
 | `categories.json` | Kategori temuan dan pemetaan label ML Kit | `schema/categories.schema.json` | `kurator-katalog` (kategori), `kamera-cutout` (aturan pemilihan) | v1 (K-020), 9 kategori, 174 label; diuji ulang dengan foto kota nyata |
 | `decorations.json` | Hiasan sampul (12, dalam 3 set), motif selotip (6), kertas latar (4); sumber dan lisensi tiap SVG | `schema/decorations.schema.json` | `desainer-visual` (aset), `kurator-katalog` (data) | Lengkap (K-031, K-043); SVG dibuat `app/tool/make_decorations.py` |
@@ -33,7 +33,7 @@ design-tokens.json
   spacing|radius|border|size|motion.<nama> {value number|null, unit px|ms|deg, status, note}
 
 cameras.json
-  cameras[] {id, name, lut, overlay, shutterSound, sku|null, isFree, isLocked, example}
+  cameras[] {id, name, lut, overlay, layout, shutterSound, shelfImage, effectName|null, sku|null, isFree, isLocked, example, isListed?}
 
 cities.json
   cities[]    {id, name, province, accentColor, stampAsset, findingTarget, isCurated, example}

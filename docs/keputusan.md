@@ -735,3 +735,27 @@
 - **Konsekuensi**:
   - `data/decorations.json` + skema; `cek-hq` memeriksa jumlah (12/6/4), isi set, dan keberadaan file.
   - Editor halaman dan sampul (kartu terpisah) perlu renderer SVG; paket dipilih saat kartu itu dikerjakan.
+
+### K-044 · Format aset kamera: overlay, layout, LUT, ilustrasi etalase
+- **Tanggal**: 26 Nov 2026
+- **Keputusan**:
+  - **Overlay** (`overlay.png`): bodi kamera layar penuh 1170×2532 (3× kanvas acuan 390×844), jendela bidik transparan. Tombol tidak digambar di overlay; aplikasi menggambarnya sebagai widget asli (bisa diakses pembaca layar) di posisi `layout.json`. Papan nama kamera tercetak di bodi; aplikasi menambah judul "Kamera <nama>" untuk pembaca layar.
+  - **Layout** (`layout.json`, field baru `Camera.layout`): kanvas acuan, persegi jendela bidik dan radiusnya, persegi 9 kontrol (tutup, lampu kilat, penghitung, Timer, Zoom, Balik, temuan terakhir, rana, Ganti kamera), gaya kontrol per kamera, kekuatan butir, dan `stretchBand`. Layar yang lebih tinggi/pendek dari 390×844 hanya meregang pita itu (sisi jendela bidik yang lurus); atas dan bawah bodi tetap.
+  - **LUT** (`lut.png`): 3D 64³ dalam 512×512, 8×8 petak 64×64; petak ke-b = biru b, di dalam petak x = merah, y = hijau. Butir bukan bagian LUT (`layout.json` `effect.grain`, digambar shader).
+  - **Ilustrasi etalase** (`shelf.png`, field baru `Camera.shelfImage`): tampak depan 640×440 transparan untuk 7 kamera yang tampil di MVP.
+  - **Catatan efek** (field baru `Camera.effectName`): teks di etalase ("CCD hangat", "Warna pop cerah", "Hitam-putih kasar", "Pastel pudar"); null untuk kamera berbayar sampai kartu Toko.
+  - Aset dibuat dari mockup v5 lewat `app/tool/render_camera_art.cjs` (Chromium) dan `app/tool/make_camera_assets.py`; sumber bodi dan ilustrasi disimpan di `app/tool/camera_src/`.
+  - Tombol lampu kilat Saku 35 dipindah ke x=262: di mockup tertimpa penghitung film.
+- **Alasan**:
+  - Tombol sebagai widget memenuhi target sentuh, label, dan status (K-035), dan bisa berubah (Timer, Zoom, penghitung) tanpa membuat ulang gambar.
+  - Layar ponsel berbeda rasio (Infinix 720×1640 lebih tinggi dari kanvas acuan); meregang seluruh gambar akan membuat rana dan lensa lonjong.
+  - LUT 64³ dalam petak 8×8 adalah format umum shader seluler dan cukup halus untuk kurva warna yang dipakai.
+  - Diputuskan atas wewenang yang diberikan pemilik (20 Nov 2026: "lakukan sesuai rekomendasi").
+- **Ditolak**:
+  - Overlay dengan tombol tercetak: tidak aksesibel dan tidak bisa menunjukkan status.
+  - Overlay terpisah per rasio layar: berlipat ganda per kamera.
+  - LUT 33³ dalam strip: lebih kasar, tidak ada keuntungan ukuran berarti.
+- **Konsekuensi**:
+  - `data/cameras.json` dan skemanya mendapat `layout`, `shelfImage`, `effectName`; `cek-hq` memeriksa file aset kamera gratis dan ilustrasi etalase.
+  - Kartu Kamera berbodi membaca `layout.json`, menerapkan LUT dan butir lewat shader, dan mengukur pratinjau ≥ 30 fps di Infinix Hot 11 Play.
+  - Suara rana menunggu kartu Rekam suara.

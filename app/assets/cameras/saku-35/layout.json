@@ -1,0 +1,102 @@
+{
+  "reference": {
+    "width": 390,
+    "height": 844
+  },
+  "stretchBand": {
+    "top": 250,
+    "bottom": 450
+  },
+  "viewfinder": {
+    "x": 30,
+    "y": 124,
+    "width": 330,
+    "height": 440,
+    "radius": 10
+  },
+  "controls": {
+    "close": {
+      "x": 22,
+      "y": 54,
+      "width": 48,
+      "height": 48
+    },
+    "flash": {
+      "x": 262,
+      "y": 54,
+      "width": 48,
+      "height": 48
+    },
+    "counter": {
+      "x": 318,
+      "y": 54,
+      "width": 52,
+      "height": 48
+    },
+    "timer": {
+      "x": 26,
+      "y": 588,
+      "width": 64,
+      "height": 69
+    },
+    "zoom": {
+      "x": 94,
+      "y": 588,
+      "width": 64,
+      "height": 69
+    },
+    "flip": {
+      "x": 300,
+      "y": 588,
+      "width": 64,
+      "height": 69
+    },
+    "lastResult": {
+      "x": 28,
+      "y": 692,
+      "width": 68,
+      "height": 68
+    },
+    "shutter": {
+      "x": 147,
+      "y": 678,
+      "width": 96,
+      "height": 96
+    },
+    "switchCamera": {
+      "x": 294,
+      "y": 686,
+      "width": 80,
+      "height": 89
+    }
+  },
+  "style": {
+    "button": {
+      "shape": "roundedRect",
+      "radius": 8,
+      "fill": "#DDE0E4",
+      "border": "#121212",
+      "borderWidth": 2,
+      "icon": "#121212"
+    },
+    "label": {
+      "text": "#121212",
+      "background": "#C9CCD1"
+    },
+    "counter": {
+      "fill": "#121212",
+      "border": "#121212",
+      "text": "#D4F25C"
+    },
+    "shutter": {
+      "ring": "#3048FF",
+      "ringWidth": 6,
+      "fill": "#EEF0F2",
+      "outline": "#121212"
+    }
+  },
+  "effect": {
+    "name": "CCD hangat",
+    "grain": 0.1
+  }
+}

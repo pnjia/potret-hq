@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "cameras.schema.json",
   "title": "Katalog kamera (skin)",
-  "description": "Entitas Camera (glosarium). Skin = overlay bodi + LUT + suara shutter. Path aset relatif terhadap app/ (belum ada).",
+  "description": "Entitas Camera (glosarium). Skin = overlay bodi + LUT + suara shutter. Path aset relatif terhadap app/. Kamera gratis wajib punya overlay, layout, lut, dan shelfImage; kamera terkunci yang tampil cukup shelfImage (dicek scripts/cek-hq.mjs).",
   "type": "object",
   "required": [
     "meta",
@@ -44,7 +44,10 @@
           "sku",
           "isFree",
           "isLocked",
-          "example"
+          "example",
+          "shelfImage",
+          "layout",
+          "effectName"
         ],
         "additionalProperties": false,
         "properties": {
@@ -89,6 +92,23 @@
           "isListed": {
             "type": "boolean",
             "description": "false = belum tampil di etalase (mis. kamera toko saat MVP, K-034). Bila tidak ada, dianggap true"
+          },
+          "shelfImage": {
+            "type": "string",
+            "pattern": "^assets/cameras/[a-z0-9-]+/shelf\\.png$",
+            "description": "Ilustrasi tampak depan untuk etalase kamera (CameraShelf), tanpa merek (K-034)"
+          },
+          "layout": {
+            "type": "string",
+            "pattern": "^assets/cameras/[a-z0-9-]+/layout\\.json$",
+            "description": "Posisi jendela bidik, tombol, pita regang, gaya kontrol, dan kekuatan butir (K-044); kanvas acuan 390x844"
+          },
+          "effectName": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Catatan efek di etalase, mis. 'CCD hangat'; null sampai kamera itu dirancang lengkap"
           }
         }
       }

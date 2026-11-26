@@ -1,7 +1,7 @@
 # Teknis: kamera dan temuan
 
 > Area agen `kamera-cutout`. Fakta di bagian 1 diambil dari spesifikasi v1 dan riset 16 Nov 2026.
-> Terakhir diverifikasi: 17 Nov 2026. Cek ulang status paket sebelum dipasang (riset bisa usang).
+> Terakhir diverifikasi: 26 Nov 2026 (format aset kamera K-044). Cek ulang status paket sebelum dipasang (riset bisa usang).
 
 ## 1. Yang sudah terkunci
 
@@ -24,11 +24,16 @@
 - **Path foto asli** (K-019): `localOriginalPath` hanya di drift, tidak pernah dikirim ke Supabase.
 - **Lokasi** (K-017): minta izin lokasi hanya saat memotret, tampilkan tanda saat lokasi dibaca, koordinat dibuang setelah kota/landmark dicocokkan.
 - **Suara shutter** (K-024): rekam sendiri; setiap file tercatat di `data/sounds.json`.
+- **Aset kamera** (K-034, K-044): per kamera di `app/assets/cameras/<id>/`:
+  - `overlay.png` bodi layar penuh 1170×2532 (3× kanvas 390×844), jendela bidik transparan, tanpa tombol;
+  - `layout.json` posisi jendela bidik, 9 kontrol, gaya kontrol, `effect.grain`, dan `stretchBand` (satu-satunya pita yang diregang untuk layar yang lebih tinggi/pendek);
+  - `lut.png` LUT 64³ dalam 512×512 (8×8 petak; petak ke-b = biru b, x = merah, y = hijau);
+  - `shelf.png` ilustrasi etalase 640×440.
+  Dibuat ulang dengan `node tool/render_camera_art.cjs` lalu `python3 tool/make_camera_assets.py` dari `app/`; sumber di `app/tool/camera_src/`.
 - **Status `native_cutout`** (riset 17 Nov): 0.4.0 (30 Sep 2026), satu perawat. ML Kit Subject Segmentation masih beta dan butuh API 24+. Risiko ini tetap di bawah K-010.
 
 ## 3. Belum ditetapkan
 
 | Hal | Status |
 |---|---|
-| Format LUT (PNG 3D LUT vs `.cube`) | Diputuskan agen `kamera-cutout` saat implementasi |
 | Ukuran dan kualitas WebP cutout dan thumbnail | Belum ada angka; terkait risiko biaya storage (#4) |

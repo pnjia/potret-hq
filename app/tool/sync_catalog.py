@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Menyalin katalog dari data/ (sumber tunggal) ke app/assets/catalog/.
+"""Menyalin katalog dari data/ (sumber tunggal) ke app/assets/catalog/:
+kota dan landmark, kategori, kamera.
 
 Flutter hanya bisa membundel file di dalam app/, jadi katalog kota, landmark,
 dan kategori disalin apa adanya. test/data/catalog_repository_test.dart gagal
@@ -12,7 +13,7 @@ import shutil
 from pathlib import Path
 
 APP = Path(__file__).resolve().parent.parent
-FILES = ["cities.json", "categories.json"]
+FILES = ["cities.json", "categories.json", "cameras.json"]
 
 for name in FILES:
     shutil.copyfile(APP.parent / "data" / name, APP / "assets" / "catalog" / name)

@@ -76,6 +76,13 @@ flutter:
     - assets/sounds/
     - assets/demo/
     - assets/catalog/
+    - assets/cameras/saku-35/
+    - assets/cameras/kotak-pos/
+    - assets/cameras/koran/
+    - assets/cameras/pagi/
+    - assets/cameras/hujan/
+    - assets/cameras/kilat/
+    - assets/cameras/layar-tancap/
     - assets/decorations/ornaments/
     - assets/decorations/tapes/
     - assets/decorations/papers/

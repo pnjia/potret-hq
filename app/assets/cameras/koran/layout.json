@@ -1,0 +1,102 @@
+{
+  "reference": {
+    "width": 390,
+    "height": 844
+  },
+  "stretchBand": {
+    "top": 240,
+    "bottom": 440
+  },
+  "viewfinder": {
+    "x": 28,
+    "y": 128,
+    "width": 334,
+    "height": 436,
+    "radius": 2
+  },
+  "controls": {
+    "close": {
+      "x": 24,
+      "y": 56,
+      "width": 48,
+      "height": 48
+    },
+    "flash": {
+      "x": 260,
+      "y": 56,
+      "width": 48,
+      "height": 48
+    },
+    "counter": {
+      "x": 316,
+      "y": 56,
+      "width": 52,
+      "height": 48
+    },
+    "timer": {
+      "x": 26,
+      "y": 584,
+      "width": 64,
+      "height": 69
+    },
+    "zoom": {
+      "x": 94,
+      "y": 584,
+      "width": 64,
+      "height": 69
+    },
+    "flip": {
+      "x": 300,
+      "y": 584,
+      "width": 64,
+      "height": 69
+    },
+    "lastResult": {
+      "x": 32,
+      "y": 712,
+      "width": 68,
+      "height": 68
+    },
+    "shutter": {
+      "x": 149,
+      "y": 698,
+      "width": 92,
+      "height": 92
+    },
+    "switchCamera": {
+      "x": 292,
+      "y": 694,
+      "width": 80,
+      "height": 89
+    }
+  },
+  "style": {
+    "button": {
+      "shape": "roundedRect",
+      "radius": 3,
+      "fill": "#2A2A30",
+      "border": "#E9E5DA",
+      "borderWidth": 2,
+      "icon": "#FFFFFF"
+    },
+    "label": {
+      "text": "#FFFFFF",
+      "background": "#1E1E22"
+    },
+    "counter": {
+      "fill": "#121212",
+      "border": "#E9E5DA",
+      "text": "#D4F25C"
+    },
+    "shutter": {
+      "ring": "#F3F1EA",
+      "ringWidth": 10,
+      "fill": "#3048FF",
+      "outline": "#121212"
+    }
+  },
+  "effect": {
+    "name": "Hitam-putih kasar",
+    "grain": 0.35
+  }
+}

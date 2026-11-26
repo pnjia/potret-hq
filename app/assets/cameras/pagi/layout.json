@@ -1,0 +1,102 @@
+{
+  "reference": {
+    "width": 390,
+    "height": 844
+  },
+  "stretchBand": {
+    "top": 230,
+    "bottom": 400
+  },
+  "viewfinder": {
+    "x": 32,
+    "y": 138,
+    "width": 326,
+    "height": 428,
+    "radius": 28
+  },
+  "controls": {
+    "close": {
+      "x": 24,
+      "y": 52,
+      "width": 48,
+      "height": 48
+    },
+    "flash": {
+      "x": 258,
+      "y": 52,
+      "width": 48,
+      "height": 48
+    },
+    "counter": {
+      "x": 318,
+      "y": 52,
+      "width": 52,
+      "height": 48
+    },
+    "timer": {
+      "x": 28,
+      "y": 590,
+      "width": 64,
+      "height": 69
+    },
+    "zoom": {
+      "x": 96,
+      "y": 590,
+      "width": 64,
+      "height": 69
+    },
+    "flip": {
+      "x": 298,
+      "y": 590,
+      "width": 64,
+      "height": 69
+    },
+    "lastResult": {
+      "x": 26,
+      "y": 694,
+      "width": 68,
+      "height": 68
+    },
+    "shutter": {
+      "x": 146,
+      "y": 679,
+      "width": 98,
+      "height": 98
+    },
+    "switchCamera": {
+      "x": 290,
+      "y": 688,
+      "width": 80,
+      "height": 89
+    }
+  },
+  "style": {
+    "button": {
+      "shape": "circle",
+      "radius": 0,
+      "fill": "#F3EBD3",
+      "border": "#121212",
+      "borderWidth": 2,
+      "icon": "#121212"
+    },
+    "label": {
+      "text": "#121212",
+      "background": "#9FE0C3"
+    },
+    "counter": {
+      "fill": "#121212",
+      "border": "#121212",
+      "text": "#D4F25C"
+    },
+    "shutter": {
+      "ring": "#F3EBD3",
+      "ringWidth": 6,
+      "fill": "#FFD84D",
+      "outline": "#121212"
+    }
+  },
+  "effect": {
+    "name": "Pastel pudar",
+    "grain": 0.06
+  }
+}
